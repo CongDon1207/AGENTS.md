@@ -88,7 +88,17 @@ Request arrives
 
 ### Trigger Keywords → Auto-Load Rules
 
-> **QUAN TRỌNG**: Khi phát hiện keyword trong request, **BẮT BUỘC** load theo thứ tự: **Agent → Command → Skill**
+> **IMPORTANT**: When trigger keywords are detected in request, **MANDATORY** load in order: **Agent → Command → Skill**
+
+---
+
+### 🎯 Slash Commands (Direct Command Loading)
+
+> **Mechanism**: When user types slash command (e.g., `/fix`, `/design/fast`, `/plan/hard`), AI **routes to router** to match and load corresponding command file from `.claude/commands/`
+
+**Full details**: See `.claude/router/commands-guide.md`
+
+---
 
 #### 🐛 Debug / Fix Bug
 **Triggers**: `bug`, `lỗi`, `error`, `fix`, `sửa`, `không chạy`, `broken`, `crash`, `failed`, `exception`, `stack trace`, `debug`, `troubleshoot`, `issue`, `problem`, `không hoạt động`

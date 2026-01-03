@@ -1,7 +1,5 @@
 # AGENTS.md - Working Conventions
 
-> **Philosophy**: Zero-preload. Only read files when triggers match. Keep context minimal.
-
 ---
 
 ## 1) Language
@@ -10,13 +8,25 @@
 ---
 
 ## 2) Core Principles (Non-negotiable)
-- **Clarify ambiguity first**: If request is unclear or missing info, ask at most 1-2 questions before starting; do not guess.
-- **Stay within scope**: Only implement what ticket/PRD/user explicitly requires; do not add "bonus" features.
-- **Minimal changes**: Prefer small, idempotent patches; avoid large refactors unless strictly necessary.
-- **Reuse before rewriting**: Prefer existing modules/utilities; avoid code duplication.
-- **File length limit**: Keep each file under 300 LOC; if exceeded, stop and propose splitting.
-- **Config/secrets**: Read only from environment variables; never hardcode.
-- **Clean up**: Remove temporary debug/test files immediately after finishing.
+- Clarify Ambiguity First: If a requirement is unclear or incomplete, ask 1-2 clarifying questions before proceeding. Never guess.
+- Code Only What Was Asked: Follow the PRD/ticket scope strictly; no extra features.
+- Minimum Viable Change: Deliver the simplest, most idempotent fix that works; avoid over-engineering.
+- Reuse Before Rewriting: Prefer existing modules or utilities; avoid duplication.
+- File Length Limit: Keep every file under 300 LOC; if a change would exceed this, pause and propose a refactor or split plan.
+- Configuration and Secrets: Load all secrets or config from environment variables only; never hardcode.
+- When writing code, aim for simplicity and readability, not just brevity. Short code that is hard to read is worse than slightly longer code that is clear.
+- Clean Up Temporary Files: Delete any temporary test files immediately after use.
+
+### Core Directives
+- WRITE CODE ONLY TO SPEC.
+- MINIMUM, NOT MAXIMUM.
+- ONE SIMPLE SOLUTION.
+- CLARIFY, DON'T ASSUME.
+
+### Philosophy (Non-negotiables)
+- Do not add unnecessary files or modules; if a new file is unavoidable, justify it.
+- Do not change architecture or patterns unless explicitly required and justified.
+- Prioritize readability and maintainability over clever or complex code.
 
 ---
 

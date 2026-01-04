@@ -70,7 +70,25 @@ Load: .claude/skills/project-index/SKILL.md
 
 ## 5) Dynamic Context Loading
 
-> **Golden Rule**: Do not preload. Only load files when matching triggers are detected.
+### Decision Framework: When to Load Skills/Commands
+**ALWAYS check catalogs first** before starting any work to determine if a specialized skill/command exists:
+
+1. **User mentions keywords** → Check `.claude/scripts/skills_data.yaml`:
+   - Debugging/bug/error/fix → Load `bug-diagnosis` or `debugging` skill
+   - Feature/implement/add → Load `feature-implementation` skill
+   - Test/testing/unit test → Load `test-generation` skill
+   - Documentation/README/docs → Load `documentation` or `readme-improvement` skill
+   - Review/code review/PR → Load `code-review` skill
+   - Performance/optimize/slow → Load `performance-optimization` skill
+   - Security/vulnerability/auth → Load `security-review` skill
+
+2. **User types slash command** (`/fix`, `/test`, etc.) → Load corresponding `.claude/commands/<command>.md`
+
+3. **Complex multi-step tasks** → Load `.claude/workflows/**` for orchestration
+
+4. **If no match found** → Use catalogs to search by description/keywords, or ask user to clarify
+
+**Never skip this step!** Skills contain systematic approaches that prevent random fixes and ensure quality.
 
 ### Standard Entry Points (6–8 lines)
 - If the request is **complex/unclear**: read `.claude/router/decision-flow.md` to decide the approach.
@@ -134,7 +152,3 @@ After completing impactful changes (feature/bugfix/schema/architecture), update 
 - `HANDOFF.md`: Current status + next steps + latest test results.
 - `CHANGELOG.md`: Add one line: `YYYY-MM-DD: <Fix|Add|Change|Remove> <what> at <path> - <impact> (completed).`
 - `docs/structure.md`: If added/removed files or restructured folders.
-
----
-
-*This file is the core policy and routing entry points. Keep it concise and do not preload context unless needed.*

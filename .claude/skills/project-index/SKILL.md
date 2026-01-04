@@ -1,282 +1,97 @@
 ---
 name: project-index
-description: Generate and maintain project structure index for fast AI navigation. Creates docs/structure.md with optimized file index. Load this skill when starting new project, after major changes, or when docs/structure.md is outdated.
+description: Generate and maintain a project structure index for fast AI navigation. Creates docs/structure.md with an AI-friendly map + tree. Use when starting a new project, after major changes, or when docs/structure.md is stale.
 ---
 
 # Project Index Skill
 
-Generate optimized project structure file for fast AI context loading.
+Generate an AI-friendly `docs/structure.md` so agents can understand project layout quickly without scanning the whole repo.
 
 ## When to Use
 
-- **First time**: Project has no `docs/structure.md`
-- **After changes**: Added/removed files, restructured folders
-- **Periodic refresh**: Weekly or after major features
-- **On demand**: User says "update structure", "refresh index", "scan project"
+- First time: project has no `docs/structure.md`
+- After major changes: added/removed modules, moved folders, renamed domains/features
+- When `docs/structure.md` looks stale or misleading
+- On demand: user says “update structure”, “refresh index”, “scan project”
 
----
+## Output
 
-## Output File
+- File: `docs/structure.md`
+- Content: **Top-Level Map** (purpose hints) + directory tree + entry points + config/key files + file-type distribution
 
-**Location**: `docs/structure.md`
+## Scripts (Recommended)
 
-**Purpose**: Single source of truth for AI to understand project layout without scanning entire codebase.
-
----
-
-## Cross-Platform Scripts (Recommended)
-
-This skill includes pre-built scripts that work on all platforms:
-
-### Node.js Script
+### Python (recommended default)
 ```bash
-# Basic usage (from project root)
-node .claude/skills/project-index/scripts/scan-structure.js . 4
-
-# Output to file
-node .claude/skills/project-index/scripts/scan-structure.js . 4 > docs/structure.md
-
-# JSON format
-node .claude/skills/project-index/scripts/scan-structure.js . 4 json
-```
-
-### Python Script
-```bash
-# Basic usage (respects .gitignore automatically)
-python .claude/skills/project-index/scripts/scan_structure.py . 4
-
-# Output to file  
 python .claude/skills/project-index/scripts/scan_structure.py . 4 > docs/structure.md
-
-# JSON format
-python .claude/skills/project-index/scripts/scan_structure.py . 4 json
-
-# Ignore .gitignore patterns (scan everything)
-python .claude/skills/project-index/scripts/scan_structure.py . 4 --no-gitignore
 ```
 
-### Script Features
-- ✅ Cross-platform (Windows, macOS, Linux)
-- ✅ **Respects .gitignore patterns by default** (NEW!)
-- ✅ Auto-detect entry points (main.*, index.*, app.*, server.*)
-- ✅ Auto-detect config files (package.json, tsconfig.*, etc.)
-- ✅ Auto-detect key files (README, CHANGELOG, LICENSE)
-- ✅ File distribution by language/type
-- ✅ Customizable depth and ignore patterns
-- ✅ Output: Markdown or JSON
-- ✅ Optional `--no-gitignore` flag to scan everything
-
----
-
-## Generation Workflow
-
-### Step 1: Scan Project (Alternative Methods)
-
-**Option A: Use Built-in Scripts (Recommended)**
+### Node.js
 ```bash
-# Node.js
-node .claude/skills/project-index/scripts/scan-structure.js . 4
-
-# Python
-python .claude/skills/project-index/scripts/scan_structure.py . 4
+node .claude/skills/project-index/scripts/scan-structure.js . 4 > docs/structure.md
 ```
 
-**Option B: VS Code Tools**
-```
-# Use list_dir tool recursively
-# Use file_search tool with glob patterns
-```
+### Flags
 
-**Option C: Native Commands (Platform-specific)**
-```bash
-# Linux/macOS
-tree -L 4 -I 'node_modules|.git|dist|build' --dirsfirst
+- `json`: output JSON instead of Markdown
+- `--no-gitignore`: ignore `.gitignore` rules and scan everything (not recommended)
 
-# Windows PowerShell
-Get-ChildItem -Recurse -Depth 4 | Where-Object { $_.FullName -notmatch 'node_modules|\.git|dist|build' }
+## Script Behavior (What “optimized” means)
 
-# Windows CMD (limited)
-dir /s /b /ad
-```
+- Respects `.gitignore` patterns by default (simplified matching)
+- Has built-in ignores for common noise:
+  - dependencies/build outputs: `node_modules/`, `dist/`, `build/`, `coverage/`, `.next/`, `.nuxt/`, `.turbo/`
+  - virtualenv/caches: `venv/`, `.venv/`, `.tox/`, `__pycache__/`, `.pytest_cache/`, `.mypy_cache/`, `.ruff_cache/`
+  - IDE: `.vscode/`, `.idea/`
+  - typical build outputs: `bin/`, `obj/`, `target/`
+  - secrets files: `.env*`
+- Uses ASCII tree connectors (`|--`, ``--`) to avoid encoding issues on Windows terminals
+- Generates a **Top-Level Map** with heuristic purpose descriptions (fast navigation)
 
-### Step 2: Identify Key Files
-Scan for these important files:
-- **Entry points**: `main.*`, `index.*`, `app.*`, `server.*`
-- **Config**: `*.config.*`, `*.json`, `*.yaml`, `*.toml`, `.env*`
-- **Docs**: `README*`, `CHANGELOG*`, `docs/*`
-- **Routes/API**: `**/routes/**`, `**/api/**`, `**/controllers/**`
-- **Components**: `**/components/**`, `**/views/**`, `**/pages/**`
-- **Services**: `**/services/**`, `**/lib/**`, `**/utils/**`
-- **Database**: `**/models/**`, `**/schema/**`, `**/migrations/**`
-- **Tests**: `**/*.test.*`, `**/*.spec.*`, `**/tests/**`
-
-### Step 3: Generate Structure File
-Create `docs/structure.md` with this format:
+## Expected Structure File Format
 
 ```markdown
 # Project Structure Index
-> Auto-generated by project-index skill. Last updated: YYYY-MM-DD HH:mm
+> Auto-generated by project-index. Last updated: YYYY-MM-DD HH:mm
 
 ## Quick Stats
 - Total files: X
+- Total directories: Y
 - Main language: TypeScript/Python/etc
-- Framework: Next.js/Angular/Express/etc
-- Package manager: npm/yarn/pnpm
+
+## Top-Level Map
+| Path | Type | Purpose |
+|:---|:---:|:---|
+| src/ | dir | Main application source code |
+| apps/ | dir | Application(s) (often runnable targets) |
+| packages/ | dir | Packages (shared modules/libraries) |
+| docs/ | dir | Documentation |
+| README.md | file | Project overview and getting started |
 
 ## Directory Tree
-\`\`\`
-<tree output here>
-\`\`\`
+```
+repo/
+|-- src/
+|   `-- ...
+`-- README.md
+```
 
-## Key Entry Points
-| File | Purpose |
-|:---|:---|
-| src/index.ts | Main entry |
-| src/app.ts | App initialization |
+## Entry Points
+- src/index.ts
 
 ## Config Files
-| File | Purpose |
-|:---|:---|
-| package.json | Dependencies |
-| tsconfig.json | TypeScript config |
+- package.json
 
-## Feature Map
-| Feature/Domain | Location | Key Files |
-|:---|:---|:---|
-| Authentication | src/auth/ | login.ts, session.ts, middleware.ts |
-| User Management | src/users/ | user.model.ts, user.service.ts |
-| API Routes | src/api/ | routes.ts, handlers/ |
-| Database | src/db/ | schema.prisma, migrations/ |
-| UI Components | src/components/ | Button.tsx, Modal.tsx, Layout.tsx |
+## Key Files
+- README.md
 
-## File Patterns
-| Looking for | Path pattern |
-|:---|:---|
-| Components | src/components/**/*.tsx |
-| API handlers | src/api/**/*.ts |
-| Database models | src/models/**/*.ts |
-| Tests | **/*.test.ts, **/*.spec.ts |
-| Styles | src/styles/**/*.css |
-
-## Recent Changes (Optional)
-- 2024-01-15: Added payment module at src/payment/
-- 2024-01-10: Restructured auth to src/auth/
+## File Distribution
+| Category | Count |
+|:---|---:|
+| typescript | 120 |
 ```
 
-### Step 4: Validate & Save
-1. Ensure `docs/` folder exists
-2. Write to `docs/structure.md`
-3. Confirm file created/updated
+## Integration Notes
 
----
-
-## JSON Alternative (Optional)
-
-If project prefers JSON, create `docs/structure.json`:
-
-```json
-{
-  "generated": "2024-01-15T10:30:00Z",
-  "stats": {
-    "totalFiles": 150,
-    "language": "TypeScript",
-    "framework": "Next.js"
-  },
-  "entryPoints": [
-    {"path": "src/index.ts", "purpose": "Main entry"},
-    {"path": "src/app.ts", "purpose": "App init"}
-  ],
-  "features": {
-    "auth": {
-      "location": "src/auth/",
-      "files": ["login.ts", "session.ts", "middleware.ts"]
-    },
-    "api": {
-      "location": "src/api/",
-      "files": ["routes.ts", "handlers/"]
-    }
-  },
-  "patterns": {
-    "components": "src/components/**/*.tsx",
-    "api": "src/api/**/*.ts",
-    "tests": "**/*.test.ts"
-  }
-}
-```
-
----
-
-## Update Triggers
-
-Structure file should be updated when:
-
-1. **Manual trigger**: User says "update structure"
-2. **New feature**: After adding new module/feature folder
-3. **Restructure**: After moving/renaming folders
-4. **Weekly maintenance**: As part of regular cleanup
-5. **Before major task**: Ensure index is fresh before big changes
-
----
-
-## Integration with AGENTS.md
-
-After generating `docs/structure.md`, AI should:
-
-1. **Read structure first** before searching for files
-2. **Use Feature Map** to locate relevant code areas
-3. **Use File Patterns** for glob searches
-4. **Skip full tree scan** if structure file exists and is recent
-
----
-
-## Quick Commands
-
-```bash
-# Check if structure exists (cross-platform)
-test -f docs/structure.md && echo "EXISTS" || echo "NEEDS GENERATION"
-
-# Generate with Node.js script
-node .claude/skills/project-index/scripts/scan-structure.js . 4 > docs/structure.md
-
-# Generate with Python script
-python .claude/skills/project-index/scripts/scan_structure.py . 4 > docs/structure.md
-
-# Quick check last modified (Linux/macOS)
-stat docs/structure.md | grep Modify
-
-# Quick check last modified (PowerShell)
-(Get-Item docs/structure.md).LastWriteTime
-```
-
----
-
-## AI Agent Workflow
-
-When generating structure as AI agent:
-
-### Method 1: Use Built-in Script (Fast)
-```bash
-node .claude/skills/project-index/scripts/scan-structure.js . 4 > docs/structure.md
-```
-
-### Method 2: Use VS Code Tools (No Script Required)
-1. Use `list_dir` tool to scan root
-2. Use `list_dir` recursively on key folders
-3. Use `file_search` with patterns like `**/*.tsx`, `**/*.ts`
-4. Combine results into structure.md format
-
-### Method 3: Hybrid Approach
-1. Run script for basic tree
-2. Use `read_file` on package.json to detect framework
-3. Manually add Feature Map based on codebase understanding
-
----
-
-## Best Practices
-
-1. **Keep it updated**: Stale index is worse than no index
-2. **Feature-focused**: Group by business domain, not just folders
-3. **Include purpose**: Don't just list files, explain what they do
-4. **Patterns over lists**: For large folders, show patterns instead of listing all files
-5. **Version control**: Commit structure.md so team shares same understanding
-6. **Use scripts**: Prefer built-in scripts over platform-specific commands
+- Agents should **read `docs/structure.md` first** for large/broad tasks, then use `rg` for precise lookup.
+- A stale `docs/structure.md` is worse than none; refresh it after restructures.

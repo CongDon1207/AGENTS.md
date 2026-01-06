@@ -95,6 +95,7 @@ Load: .claude/skills/project-index/SKILL.md
 - If you need the **overall workflow**: read `.claude/workflows/primary-workflow.md`.
 - If you need **quality rules**: read `.claude/workflows/development-rules.md`.
 - If you need a **command quick reference**: use `.claude/scripts/ck-help.py`.
+- If you add/update `.claude/commands/**`: regenerate `.claude/scripts/commands_data.yaml` via `python .claude/scripts/scan_commands.py`.
 - If you need a **project map**: create/read `docs/structure.md` via `.claude/skills/project-index/SKILL.md`.
 - If you need **exact matches in code**: use `rg` (preferred when you already have concrete keywords).
 

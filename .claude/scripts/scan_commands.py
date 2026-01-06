@@ -4,9 +4,14 @@ Scan .claude/commands directory and extract command metadata.
 """
 
 import re
+import sys
+import io
 from pathlib import Path
 from typing import Dict, List
 import yaml
+
+if sys.platform == 'win32' and hasattr(sys.stdout, 'buffer'):
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
 def extract_frontmatter(content: str) -> Dict:
     """Extract YAML frontmatter from markdown content."""
@@ -28,11 +33,12 @@ def scan_commands(base_path: Path) -> List[Dict]:
 
         # Build command name from path
         parts = list(rel_path.parts[:-1]) + [rel_path.stem]
-        command_name = '/ck:' + ':'.join(parts)
+        # Canonical command format: /fix, /fix/ui, /plan/fast, ...
+        command_name = '/' + '/'.join(parts)
 
         # Read file and extract frontmatter
         try:
-            content = cmd_file.read_text()
+            content = cmd_file.read_text(encoding='utf-8', errors='replace')
             frontmatter = extract_frontmatter(content)
 
             description = frontmatter.get('description', '')
@@ -91,8 +97,11 @@ def main():
 
     # Output YAML for processing (generate_catalogs.py expects YAML format)
     output_path = Path('.claude/scripts/commands_data.yaml')
-    output_path.write_text(yaml.dump(commands, allow_unicode=True, default_flow_style=False))
-    print(f"\n✓ Saved metadata to {output_path}")
+    output_path.write_text(
+        yaml.dump(commands, allow_unicode=True, default_flow_style=False),
+        encoding='utf-8',
+    )
+    print(f"\nSaved metadata to {output_path}")
 
 if __name__ == '__main__':
     main()

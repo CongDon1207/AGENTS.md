@@ -50,7 +50,7 @@ def scan_commands(base_path: Path) -> List[Dict]:
 
             commands.append({
                 'name': command_name,
-                'path': str(rel_path),
+                'path': rel_path.as_posix(),
                 'description': clean_desc,
                 'argument_hint': arg_hint,
                 'power_level': power_level,

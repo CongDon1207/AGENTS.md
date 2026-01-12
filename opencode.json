@@ -1,0 +1,218 @@
+{
+    "permissions": {
+        "allow": [
+            "Bash(git:*)",
+            "Bash(npm:*)",
+            "Bash(npx:*)",
+            "Bash(dotnet:*)",
+            "Bash(nx:*)",
+            "Bash(node:*)",
+            "Bash(find:*)",
+            "Bash(ls:*)",
+            "Bash(cat:*)",
+            "Bash(head:*)",
+            "Bash(tail:*)",
+            "Bash(wc:*)",
+            "Bash(pwd)",
+            "Bash(echo:*)",
+            "Bash(mkdir:*)",
+            "Bash(cp:*)",
+            "Bash(mv:*)",
+            "Bash(touch:*)",
+            "Bash(grep:*)",
+            "Bash(awk:*)",
+            "Bash(sed:*)",
+            "Bash(sort:*)",
+            "Bash(uniq:*)",
+            "Bash(diff:*)",
+            "Bash(curl:*)",
+            "Bash(wget:*)",
+            "Bash(tar:*)",
+            "Bash(zip:*)",
+            "Bash(unzip:*)",
+            "Bash(cd:*)",
+            "Bash(which:*)",
+            "Bash(whoami)",
+            "Bash(date)",
+            "Bash(env)",
+            "Bash(printenv:*)",
+            "Bash(dir:*)",
+            "Bash(type:*)",
+            "Edit",
+            "ExitPlanMode",
+            "NotebookEdit",
+            "Skill",
+            "SlashCommand",
+            "WebFetch",
+            "WebSearch",
+            "Write",
+            "Read",
+            "Glob",
+            "Grep",
+            "Bash(npm run:*)",
+            "Bash(dotnet:*)",
+            "Bash(nx:*)",
+            "Bash(git:*)",
+            "mcp__filesystem__list_directory",
+            "mcp__filesystem__directory_tree",
+            "mcp__filesystem__read_text_file",
+            "mcp__filesystem__read_multiple_files"
+        ],
+        "ask": ["Bash(git push:*)", "Bash(npm publish:*)", "Bash(docker push:*)"],
+        "defaultMode": "bypassPermissions",
+        "deny": [
+            "Bash(rm -rf /*)",
+            "Bash(rm -rf ~/*)",
+            "Bash(rm -rf .)",
+            "Bash(git push --force:*)",
+            "Bash(git push -f:*)",
+            "Bash(git reset --hard:*)",
+            "Bash(git clean -fd:*)",
+            "Bash(git branch -D:*)",
+            "Bash(git stash drop:*)",
+            "Edit(**/.env*)",
+            "Edit(.env*)",
+            "Edit(**/secrets/**)",
+            "Edit(**/credentials*)",
+            "Edit(**/generated/**)",
+            "Edit(**/obj/**)",
+            "Edit(**/bin/**)",
+            "Edit(**/dist/**)",
+            "Edit(**/node_modules/**)",
+            "Edit(.github/workflows/**)",
+            "Read(**/.env*)",
+            "Read(.env*)",
+            "Read(**/secrets/**)",
+            "Read(**/credentials*)",
+            "Read(~/.ssh/**)",
+            "Read(~/.aws/**)",
+            "Read(~/.config/gcloud/**)",
+            "Write(**/.env*)",
+            "Write(.env*)",
+            "Write(**/secrets/**)",
+            "Write(**/credentials*)",
+            "Write(**/generated/**)",
+            "Write(**/obj/**)",
+            "Write(**/bin/**)",
+            "Write(**/dist/**)",
+            "Write(**/node_modules/**)"
+        ]
+    },
+    "hooks": {
+        "Notification": [
+            {
+                "hooks": [
+                    {
+                        "command": "node .opencode/hooks/notify-waiting.js",
+                        "type": "command"
+                    }
+                ]
+            }
+        ],
+        "PostToolUse": [
+            {
+                "hooks": [
+                    {
+                        "command": "node .opencode/hooks/post-edit-prettier.cjs",
+                        "type": "command"
+                    }
+                ],
+                "matcher": "Edit|Write"
+            }
+        ],
+        "PreCompact": [
+            {
+                "hooks": [
+                    {
+                        "command": "node .opencode/hooks/write-compact-marker.cjs",
+                        "type": "command"
+                    }
+                ],
+                "matcher": "manual|auto"
+            }
+        ],
+        "PreToolUse": [
+            {
+                "hooks": [
+                    {
+                        "command": "node .opencode/hooks/scout-block.cjs",
+                        "type": "command"
+                    },
+                    {
+                        "command": "node .opencode/hooks/privacy-block.cjs",
+                        "type": "command"
+                    }
+                ],
+                "matcher": "Bash|Glob|Grep|Read|Edit|Write"
+            },
+            {
+                "hooks": [
+                    {
+                        "command": "node .opencode/hooks/design-system-context.cjs",
+                        "type": "command"
+                    },
+                    {
+                        "command": "node .opencode/hooks/backend-csharp-context.cjs",
+                        "type": "command"
+                    },
+                    {
+                        "command": "node .opencode/hooks/frontend-typescript-context.cjs",
+                        "type": "command"
+                    },
+                    {
+                        "command": "node .opencode/hooks/scss-styling-context.cjs",
+                        "type": "command"
+                    }
+                ],
+                "matcher": "Edit|Write|MultiEdit"
+            }
+        ],
+        "SessionEnd": [
+            {
+                "hooks": [
+                    {
+                        "command": "node .opencode/hooks/session-end.cjs",
+                        "type": "command"
+                    }
+                ],
+                "matcher": "clear"
+            }
+        ],
+        "SessionStart": [
+            {
+                "hooks": [
+                    {
+                        "command": "node .opencode/hooks/session-init.cjs",
+                        "type": "command"
+                    }
+                ],
+                "matcher": "startup|resume|clear|compact"
+            }
+        ],
+        "SubagentStart": [
+            {
+                "hooks": [
+                    {
+                        "command": "node .opencode/hooks/subagent-init.cjs",
+                        "type": "command"
+                    }
+                ],
+                "matcher": "*"
+            }
+        ],
+        "UserPromptSubmit": [
+            {
+                "hooks": [
+                    {
+                        "command": "node .opencode/hooks/workflow-router.cjs",
+                        "type": "command"
+                    },
+                    {
+                        "command": "node .opencode/hooks/dev-rules-reminder.cjs",
+                        "type": "command"
+                    }
+                ]
+            }
+        ]
+    }
+}

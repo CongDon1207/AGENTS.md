@@ -10,21 +10,21 @@
   category: bootstrap
   description: Quickly bootstrap a new project automatically
   name: /bootstrap/auto/fast
-  path: bootstrap\auto\fast.md
+  path: bootstrap/auto/fast.md
   power_level: 3
 - argument_hint:
   - user-requirements
   category: bootstrap
   description: Bootstrap project with parallel execution
   name: /bootstrap/auto/parallel
-  path: bootstrap\auto\parallel.md
+  path: bootstrap/auto/parallel.md
   power_level: 5
 - argument_hint:
   - user-requirements
   category: bootstrap
   description: Bootstrap a new project automatically
   name: /bootstrap/auto
-  path: bootstrap\auto.md
+  path: bootstrap/auto.md
   power_level: 4
 - argument_hint:
   - user-requirements
@@ -46,6 +46,12 @@
   name: /build
   path: build.md
   power_level: 0
+- argument_hint: ''
+  category: core
+  description: ''
+  name: /checkpoint
+  path: checkpoint.md
+  power_level: 0
 - argument_hint:
   - category|command|task description
   category: core
@@ -57,22 +63,28 @@
   category: code
   description: ''
   name: /code/auto
-  path: code\auto.md
+  path: code/auto.md
   power_level: 0
 - argument_hint:
   - plan
   category: code
   description: Start coding an existing plan (no testing)
   name: /code/no-test
-  path: code\no-test.md
+  path: code/no-test.md
   power_level: 2
 - argument_hint:
   - plan-path
   category: code
   description: Execute parallel or sequential phases based on plan structure
   name: /code/parallel
-  path: code\parallel.md
+  path: code/parallel.md
   power_level: 1
+- argument_hint: ''
+  category: core
+  description: ''
+  name: /code-simplifier
+  path: code-simplifier.md
+  power_level: 0
 - argument_hint:
   - plan
   category: core
@@ -86,55 +98,88 @@
   name: /coding-level
   path: coding-level.md
   power_level: 0
+- argument_hint: ''
+  category: core
+  description: ''
+  name: /compact
+  path: compact.md
+  power_level: 0
 - argument_hint:
   - issues
   category: content
   description: Analyze the current content and optimize for conversion
   name: /content/cro
-  path: content\cro.md
+  path: content/cro.md
   power_level: 0
 - argument_hint:
   - issues
   category: content
   description: Analyze the current copy issues and enhance it
   name: /content/enhance
-  path: content\enhance.md
+  path: content/enhance.md
   power_level: 0
 - argument_hint:
   - user-request
   category: content
   description: Write creative & smart copy [FAST]
   name: /content/fast
-  path: content\fast.md
+  path: content/fast.md
   power_level: 0
 - argument_hint:
   - user-request
   category: content
   description: Write good creative & smart copy [GOOD]
   name: /content/good
-  path: content\good.md
+  path: content/good.md
+  power_level: 0
+- argument_hint: ''
+  category: core
+  description: ''
+  name: /context
+  path: context.md
   power_level: 0
 - argument_hint:
   - tasks-or-prompt
   category: cook
   description: No research. Only scout, plan & implement ["trust me bro"]
   name: /cook/auto/fast
-  path: cook\auto\fast.md
+  path: cook/auto/fast.md
   power_level: 1
 - argument_hint:
   - tasks
   category: cook
   description: Plan parallel phases & execute with fullstack-developer agents
   name: /cook/auto/parallel
-  path: cook\auto\parallel.md
+  path: cook/auto/parallel.md
   power_level: 3
 - argument_hint:
   - tasks
   category: cook
   description: Implement a feature automatically ("trust me bro")
   name: /cook/auto
-  path: cook\auto.md
+  path: cook/auto.md
   power_level: 2
+- argument_hint:
+  - tasks
+  category: cook
+  description: Fast implementation - skip research, minimal planning
+  name: /cook/fast
+  path: cook/fast.md
+  power_level: 1
+- argument_hint:
+  - tasks
+  category: cook
+  description: Thorough implementation with maximum verification
+  name: /cook/hard
+  path: cook/hard.md
+  power_level: 4
+- argument_hint:
+  - tasks
+  category: cook
+  description: Parallel implementation - multiple tasks simultaneously
+  name: /cook/parallel
+  path: cook/parallel.md
+  power_level: 3
 - argument_hint:
   - tasks
   category: core
@@ -166,119 +211,125 @@
   category: design
   description: Create immersive interactive 3D designs with Three.js
   name: /design/3d
-  path: design\3d.md
+  path: design/3d.md
   power_level: 0
 - argument_hint:
   - screenshot
   category: design
   description: Describe a design based on screenshot/video
   name: /design/describe
-  path: design\describe.md
+  path: design/describe.md
   power_level: 0
 - argument_hint:
   - tasks
   category: design
   description: Create a quick design
   name: /design/fast
-  path: design\fast.md
+  path: design/fast.md
   power_level: 0
 - argument_hint:
   - tasks
   category: design
   description: Create an immersive design
   name: /design/good
-  path: design\good.md
+  path: design/good.md
   power_level: 0
 - argument_hint:
   - screenshot
   category: design
   description: Create a design based on screenshot
   name: /design/screenshot
-  path: design\screenshot.md
+  path: design/screenshot.md
   power_level: 0
 - argument_hint:
   - video
   category: design
   description: Create a design based on video
   name: /design/video
-  path: design\video.md
+  path: design/video.md
   power_level: 0
 - argument_hint: ''
   category: docs
   description: Analyze the codebase and create initial documentation
   name: /docs/init
-  path: docs\init.md
+  path: docs/init.md
   power_level: 4
 - argument_hint: ''
   category: docs
   description: ''
   name: /docs/summarize
-  path: docs\summarize.md
+  path: docs/summarize.md
   power_level: 0
 - argument_hint: ''
   category: docs
   description: Analyze the codebase and update documentation
   name: /docs/update
-  path: docs\update.md
+  path: docs/update.md
   power_level: 3
+- argument_hint: ''
+  category: core
+  description: ''
+  name: /feature
+  path: feature.md
+  power_level: 0
 - argument_hint:
   - github-actions-url
   category: fix
   description: Analyze Github Actions logs and fix issues
   name: /fix/ci
-  path: fix\ci.md
+  path: fix/ci.md
   power_level: 1
 - argument_hint:
   - issues
   category: fix
   description: Analyze and fix small issues [FAST]
   name: /fix/fast
-  path: fix\fast.md
+  path: fix/fast.md
   power_level: 1
 - argument_hint:
   - issues
   category: fix
   description: Use subagents to plan and fix hard issues
   name: /fix/hard
-  path: fix\hard.md
+  path: fix/hard.md
   power_level: 3
 - argument_hint:
   - issue
   category: fix
   description: Analyze logs and fix issues
   name: /fix/logs
-  path: fix\logs.md
+  path: fix/logs.md
   power_level: 1
 - argument_hint:
   - issues
   category: fix
   description: Analyze & fix issues with parallel fullstack-developer agents
   name: /fix/parallel
-  path: fix\parallel.md
+  path: fix/parallel.md
   power_level: 2
 - argument_hint:
   - issues
   category: fix
   description: Run test suite and fix issues
   name: /fix/test
-  path: fix\test.md
+  path: fix/test.md
   power_level: 2
 - argument_hint: ''
   category: fix
   description: Fix type errors
   name: /fix/types
-  path: fix\types.md
+  path: fix/types.md
   power_level: 1
 - argument_hint:
   - issue
   category: fix
   description: Analyze and fix UI issues
   name: /fix/ui
-  path: fix\ui.md
+  path: fix/ui.md
   power_level: 2
 - argument_hint: ''
   category: core
-  description: Investigate and fix a GitHub issue by number
+  description: ''
   name: /fix-issue
   path: fix-issue.md
   power_level: 0
@@ -299,40 +350,46 @@
   category: git
   description: Stage all files and create a commit.
   name: /git/cm
-  path: git\cm.md
+  path: git/cm.md
   power_level: 0
 - argument_hint: ''
   category: git
   description: Stage, commit and push all code in the current branch
   name: /git/cp
-  path: git\cp.md
+  path: git/cp.md
   power_level: 0
 - argument_hint: ''
   category: git
   description: ''
   name: /git/merge
-  path: git\merge.md
+  path: git/merge.md
   power_level: 0
 - argument_hint: ''
   category: git
   description: ''
   name: /git/pr
-  path: git\pr.md
+  path: git/pr.md
   power_level: 0
 - argument_hint:
   - tasks
   category: integrate
   description: Implement payment integration with Polar.sh
   name: /integrate/polar
-  path: integrate\polar.md
+  path: integrate/polar.md
   power_level: 2
 - argument_hint:
   - tasks
   category: integrate
   description: Implement payment integration with SePay.vn
   name: /integrate/sepay
-  path: integrate\sepay.md
+  path: integrate/sepay.md
   power_level: 2
+- argument_hint: ''
+  category: core
+  description: ''
+  name: /investigate
+  path: investigate.md
+  power_level: 0
 - argument_hint: ''
   category: core
   description: Write some journal entries.
@@ -352,59 +409,71 @@
   path: lint.md
   power_level: 0
 - argument_hint: ''
+  category: core
+  description: ''
+  name: /migration
+  path: migration.md
+  power_level: 0
+- argument_hint: ''
+  category: core
+  description: ''
+  name: /performance
+  path: performance.md
+  power_level: 0
+- argument_hint: ''
   category: plan
   description: ''
   name: /plan/archive
-  path: plan\archive.md
+  path: plan/archive.md
   power_level: 0
 - argument_hint:
   - github-actions-url
   category: plan
   description: Analyze Github Actions logs and provide a plan to fix the issues
   name: /plan/ci
-  path: plan\ci.md
+  path: plan/ci.md
   power_level: 0
 - argument_hint:
   - issues
   category: plan
   description: Create a CRO plan for the given content
   name: /plan/cro
-  path: plan\cro.md
+  path: plan/cro.md
   power_level: 0
 - argument_hint:
   - task
   category: plan
   description: No research. Only analyze and create an implementation plan
   name: /plan/fast
-  path: plan\fast.md
+  path: plan/fast.md
   power_level: 2
 - argument_hint:
   - task
   category: plan
   description: Research, analyze, and create an implementation plan
   name: /plan/hard
-  path: plan\hard.md
+  path: plan/hard.md
   power_level: 3
 - argument_hint:
   - task
   category: plan
   description: Create detailed plan with parallel-executable phases
   name: /plan/parallel
-  path: plan\parallel.md
+  path: plan/parallel.md
   power_level: 3
 - argument_hint:
   - task
   category: plan
   description: Research & create an implementation plan with 2 approaches
   name: /plan/two
-  path: plan\two.md
+  path: plan/two.md
   power_level: 4
 - argument_hint:
   - plan-path
   category: plan
   description: Validate plan with critical questions interview
   name: /plan/validate
-  path: plan\validate.md
+  path: plan/validate.md
   power_level: 0
 - argument_hint:
   - task
@@ -413,6 +482,12 @@
   name: /plan
   path: plan.md
   power_level: 3
+- argument_hint: ''
+  category: core
+  description: ''
+  name: /pr
+  path: pr.md
+  power_level: 0
 - argument_hint: ''
   category: core
   description: Path to markdown file, plan directory, or plans collection
@@ -425,19 +500,25 @@
   name: /README
   path: README.md
   power_level: 0
+- argument_hint: ''
+  category: core
+  description: ''
+  name: /release-notes
+  path: release-notes.md
+  power_level: 0
 - argument_hint:
   - tasks-or-prompt
   category: review
   description: Scan & analyze the codebase.
   name: /review/codebase
-  path: review\codebase.md
+  path: review/codebase.md
   power_level: 3
 - argument_hint:
   - optional-focus-area
   category: review
   description: Two-pass code review for task completion
   name: /review/post-task
-  path: review\post-task.md
+  path: review/post-task.md
   power_level: 3
 - argument_hint: ''
   category: core
@@ -446,10 +527,16 @@
   path: review-changes.md
   power_level: 0
 - argument_hint: ''
+  category: core
+  description: ''
+  name: /review
+  path: review.md
+  power_level: 0
+- argument_hint: ''
   category: scout
   description: ''
   name: /scout/ext
-  path: scout\ext.md
+  path: scout/ext.md
   power_level: 0
 - argument_hint: ''
   category: core
@@ -458,48 +545,54 @@
   path: scout.md
   power_level: 0
 - argument_hint: ''
+  category: core
+  description: ''
+  name: /security
+  path: security.md
+  power_level: 0
+- argument_hint: ''
   category: skill
   description: ''
   name: /skill/add
-  path: skill\add.md
+  path: skill/add.md
   power_level: 0
 - argument_hint:
   - prompt-or-llms-or-github-url
   category: skill
   description: Create a new agent skill
   name: /skill/create
-  path: skill\create.md
+  path: skill/create.md
   power_level: 0
 - argument_hint:
   - prompt-or-path-to-skill
   category: skill
   description: Fix the agent skill based on `logs.txt` file.
   name: /skill/fix-logs
-  path: skill\fix-logs.md
+  path: skill/fix-logs.md
   power_level: 0
 - argument_hint: ''
   category: skill
   description: ''
   name: /skill/optimize/auto
-  path: skill\optimize\auto.md
+  path: skill/optimize/auto.md
   power_level: 0
 - argument_hint: ''
   category: skill
   description: ''
   name: /skill/optimize
-  path: skill\optimize.md
+  path: skill/optimize.md
   power_level: 0
 - argument_hint: ''
   category: skill
   description: ''
   name: /skill/plan
-  path: skill\plan.md
+  path: skill/plan.md
   power_level: 0
 - argument_hint: ''
   category: test
   description: ''
   name: /test/ui
-  path: test\ui.md
+  path: test/ui.md
   power_level: 0
 - argument_hint: ''
   category: core

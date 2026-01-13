@@ -1,6 +1,6 @@
 ---
 description: ⚡ Use external agentic tools to scout given directories
-argument-hint: [user-prompt] [scale]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 ## Purpose

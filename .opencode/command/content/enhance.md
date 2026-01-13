@@ -1,6 +1,6 @@
 ---
 description: Analyze the current copy issues and enhance it
-argument-hint: [issues]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 Enhance the copy based on reported issues:

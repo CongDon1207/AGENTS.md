@@ -1,9 +1,6 @@
 ---
 description: AI agent orchestration board (Coming Soon)
-arguments:
-  - name: dir
-    description: Plans directory (default: ./plans)
-    required: false
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 Plans dashboard with progress tracking and timeline visualization.

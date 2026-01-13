@@ -1,9 +1,6 @@
 ---
 description: Path to markdown file, plan directory, or plans collection
-arguments:
-  - name: path
-    description: Path to file or directory to preview
-    required: false
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 Universal viewer using `markdown-novel-viewer` skill - pass ANY path and see it rendered nicely.
@@ -48,19 +45,7 @@ Otherwise, run the `markdown-novel-viewer` server as CC background task with `--
 # Determine if path is file or directory
 INPUT_PATH="{{path}}"
 if [[ -d "$INPUT_PATH" ]]; then
-  # Directory mode - browse
-  node $SKILL_DIR_PATH/scripts/server.cjs \
-    --dir "$INPUT_PATH" \
-    --host 0.0.0.0 \
-    --open \
-    --foreground
 else
-  # File mode - view markdown
-  node $SKILL_DIR_PATH/scripts/server.cjs \
-    --file "$INPUT_PATH" \
-    --host 0.0.0.0 \
-    --open \
-    --foreground
 fi
 ```
 
@@ -72,10 +57,6 @@ fi
 Example Bash tool call:
 ```json
 {
-  "command": "node .claude/skills/markdown-novel-viewer/scripts/server.cjs --dir \"path\" --host 0.0.0.0 --open --foreground",
-  "run_in_background": true,
-  "timeout": 300000,
-  "description": "Start preview server in background"
 }
 ```
 

@@ -1,6 +1,6 @@
 ---
 description: ⚡⚡⚡⚡⚡ Bootstrap project with parallel execution
-argument-hint: [user-requirements]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 **Ultrathink parallel** to bootstrap: <user-requirements>$ARGUMENTS</user-requirements>

@@ -1,6 +1,6 @@
 ---
 description: Build backend and/or frontend projects
-argument-hint: (empty)
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 **Build the project:**

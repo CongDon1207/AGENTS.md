@@ -1,6 +1,6 @@
 ---
 description: ⚡⚡ Run UI tests on a website & generate a detailed report.
-argument-hint: [url] [options]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 Activate the chrome-devtools skill.

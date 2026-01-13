@@ -1,6 +1,6 @@
 ---
 description: Utilize tools of Model Context Protocol (MCP) servers
-argument-hint: [task]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 Execute MCP operations via **Gemini CLI** to preserve context budget.
 

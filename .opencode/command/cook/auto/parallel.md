@@ -1,6 +1,6 @@
 ---
 description: ⚡⚡⚡ Plan parallel phases & execute with fullstack-developer agents
-argument-hint: [tasks]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 **Ultrathink parallel** to implement: <tasks>$ARGUMENTS</tasks>

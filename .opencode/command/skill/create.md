@@ -1,6 +1,6 @@
 ---
 description: Create a new agent skill
-argument-hint: [prompt-or-llms-or-github-url]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 Ultrathink.

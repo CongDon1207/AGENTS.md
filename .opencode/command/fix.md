@@ -1,6 +1,6 @@
 ---
 description: Analyze and fix issues [INTELLIGENT ROUTING]
-argument-hint: [issues]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 **Analyze issues and route to specialized fix command:**

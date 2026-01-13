@@ -1,6 +1,6 @@
 ---
 description: ⚡⚡ Implement payment integration with SePay.vn
-argument-hint: [tasks]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 Think harder.

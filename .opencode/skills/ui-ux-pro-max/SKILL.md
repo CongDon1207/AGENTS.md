@@ -1,6 +1,6 @@
 ---
 name: ui-ux-pro-max
-description: "Frontend UI/UX design intelligence - activate FIRST when user requests beautiful, stunning, gorgeous, or aesthetic interfaces. The primary skill for design decisions before implementation. 50 styles, 21 palettes, 50 font pairings, 20 charts, 8 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind). Actions: plan, build, create, design, implement, review, fix, improve, optimize, enhance, refactor, check frontend UI/UX code. Projects: website, landing page, dashboard, admin panel, e-commerce, SaaS, portfolio, blog, mobile app, .html, .tsx, .vue, .svelte. Elements: button, modal, navbar, sidebar, card, table, form, chart. Styles: glassmorphism, claymorphism, minimalism, brutalism, neumorphism, bento grid, dark mode, responsive, skeuomorphism, flat design. Topics: color palette, accessibility, animation, layout, typography, font pairing, spacing, hover, shadow, gradient."
+description: "UI/UX design intelligence. 50 styles, 21 palettes, 50 font pairings, 20 charts, 9 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui). Actions: plan, build, create, design, implement, review, fix, improve, optimize, enhance, refactor, check UI/UX code. Projects: website, landing page, dashboard, admin panel, e-commerce, SaaS, portfolio, blog, mobile app, .html, .tsx, .vue, .svelte. Elements: button, modal, navbar, sidebar, card, table, form, chart. Styles: glassmorphism, claymorphism, minimalism, brutalism, neumorphism, bento grid, dark mode, responsive, skeuomorphism, flat design. Topics: color palette, accessibility, animation, layout, typography, font pairing, spacing, hover, shadow, gradient."
 ---
 
 # UI/UX Pro Max - Design Intelligence
@@ -51,7 +51,7 @@ Extract key information from user request:
 Use `search.py` multiple times to gather comprehensive information. Search until you have enough context.
 
 ```bash
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "<keyword>" --domain <domain> [-n <max_results>]
+python3 .codex/scripts/search.py "<keyword>" --domain <domain> [-n <max_results>]
 ```
 
 **Recommended search order:**
@@ -70,10 +70,10 @@ python3 .claude/skills/ui-ux-pro-max/scripts/search.py "<keyword>" --domain <dom
 If user doesn't specify a stack, **default to `html-tailwind`**.
 
 ```bash
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "<keyword>" --stack html-tailwind
+python3 .codex/scripts/search.py "<keyword>" --stack html-tailwind
 ```
 
-Available stacks: `html-tailwind`, `react`, `nextjs`, `vue`, `svelte`, `swiftui`, `react-native`, `flutter`
+Available stacks: `html-tailwind`, `react`, `nextjs`, `vue`, `svelte`, `swiftui`, `react-native`, `flutter`, `shadcn`
 
 ---
 
@@ -104,6 +104,7 @@ Available stacks: `html-tailwind`, `react`, `nextjs`, `vue`, `svelte`, `swiftui`
 | `swiftui` | Views, State, Navigation, Animation |
 | `react-native` | Components, Navigation, Lists |
 | `flutter` | Widgets, State, Layout, Theming |
+| `shadcn` | shadcn/ui components, theming, forms, patterns |
 
 ---
 
@@ -115,26 +116,26 @@ Available stacks: `html-tailwind`, `react`, `nextjs`, `vue`, `svelte`, `swiftui`
 
 ```bash
 # 1. Search product type
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "beauty spa wellness service" --domain product
+python3 .codex/scripts/search.py "beauty spa wellness service" --domain product
 
 # 2. Search style (based on industry: beauty, elegant)
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "elegant minimal soft" --domain style
+python3 .codex/scripts/search.py "elegant minimal soft" --domain style
 
 # 3. Search typography
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "elegant luxury" --domain typography
+python3 .codex/scripts/search.py "elegant luxury" --domain typography
 
 # 4. Search color palette
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "beauty spa wellness" --domain color
+python3 .codex/scripts/search.py "beauty spa wellness" --domain color
 
 # 5. Search landing page structure
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "hero-centric social-proof" --domain landing
+python3 .codex/scripts/search.py "hero-centric social-proof" --domain landing
 
 # 6. Search UX guidelines
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "animation" --domain ux
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "accessibility" --domain ux
+python3 .codex/scripts/search.py "animation" --domain ux
+python3 .codex/scripts/search.py "accessibility" --domain ux
 
 # 7. Search stack guidelines (default: html-tailwind)
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "layout responsive" --stack html-tailwind
+python3 .codex/scripts/search.py "layout responsive" --stack html-tailwind
 ```
 
 **Then:** Synthesize all search results and implement the design.
@@ -149,6 +150,10 @@ python3 .claude/skills/ui-ux-pro-max/scripts/search.py "layout responsive" --sta
 4. **Always check UX** - Search "animation", "z-index", "accessibility" for common issues
 5. **Use stack flag** - Get implementation-specific best practices
 6. **Iterate** - If first search doesn't match, try different keywords
+7. **Split Into Multiple Files** - For better maintainability:
+   - Separate components into individual files (e.g., `Header.tsx`, `Footer.tsx`)
+   - Extract reusable styles into dedicated files
+   - Keep each file focused and under 200-300 lines
 
 ---
 
@@ -199,29 +204,3 @@ Before delivering UI code, verify these items:
 ### Visual Quality
 - [ ] No emojis used as icons (use SVG instead)
 - [ ] All icons from consistent icon set (Heroicons/Lucide)
-- [ ] Brand logos are correct (verified from Simple Icons)
-- [ ] Hover states don't cause layout shift
-
-### Interaction
-- [ ] All clickable elements have `cursor-pointer`
-- [ ] Hover states provide clear visual feedback
-- [ ] Transitions are smooth (150-300ms)
-- [ ] Focus states visible for keyboard navigation
-
-### Light/Dark Mode
-- [ ] Light mode text has sufficient contrast (4.5:1 minimum)
-- [ ] Glass/transparent elements visible in light mode
-- [ ] Borders visible in both modes
-- [ ] Test both modes before delivery
-
-### Layout
-- [ ] Floating elements have proper spacing from edges
-- [ ] No content hidden behind fixed navbars
-- [ ] Responsive at 320px, 768px, 1024px, 1440px
-- [ ] No horizontal scroll on mobile
-
-### Accessibility
-- [ ] All images have alt text
-- [ ] Form inputs have labels
-- [ ] Color is not the only indicator
-- [ ] `prefers-reduced-motion` respected

@@ -1,6 +1,6 @@
 ---
 description: Use subagents to plan and fix hard issues
-argument-hint: [issues]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 **Complex fix requiring investigation and planning:**

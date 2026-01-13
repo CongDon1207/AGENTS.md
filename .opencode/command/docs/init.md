@@ -1,6 +1,6 @@
 ---
 description: Analyze the codebase and create initial documentation
-argument-hint: (empty)
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 **Initialize project documentation:**

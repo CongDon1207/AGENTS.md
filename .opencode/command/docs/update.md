@@ -1,6 +1,6 @@
 ---
 description: Analyze the codebase and update documentation
-argument-hint: (empty)
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 **Update project documentation:**

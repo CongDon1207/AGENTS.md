@@ -1,6 +1,6 @@
 ---
 description: Review all uncommitted changes before commit
-argument-hint: (empty)
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 **Review changes before committing:**

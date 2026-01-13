@@ -1,6 +1,6 @@
 ---
 description: Search codebase for files and functions
-argument-hint: [query]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 **Search the codebase for:**

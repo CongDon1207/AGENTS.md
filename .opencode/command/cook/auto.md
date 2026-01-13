@@ -1,6 +1,6 @@
 ---
 description: ⚡⚡ Implement a feature automatically ("trust me bro")
-argument-hint: [tasks]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 **Ultrathink** to plan & start working on these tasks follow the Orchestration Protocol, Core Responsibilities, Subagents Team and Development Rules: 

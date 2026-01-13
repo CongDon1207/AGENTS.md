@@ -1,5 +1,6 @@
 ---
 description: Run or create database migrations
+model: google/antigravity-claude-opus-4-5-thinking
 allowed-tools: Bash, Read, Write, Edit, Glob, TodoWrite
 ---
 

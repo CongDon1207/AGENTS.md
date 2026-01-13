@@ -1,6 +1,6 @@
 ---
 description: No research. Only analyze and create an implementation plan
-argument-hint: [task]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 **Quick plan without deep research:**
@@ -25,6 +25,7 @@ argument-hint: [task]
 ---
 title: "{Brief title}"
 description: "{One sentence}"
+model: google/antigravity-claude-opus-4-5-thinking
 status: pending
 priority: P2
 effort: {estimate}

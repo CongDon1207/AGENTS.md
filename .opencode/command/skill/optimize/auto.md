@@ -1,6 +1,6 @@
 ---
 description: Optimize an existing agent skill [auto]
-argument-hint: [skill-name] [prompt]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 Think harder.

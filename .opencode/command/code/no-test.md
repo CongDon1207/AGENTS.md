@@ -1,6 +1,6 @@
 ---
 description: Start coding an existing plan (no testing)
-argument-hint: [plan]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 **Fast coding without testing phase:**

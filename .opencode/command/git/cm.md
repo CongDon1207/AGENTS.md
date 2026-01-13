@@ -1,6 +1,6 @@
 ---
 description: Stage all files and create a commit
-argument-hint: (empty - auto-generate message)
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 **Create a git commit:**

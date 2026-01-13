@@ -1,6 +1,6 @@
 ---
 description: Plan to create a new agent skill
-argument-hint: [skill-name] [prompt]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 Think harder.

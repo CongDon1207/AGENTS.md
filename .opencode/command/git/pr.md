@@ -1,6 +1,6 @@
 ---
 description: Create a Pull Request
-argument-hint: (empty)
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 **Create a Pull Request:**

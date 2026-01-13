@@ -1,6 +1,6 @@
 ---
 description: Fix type errors
-argument-hint: (empty - auto-detect)
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 **Fix TypeScript/type errors:**

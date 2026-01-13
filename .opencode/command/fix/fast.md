@@ -1,6 +1,6 @@
 ---
 description: Analyze and fix small issues [FAST]
-argument-hint: [issues]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 **Quick fix for simple issues:**

@@ -1,6 +1,6 @@
 ---
 description: Research, analyze, and create an implementation plan
-argument-hint: [task]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 **Deep planning with research:**
@@ -51,6 +51,7 @@ argument-hint: [task]
 ---
 title: "{Title}"
 description: "{Description}"
+model: google/antigravity-claude-opus-4-5-thinking
 status: pending
 priority: P1
 effort: {total hours}

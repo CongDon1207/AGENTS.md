@@ -1,6 +1,6 @@
 ---
 description: Analyze Github Actions logs and fix issues
-argument-hint: [github-actions-url]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 **Fix CI/CD pipeline issues:**

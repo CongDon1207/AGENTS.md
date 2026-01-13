@@ -1,6 +1,6 @@
 ---
 description: Create isolated git worktree for parallel development
-argument-hint: [feature-description] OR [project] [feature] (monorepo)
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 Create an isolated git worktree for parallel feature development.

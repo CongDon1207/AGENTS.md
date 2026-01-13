@@ -1,6 +1,6 @@
 ---
 description: ⚡ No research. Only scout, plan & implement ["trust me bro"]
-argument-hint: [tasks-or-prompt]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 Think harder to plan & start working on these tasks follow the Orchestration Protocol, Core Responsibilities, Subagents Team and Development Rules: 

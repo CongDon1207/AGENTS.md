@@ -1,6 +1,6 @@
 ---
 description: Analyze and fix UI issues
-argument-hint: [issue]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 **Fix UI/UX issues:**

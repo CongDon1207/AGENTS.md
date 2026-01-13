@@ -1,6 +1,6 @@
 ---
 description: Run test suite and fix issues
-argument-hint: [issues]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 **Fix failing tests:**

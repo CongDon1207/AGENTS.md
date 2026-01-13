@@ -1,6 +1,6 @@
 ---
 description: Write good creative & smart copy [GOOD]
-argument-hint: [user-request]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 Write good creative & smart copy for this user request:

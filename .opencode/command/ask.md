@@ -1,6 +1,6 @@
 ---
 description: ⚡ Answer technical and architectural questions.
-argument-hint: [technical-question]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 ## Context

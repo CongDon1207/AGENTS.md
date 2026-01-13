@@ -1,6 +1,6 @@
 ---
 description: Analyze the current content and optimize for conversion
-argument-hint: [issues]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 You are an expert in conversion optimization. Analyze the content based on reported issues:

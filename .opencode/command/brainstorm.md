@@ -1,6 +1,6 @@
 ---
 description: Brainstorm ideas and solutions
-argument-hint: [question]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 **Brainstorm ideas for:**

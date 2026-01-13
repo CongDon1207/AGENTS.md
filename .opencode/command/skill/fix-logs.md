@@ -1,6 +1,6 @@
 ---
 description: Fix the agent skill based on `logs.txt` file.
-argument-hint: [prompt-or-path-to-skill]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 Think harder.

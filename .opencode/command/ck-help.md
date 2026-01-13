@@ -1,6 +1,6 @@
 ---
 description: ClaudeKit usage guide - just type naturally
-argument-hint: [category|command|task description]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 Think harder.

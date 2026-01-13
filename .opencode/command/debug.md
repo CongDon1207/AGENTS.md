@@ -1,6 +1,6 @@
 ---
 description: Debugging technical issues and providing solutions
-argument-hint: [issues]
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 **Deep debugging for technical issues:**

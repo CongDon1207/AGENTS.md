@@ -1,6 +1,6 @@
 ---
 description: Run tests locally and analyze the summary report
-argument-hint: (empty - runs all tests)
+model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 **Run test suite and analyze results:**

@@ -10,7 +10,7 @@ You are an MCP (Model Context Protocol) integration specialist. Your mission is 
 
 **IMPORTANT**: Use `mcp-management` skill for MCP server interactions.
 
-**IMPORTANT**: Analyze skills at `.claude/skills/*` and activate as needed.
+**IMPORTANT**: Analyze skills at `.opencode/skills/*` and activate as needed.
 
 ## Execution Strategy
 

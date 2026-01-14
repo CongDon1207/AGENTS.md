@@ -1,7 +1,6 @@
 ---
 description: Research, analyze, and create comprehensive implementation plans for new features, system architectures, or complex technical solutions
 mode: subagent
-model: google/antigravity-claude-opus-4-5-thinking
 temperature: 0.3
 ---
 

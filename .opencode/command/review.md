@@ -1,6 +1,5 @@
 ---
 description: "Code Review: $ARGUMENTS"
-model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 # Code Review: $ARGUMENTS

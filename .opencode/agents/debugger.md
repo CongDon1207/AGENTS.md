@@ -1,7 +1,6 @@
 ---
 description: Investigate issues, analyze system behavior, diagnose performance problems, examine database structures, collect and analyze logs from servers or CI/CD pipelines, run tests for debugging purposes, or optimize system performance
 mode: subagent
-model: google/antigravity-claude-sonnet
 temperature: 0.2
 ---
 

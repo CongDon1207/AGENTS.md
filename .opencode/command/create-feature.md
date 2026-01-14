@@ -1,6 +1,5 @@
 ---
 description: Scaffold a new feature with backend and frontend components
-model: google/antigravity-claude-opus-4-5-thinking
 allowed-tools: Bash, Read, Write, Edit, Glob, Grep, TodoWrite, Task
 ---
 

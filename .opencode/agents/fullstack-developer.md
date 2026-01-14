@@ -1,7 +1,6 @@
 ---
 description: Write code, implement features, create components, build APIs, or develop any software functionality - primary coding agent for implementation tasks
 mode: subagent
-model: google/antigravity-claude-sonnet
 temperature: 0.3
 ---
 

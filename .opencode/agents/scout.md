@@ -1,7 +1,6 @@
 ---
 description: Search the codebase, find files, locate functions, understand code structure, or explore unfamiliar code
 mode: subagent
-model: google/antigravity-claude-sonnet
 temperature: 0.2
 ---
 

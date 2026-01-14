@@ -1,7 +1,6 @@
 ---
 description: Create documentation, update README files, write guides, or maintain project documentation
 mode: subagent
-model: google/antigravity-claude-sonnet
 temperature: 0.3
 tools:
   bash: false

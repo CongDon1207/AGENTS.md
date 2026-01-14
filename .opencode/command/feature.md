@@ -1,6 +1,5 @@
 ---
 description: "Implement Feature: $ARGUMENTS"
-model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 # Implement Feature: $ARGUMENTS

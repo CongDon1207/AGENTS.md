@@ -1,7 +1,6 @@
 ---
 description: Design user interfaces, improve user experience, create layouts, select colors and typography, or implement visual designs
 mode: subagent
-model: google/antigravity-claude-sonnet
 temperature: 0.4
 ---
 

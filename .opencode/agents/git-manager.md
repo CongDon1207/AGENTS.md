@@ -1,7 +1,6 @@
 ---
 description: Manage git operations, create commits, handle branches, create pull requests, merge code, or resolve conflicts
 mode: subagent
-model: google/antigravity-claude-sonnet
 temperature: 0.2
 ---
 

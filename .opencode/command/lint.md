@@ -1,6 +1,5 @@
 ---
 description: Run linters and fix issues for backend or frontend
-model: google/antigravity-claude-opus-4-5-thinking
 allowed-tools: Bash, Read, Edit, Glob, TodoWrite
 ---
 

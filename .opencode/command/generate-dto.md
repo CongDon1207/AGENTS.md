@@ -1,6 +1,5 @@
 ---
 description: Generate entity DTO from an existing entity
-model: google/antigravity-claude-opus-4-5-thinking
 allowed-tools: Read, Write, Glob, Grep, TodoWrite
 ---
 

@@ -1,7 +1,6 @@
 ---
 description: Create high-converting, engagement-driven copy for marketing materials, social media posts, landing pages, email campaigns, product descriptions, or any content that needs to capture attention and drive action
 mode: subagent
-model: google/antigravity-claude-sonnet
 temperature: 0.7
 ---
 

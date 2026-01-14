@@ -1,6 +1,5 @@
 ---
 description: AI agent orchestration board (Coming Soon)
-model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 Plans dashboard with progress tracking and timeline visualization.

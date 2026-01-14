@@ -1,6 +1,5 @@
 ---
 description: ⚡⚡⚡ Implement a feature [step by step]
-model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 Think harder to plan & start working on these tasks follow the Orchestration Protocol, Core Responsibilities, Subagents Team and Development Rules: 

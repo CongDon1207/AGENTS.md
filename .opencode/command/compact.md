@@ -1,6 +1,5 @@
 ---
 description: Compact Context
-model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 # Compact Context

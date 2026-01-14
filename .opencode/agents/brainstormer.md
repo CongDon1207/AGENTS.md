@@ -1,7 +1,6 @@
 ---
 description: Generate creative ideas, innovative solutions, alternative approaches, or explore possibilities for a problem
 mode: subagent
-model: google/antigravity-claude-sonnet
 temperature: 0.8
 ---
 

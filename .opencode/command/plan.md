@@ -1,6 +1,5 @@
 ---
 description: Intelligent plan creation with prompt enhancement
-model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 **Create implementation plan for:**
@@ -33,7 +32,6 @@ model: google/antigravity-claude-opus-4-5-thinking
 ---
 title: "{Brief title}"
 description: "{One sentence}"
-model: google/antigravity-claude-opus-4-5-thinking
 status: pending
 priority: P2
 effort: {estimated hours}

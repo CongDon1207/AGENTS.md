@@ -119,7 +119,6 @@ Create file at: `docs/release-notes/YYMMDD-<feature-slug>.md`
 
 - @contributor
 
-model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 *Generated with [Claude Code](https://claude.com/claude-code)*

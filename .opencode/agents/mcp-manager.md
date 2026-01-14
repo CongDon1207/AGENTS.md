@@ -1,7 +1,6 @@
 ---
 description: Manage MCP (Model Context Protocol) server integrations - discover tools/prompts/resources, analyze relevance for tasks, and execute MCP capabilities
 mode: subagent
-model: google/antigravity-gemini-3-flash
 temperature: 0.2
 ---
 

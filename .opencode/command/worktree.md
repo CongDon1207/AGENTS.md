@@ -1,6 +1,5 @@
 ---
 description: Create isolated git worktree for parallel development
-model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 Create an isolated git worktree for parallel feature development.

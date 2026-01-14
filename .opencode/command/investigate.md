@@ -36,7 +36,6 @@ Investigate and explain how an existing feature or logic works using structured 
 
 **If NO Scout output available:** Proceed with Phase 1A discovery as normal.
 
-model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 ## PHASE 1A: INITIALIZATION AND DISCOVERY
@@ -185,7 +184,6 @@ When analyzing `*Consumer.cs` files extending `PlatformApplicationMessageBusCons
 3. Document producer files and their service locations
 4. Map the cross-service data flow
 
-model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 ## PHASE 2: CODE FLOW TRACING
@@ -276,7 +274,6 @@ Document in analysis file:
 - [Related topic 2]
 ```
 
-model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 ## Anti-Hallucination Protocol
@@ -312,7 +309,6 @@ Update `## Progress` section after each batch:
 - **Current Focus**: "Event Handlers"
 ```
 
-model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 ## Quick Reference

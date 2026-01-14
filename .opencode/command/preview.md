@@ -1,6 +1,5 @@
 ---
 description: Path to markdown file, plan directory, or plans collection
-model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 Universal viewer using `markdown-novel-viewer` skill - pass ANY path and see it rendered nicely.

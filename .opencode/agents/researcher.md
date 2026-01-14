@@ -1,7 +1,6 @@
 ---
 description: Research technologies, compare solutions, analyze trade-offs, or gather information before making technical decisions
 mode: subagent
-model: google/antigravity-claude-sonnet
 temperature: 0.2
 ---
 

@@ -1,7 +1,6 @@
 ---
 description: Write tests, run test suites, analyze test failures, improve test coverage, or ensure code quality through testing
 mode: subagent
-model: google/antigravity-claude-sonnet
 temperature: 0.2
 ---
 

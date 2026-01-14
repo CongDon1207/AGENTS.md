@@ -1,6 +1,5 @@
 ---
 description: Simplify and refine code for clarity, consistency, and maintainability.
-model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 Simplify and refine code for clarity, consistency, and maintainability.

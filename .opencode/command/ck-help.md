@@ -1,6 +1,5 @@
 ---
 description: ClaudeKit usage guide - just type naturally
-model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 Think harder.

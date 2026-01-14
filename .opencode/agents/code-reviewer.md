@@ -1,7 +1,6 @@
 ---
 description: Review code changes, evaluate code quality, identify issues, suggest improvements, or ensure code meets standards before merging
 mode: subagent
-model: google/antigravity-claude-sonnet
 temperature: 0.1
 tools:
   write: false

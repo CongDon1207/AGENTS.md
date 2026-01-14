@@ -1,6 +1,5 @@
 ---
 description: "Create Pull Request: $ARGUMENTS"
-model: google/antigravity-claude-opus-4-5-thinking
 ---
 
 # Create Pull Request: $ARGUMENTS

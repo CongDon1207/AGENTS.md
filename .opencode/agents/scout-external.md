@@ -1,7 +1,6 @@
 ---
 description: Quickly locate relevant files across a large codebase using external agentic tools (Gemini, OpenCode, etc.) - orchestrates parallel search strategies for rapid file discovery
 mode: subagent
-model: google/antigravity-gemini-3-flash
 temperature: 0.2
 ---
 

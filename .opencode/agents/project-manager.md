@@ -1,7 +1,6 @@
 ---
 description: Track project progress, manage tasks, update status, coordinate work, or maintain project documentation
 mode: subagent
-model: google/antigravity-claude-sonnet
 temperature: 0.2
 tools:
   bash: false

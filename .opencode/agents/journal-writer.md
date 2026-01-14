@@ -1,7 +1,6 @@
 ---
 description: Document significant technical failures, difficulties, and setbacks with emotional authenticity and technical precision - captures the raw reality of software development challenges
 mode: subagent
-model: google/antigravity-gemini-3-flash
 temperature: 0.4
 ---
 

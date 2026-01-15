@@ -1,138 +1,75 @@
-# Commands - Workflow Procedures
+# Danh Mục Lệnh (Commands Catalog)
 
-## What are Commands?
+**Commands** (Lệnh) là các quy trình làm việc chuẩn hóa (Standard Operating Procedures - SOP) được đóng gói sẵn. Giống như một công thức nấu ăn, mỗi Command hướng dẫn AI thực hiện từng bước cụ thể để đạt kết quả tốt nhất.
 
-**Commands** are step-by-step "recipes" for completing specific types of work. Like cooking recipes - follow the steps and get the expected result.
-
-**Simple examples:**
-- Need to **fix a bug** -> Use command `/fix` (has 8 specific steps)
-- Need to **write code** -> Use command `/code` (has its own workflow)
-- Need to **make a plan** -> Use command `/plan` (has ready templates)
+> **Cách dùng:** Gõ `/command` trong khung chat (Ví dụ: `/fix`, `/plan`).
 
 ---
 
-## Main Commands (10 commands)
+## 🏆 Các Lệnh Phổ Biến Nhất
 
-| Command | When to Use | Description |
-|---------|-------------|-------------|
-| `/code` | Need to write new code | Standard coding workflow with tests |
-| `/fix` | Need to fix bugs | Debug and fix bug workflow |
-| `/test` | Need to write/run tests | Testing workflow |
-| `/plan` | Need to make a plan | Analysis and planning workflow |
-| `/review-changes` | Need to review code | Quality check workflow |
-| `/build` | Need to build project | Application packaging workflow |
-| `/debug` | Need deep investigation | Problem analysis workflow |
-| `/scout` | Need to search | Smart search workflow |
-| `/brainstorm` | Need ideas | Creative solution workflow |
+Đây là những lệnh bạn sẽ sử dụng 80% thời gian làm việc:
 
----
-
-## Detailed Commands by Group
-
-### Fix Group (Bug Fixing) - 8 variants
-
-| Command | When to Use | Example Situation |
-|---------|-------------|-------------------|
-| `/fix` | Regular bug fixing | "Button not clickable" |
-| `/fix/fast` | Quick simple fix | "Typo in text" |
-| `/fix/hard` | Complex, unclear bug | "App crashes randomly, unknown cause" |
-| `/fix/ui` | UI bug | "Layout breaks on mobile" |
-| `/fix/test` | Fix failing tests | "Unit test failed after update" |
-| `/fix/types` | TypeScript errors | "Type error on compile" |
-| `/fix/ci` | CI/CD issues | "Pipeline failed" |
-| `/fix/logs` | Fix based on logs | "Production error, have log file" |
-
-### Plan Group - 6 variants
-
-| Command | When to Use | Example Situation |
-|---------|-------------|-------------------|
-| `/plan` | Regular planning | "Add login feature" |
-| `/plan/fast` | Quick plan, small task | "Add export button" |
-| `/plan/hard` | Complex planning | "Design microservices system" |
-| `/plan/two` | Two-phase plan | "Large project needs phasing" |
-| `/plan/validate` | Validate existing plan | "Review existing plan" |
-| `/plan/parallel` | Multiple parallel plans | "3 independent features" |
-
-### Code Group - 3 variants
-
-| Command | When to Use | Example Situation |
-|---------|-------------|-------------------|
-| `/code` | Standard coding (with test) | "Create UserProfile component" |
-| `/code/auto` | Automatic coding | "Generate CRUD from schema" |
-| `/code/no-test` | Quick code without test | "Quick prototype for demo" |
-
-### Git Commands - 4 variants
-
-| Command | When to Use | Example Situation |
-|---------|-------------|-------------------|
-| `/git/cm` | Commit code | "Commit recent changes" |
-| `/git/pr` | Create Pull Request | "Create PR for review" |
-| `/git/merge` | Merge branches | "Merge feature to main" |
-| `/git/cp` | Cherry-pick | "Get commit from other branch" |
-
-### Docs Commands - 3 variants
-
-| Command | When to Use | Example Situation |
-|---------|-------------|-------------------|
-| `/docs/init` | Create new docs | "Initialize docs for new project" |
-| `/docs/update` | Update docs | "Update README after adding feature" |
-| `/docs/summarize` | Summarize docs | "Summarize for executive" |
-
-### Design Commands - 5 variants
-
-| Command | When to Use | Example Situation |
-|---------|-------------|-------------------|
-| `/design/fast` | Quick design | "Quick mock for meeting" |
-| `/design/good` | Polished design | "Production-ready UI" |
-| `/design/screenshot` | Design from image | "Code from this Figma design" |
-| `/design/video` | Analyze from video | "Make like demo in video" |
-| `/design/3d` | 3D design | "Create Three.js scene" |
-
-### Review Commands - 2 variants
-
-| Command | When to Use | Example Situation |
-|---------|-------------|-------------------|
-| `/review/codebase` | Review entire codebase | "Evaluate project quality" |
-| `/review/post-task` | Review after completion | "Check before commit" |
+| Lệnh | Ý nghĩa | Khi nào sử dụng? |
+| :--- | :--- | :--- |
+| **`/fix`** | **Sửa lỗi** | Khi gặp bug, error message. AI sẽ chạy quy trình Debug 4 bước: Phân tích -> Tìm nguyên nhân -> Sửa -> Kiểm tra. |
+| **`/code`** | **Viết code** | Khi cần tạo tính năng mới hoặc viết một đoạn code hoàn chỉnh. Bao gồm cả việc viết test đi kèm. |
+| **`/plan`** | **Lập kế hoạch** | Dùng TRƯỚC khi làm task lớn. AI sẽ phân tích yêu cầu và lập ra một bản kế hoạch thực thi (Implementation Plan) chi tiết. |
+| **`/test`** | **Kiểm thử** | Khi cần chạy test, viết test case mới, hoặc kiểm tra độ bao phủ mã nguồn. |
+| **`/review`** | **Review code** | Yêu cầu AI xem xét code bạn vừa viết hoặc review một file cụ thể để tìm lỗi tiềm ẩn. |
+| **`/scout`** | **Tìm kiếm** | Khi bạn quên mất logic nằm ở đâu, hoặc muốn tìm tất cả các chỗ dùng hàm `X`. AI sẽ dùng tool tìm kiếm thông minh. |
+| **`/docs/update`** | **Cập nhật Docs** | Chạy sau khi code xong. Tự động cập nhật README hoặc các file tài liệu liên quan để khớp với code mới. |
 
 ---
 
-## Summary
+## 🔍 Chi Tiết Theo Nhóm Chức Năng
 
-| Concept | Explanation |
-|---------|-------------|
-| **What is Command** | Step-by-step workflow for a task |
-| **How many** | 10 main commands + 30+ variants |
-| **Who chooses** | AI auto-selects based on request |
-| **What are variants** | Specialized versions for specific situations |
+### 1. Nhóm Sửa Lỗi (Fixing)
+Các biến thể của lệnh sửa lỗi cho từng tình huống:
+
+*   **`/fix`**: Quy trình chuẩn (khuyên dùng).
+*   **`/fix/fast`**: Sửa nhanh các lỗi nhỏ (typo, syntax đơn giản), bỏ qua bước phân tích sâu.
+*   **`/fix/ui`**: Chuyên sửa lỗi giao diện (CSS, Layout vỡ).
+*   **`/fix/test`**: Chuyên sửa các bài test đang bị fail.
+*   **`/fix/hard`**: Dùng cho các lỗi "siêu khó", lỗi chập chờn, cần điều tra sâu và đặt nhiều giả thuyết.
+
+### 2. Nhóm Lập Kế Hoạch (Planning)
+*   **`/plan`**: Lập kế hoạch chuẩn cho tính năng mới.
+*   **`/plan/fast`**: Kế hoạch nhanh cho task nhỏ.
+*   **`/plan/hard`**: Kế hoạch cho hệ thống phức tạp (Microservices, kiến trúc lớn).
+*   **`/plan/validate`**: Nhờ AI đánh giá/phản biện một kế hoạch có sẵn.
+
+### 3. Nhóm Code & Xây Dựng (Coding)
+*   **`/code`**: Viết code chuẩn (kèm test).
+*   **`/code/auto`**: Tự động sinh code mẫu (scaffold) hoặc code đơn giản.
+*   **`/code/no-test`**: Viết code nhanh (prototype) bỏ qua bước viết test (cẩn thận khi dùng).
+*   **`/build`**: Chạy lệnh build project và kiểm tra lỗi biên dịch.
+
+### 4. Nhóm Git & Quản Lý Source
+*   **`/git/cm`**: Tạo commit message chuẩn semantic (feat, fix, chore...).
+*   **`/git/pr`**: Tạo mô tả cho Pull Request tự động.
+*   **`/git/merge`**: Hỗ trợ merge code và xử lý conflict.
+
+### 5. Nhóm Tài Liệu (Docs)
+*   **`/docs/init`**: Khởi tạo cấu trúc tài liệu cho dự án mới.
+*   **`/docs/update`**: Cập nhật tài liệu hiện có.
+*   **`/docs/summarize`**: Tóm tắt nội dung file hoặc thư mục.
+
+### 6. Nhóm Thiết Kế (Design)
+*   **`/design/fast`**: Phác thảo nhanh ý tưởng giao diện.
+*   **`/design/ui`**: Thiết kế chi tiết UI (Màu sắc, Specs).
+*   **`/brainstorm`**: Cùng AI "bão não" tìm ý tưởng giải pháp.
+
+### 7. Nhóm Tiện Ích Khác
+*   **`/ask`**: Hỏi đáp thông thường (nhưng AI sẽ trả lời có cấu trúc hơn).
+*   **`/investigate`**: Điều tra vấn đề (giống `/scout` nhưng sâu hơn về logic).
+*   **`/performance`**: Phân tích và tối ưu hiệu năng.
+*   **`/security`**: Rà soát bảo mật.
 
 ---
 
-## Usage Tips
+## 💡 Mẹo Sử Dụng
 
-### 1. Choose appropriate variant
-```
-Simple task -> use /fast
-Complex task -> use /hard
-Multiple independent tasks -> use /parallel
-```
-
-### 2. Combine Commands
-```
-New feature:
-/plan -> /code -> /test -> /review -> /docs
-```
-
-### 3. Be specific
-```
-BAD: "Fix this" (unclear)
-GOOD: "Fix layout breaking on mobile" (clear -> AI picks /fix/ui)
-```
-
----
-
-## See Also
-
-- [Agents List (Roles)](../agents/README.md) - Who will do this work
-- [Skills List (Knowledge)](../skills/README.md) - What expertise needed
-- [Router (Decision Flow)](../router/decision-flow.md) - How AI decides
+1.  **Càng cụ thể càng tốt**: `/fix lỗi login` sẽ tốt hơn `/fix` (AI tự hiểu ngữ cảnh).
+2.  **Kết hợp**: Bạn có thể dùng `/plan` để lên kế hoạch trước, sau đó dùng `/code` để thực hiện từng phần của kế hoạch đó.
+3.  **Slash Command là "lối tắt"**: Thực ra `/fix` chính là việc gọi Agent **Debugger** + Skill **Bug Diagnosis**. Dùng lệnh giúp bạn tiết kiệm thời gian giải thích quy trình cho AI.

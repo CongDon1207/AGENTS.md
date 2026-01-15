@@ -1,241 +1,241 @@
-# 🏠 .claude - Trung Tâm Điều Khiển AI
+# 🏠 .claude - AI Control Center
 
-## .claude là gì?
+## What is .claude?
 
-Thư mục **`.claude`** là "bộ não mở rộng" của AI - nơi chứa tất cả cấu hình, kiến thức và quy trình giúp AI làm việc thông minh hơn, chuyên nghiệp hơn.
+The **`.claude`** directory is the "extended brain" of the AI - containing all configurations, knowledge, and processes that enable the AI to work smarter and more professionally.
 
-**Ví dụ đơn giản:**
-- Không có `.claude`: AI trả lời như chatbot thông thường
-- Có `.claude`: AI làm việc như đội ngũ chuyên gia đầy đủ
+**Simple Example:**
+- Without `.claude`: The AI responds like a standard chatbot.
+- With `.claude`: The AI operates as a full team of specialized experts.
 
 ---
 
-## Cấu Trúc Tổng Quan
+## Overview Structure
 
 ```
 .claude/
 │
-├── 🤖 agents/          ← VAI TRÒ (Ai làm?)
-│   └── 17 chuyên gia khác nhau
+├── 🤖 agents/          ← ROLES (Who does it?)
+│   └── 17 distinct expert personas
 │
-├── 📋 commands/        ← QUY TRÌNH (Làm thế nào?)
-│   └── 50+ quy trình làm việc
+├── 📋 commands/        ← PROCEDURES (How is it done?)
+│   └── 50+ standardized workflows
 │
-├── 📚 skills/          ← KIẾN THỨC (Cần biết gì?)
-│   └── 59 bộ kiến thức chuyên môn
+├── 📚 skills/          ← KNOWLEDGE (What to know?)
+│   └── 59 domain-specific knowledge bases
 │
-├── 🧭 router/          ← ĐỊNH TUYẾN (Chọn gì?)
-│   └── 5 files hướng dẫn AI quyết định
+├── 🧭 router/          ← ROUTING (What to choose?)
+│   └── 5 decision-making guides
 │
-├── 🔄 workflows/       ← PHỐI HỢP (Làm việc lớn)
-│   └── 4 kịch bản phối hợp
+├── 🔄 workflows/       ← ORCHESTRATION (Big tasks)
+│   └── 4 collaboration scenarios
 │
-├── ⚡ hooks/           ← TỰ ĐỘNG (Trigger events)
-│   └── 15+ scripts tự động chạy
+├── ⚡ hooks/           ← AUTOMATION (Trigger events)
+│   └── 15+ automated scripts
 │
-├── 🔧 scripts/         ← CÔNG CỤ (Utilities)
-│   └── 10+ scripts tiện ích
+├── 🔧 scripts/         ← UTILITIES (Tools)
+│   └── 10+ helper scripts
 │
-└── ⚙️ settings.json    ← CẤU HÌNH (Tùy chỉnh)
+└── ⚙️ settings.json    ← CONFIG (Customization)
 ```
 
 ---
 
-## Giải Thích Từng Thư Mục
+## Directory Explanation
 
-### 🤖 agents/ - Các Vai Trò Chuyên Gia
+### 🤖 agents/ - Expert Roles
 
-**Là gì:** 17 "nhân cách" khác nhau mà AI sẽ nhập vai
+**What it is:** 17 different "personas" the AI can embody.
 
-**Ví dụ:**
-| Bạn nói | AI nhập vai |
+**Examples:**
+| You say | AI embodies |
 |---------|-------------|
-| "Sửa bug" | Debugger (thợ săn lỗi) |
-| "Viết code" | Developer (lập trình viên) |
-| "Lập kế hoạch" | Planner (kiến trúc sư) |
+| "Fix bug" | Debugger (Bug Hunter) |
+| "Write code" | Developer (Programmer) |
+| "Make a plan" | Planner (Architect) |
 
-📖 [Xem chi tiết agents/README.md](agents/README.md)
+📖 [See details in agents/README.md](agents/README.md)
 
 ---
 
-### 📋 commands/ - Quy Trình Làm Việc
+### 📋 commands/ - Workflows
 
-**Là gì:** 50+ "công thức" hướng dẫn từng bước cho mỗi loại việc
+**What it is:** 50+ step-by-step "recipes" for specific tasks.
 
-**Ví dụ:**
-| Command | Làm gì |
+**Examples:**
+| Command | Action |
 |---------|--------|
-| `/fix` | 5 bước sửa bug chuẩn |
-| `/code` | Quy trình viết code có test |
-| `/plan` | Template lập kế hoạch |
+| `/fix` | Standard 5-step bug fix |
+| `/code` | Coding workflow with testing |
+| `/plan` | Planning template |
 
-📖 [Xem chi tiết commands/README.md](commands/README.md)
-
----
-
-### 📚 skills/ - Kiến Thức Chuyên Môn
-
-**Là gì:** 59 "bộ kiến thức" AI sẽ học khi cần
-
-**Ví dụ:**
-| Skill | Chứa gì |
-|-------|---------|
-| `ui-ux-pro-max` | 50 styles, 21 bảng màu, 50 fonts |
-| `debugging` | Framework debug 4 bước |
-| `better-auth` | Hướng dẫn OAuth, 2FA |
-
-📖 [Xem chi tiết skills/README.md](skills/README.md)
+📖 [See details in commands/README.md](commands/README.md)
 
 ---
 
-### 🧭 router/ - Bộ Định Tuyến
+### 📚 skills/ - Specialized Knowledge
 
-**Là gì:** "Bộ não quyết định" - giúp AI chọn đúng agent/command/skill
+**What it is:** 59 knowledge packages loaded on demand.
 
-**Cách hoạt động:**
+**Examples:**
+| Skill | Contains |
+|-------|----------|
+| `ui-ux-pro-max` | 50 styles, 21 palettes, 50 fonts |
+| `debugging` | 4-step debug framework |
+| `better-auth` | OAuth, 2FA guides |
+
+📖 [See details in skills/README.md](skills/README.md)
+
+---
+
+### 🧭 router/ - Decision Engine
+
+**What it is:** The "decision brain" - helps AI select the right agent/command/skill.
+
+**How it works:**
 ```
-Bạn: "Sửa lỗi login"
+You: "Fix login error"
         ↓
-Router phân tích từ khóa
+Router analyzes keywords
         ↓
-Chọn: Debugger + /fix + better-auth
+Selects: Debugger + /fix + better-auth
         ↓
-AI bắt đầu làm việc
+AI starts working
 ```
 
-📖 [Xem chi tiết router/README.md](router/README.md)
+📖 [See details in router/README.md](router/README.md)
 
 ---
 
-### 🔄 workflows/ - Phối Hợp Nhiều Bước
+### 🔄 workflows/ - Multi-step Collaboration
 
-**Là gì:** Kịch bản cho công việc lớn cần nhiều người phối hợp
+**What it is:** Scripts for large tasks requiring coordination.
 
-**Ví dụ:** Tính năng mới
+**Example:** New Feature
 ```
 Planner → Developer → Tester → Reviewer → Docs Manager
 ```
 
-📖 [Xem chi tiết workflows/README.md](workflows/README.md)
+📖 [See details in workflows/README.md](workflows/README.md)
 
 ---
 
-### ⚡ hooks/ - Tự Động Hóa
+### ⚡ hooks/ - Automation
 
-**Là gì:** Code tự động chạy khi có sự kiện
+**What it is:** Code that runs automatically on events.
 
-**Ví dụ:**
-| Sự kiện | Hook chạy |
-|---------|-----------|
-| Sửa file | Tự động format (Prettier) |
-| Xong task | Tự động review |
-| Bắt đầu session | Tự động load context |
+**Examples:**
+| Event | Hook runs |
+|-------|-----------|
+| File edit | Auto-format (Prettier) |
+| Task done | Auto-review |
+| Session start | Auto-load context |
 
-📖 [Xem chi tiết hooks/README.md](hooks/README.md)
+📖 [See details in hooks/README.md](hooks/README.md)
 
 ---
 
-### 🔧 scripts/ - Công Cụ Tiện Ích
+### 🔧 scripts/ - Utility Tools
 
-**Là gì:** Các scripts tiện ích hỗ trợ
+**What it is:** Helper scripts.
 
-**Ví dụ:**
-| Script | Làm gì |
+**Examples:**
+| Script | Action |
 |--------|--------|
-| `scan_skills.py` | Quét và tạo danh sách skills |
-| `worktree.cjs` | Quản lý git worktrees |
-| `ck-help.py` | Tra cứu commands |
+| `scan_skills.py` | Scans and generates skills list |
+| `worktree.cjs` | Manages git worktrees |
+| `ck-help.py` | Command lookup |
 
-📖 [Xem chi tiết scripts/README.md](scripts/README.md)
+📖 [See details in scripts/README.md](scripts/README.md)
 
 ---
 
-## Cách Mọi Thứ Phối Hợp
+## How It All Works Together
 
-### Ví dụ: "Thêm dark mode cho app"
+### Example: "Add dark mode to app"
 
 ```
-BƯỚC 1: Router phân tích
-├── Từ khóa: "thêm", "dark mode"
-├── Loại việc: Feature mới
-└── Độ phức tạp: Trung bình
+STEP 1: Router Analysis
+├── Keywords: "add", "dark mode"
+├── Task Type: New Feature
+└── Complexity: Medium
 
-BƯỚC 2: Chọn resources
+STEP 2: Resource Selection
 ├── Agents: planner → developer → tester
 ├── Commands: /plan → /code → /test
 ├── Skills: ui-ux-pro-max, frontend-development
 └── Workflow: primary-workflow
 
-BƯỚC 3: Thực hiện
-├── Planner lên kế hoạch
-├── Developer viết code
-├── Tester viết tests
-└── Hooks tự động format, review
+STEP 3: Execution
+├── Planner creates plan
+├── Developer writes code
+├── Tester writes tests
+└── Hooks auto-format & review
 
-BƯỚC 4: Hoàn thành
+STEP 4: Completion
 ├── Code merged
-├── Docs updated (tự động)
-└── Changelog ghi nhận (tự động)
+├── Docs updated (automated)
+└── Changelog recorded (automated)
 ```
 
 ---
 
-## Bảng Tham Khảo Nhanh
+## Quick Reference
 
-| Cần gì | Xem ở đâu |
-|--------|-----------|
-| AI làm việc như ai | `agents/` |
-| Làm theo quy trình nào | `commands/` |
-| Cần kiến thức gì | `skills/` |
-| AI quyết định thế nào | `router/` |
-| Việc lớn nhiều bước | `workflows/` |
-| Tự động hóa | `hooks/` |
-| Công cụ tiện ích | `scripts/` |
-
----
-
-## Các Files Cấu Hình
-
-| File | Chức năng |
-|------|-----------|
-| `settings.json` | Cấu hình chung |
-| `.env` | Biến môi trường (không commit) |
-| `.env.example` | Template biến môi trường |
-| `.mcp.json.example` | Cấu hình MCP servers |
-| `.gitignore` | Files không commit |
+| Need | Look in |
+|------|---------|
+| Who does the work | `agents/` |
+| What process to follow | `commands/` |
+| What knowledge is needed | `skills/` |
+| How AI decides | `router/` |
+| Large multi-step tasks | `workflows/` |
+| Automation | `hooks/` |
+| Utility tools | `scripts/` |
 
 ---
 
-## Tóm Tắt
+## Configuration Files
 
-| Thư mục | Số lượng | Chức năng |
-|---------|----------|-----------|
-| agents | 17 | Vai trò chuyên gia |
-| commands | 50+ | Quy trình làm việc |
-| skills | 59 | Kiến thức chuyên môn |
-| router | 5 | Định tuyến quyết định |
-| workflows | 4 | Phối hợp nhiều bước |
-| hooks | 15+ | Tự động hóa |
-| scripts | 10+ | Công cụ tiện ích |
+| File | Function |
+|------|----------|
+| `settings.json` | General config |
+| `.env` | Environment variables (do not commit) |
+| `.env.example` | Env var template |
+| `.mcp.json.example` | MCP server config |
+| `.gitignore` | Ignored files |
 
 ---
 
-## Bắt Đầu Từ Đâu?
+## Summary
 
-### Nếu bạn mới:
-1. Đọc [agents/README.md](agents/README.md) - Hiểu các vai trò
-2. Đọc [commands/README.md](commands/README.md) - Hiểu các quy trình
-3. Thử nghiệm với các yêu cầu đơn giản
-
-### Nếu bạn muốn customize:
-1. Xem [skills/README.md](skills/README.md) - Tạo skill riêng
-2. Xem [hooks/README.md](hooks/README.md) - Thêm automation
-3. Xem [router/README.md](router/README.md) - Hiểu logic quyết định
+| Directory | Count | Function |
+|-----------|-------|----------|
+| agents | 17 | Expert Roles |
+| commands | 50+ | Workflows |
+| skills | 59 | Specialized Knowledge |
+| router | 5 | Decision Routing |
+| workflows | 4 | Orchestration |
+| hooks | 15+ | Automation |
+| scripts | 10+ | Utilities |
 
 ---
 
-## Liên Kết Nhanh
+## Where to Start?
 
-- [📖 AGENTS.md](../AGENTS.md) - Quy tắc làm việc chính
-- [📖 README.md](../README.md) - Tổng quan project
-- [🔧 Settings](settings.json) - Cấu hình
+### If you are new:
+1. Read [agents/README.md](agents/README.md) - Understand roles
+2. Read [commands/README.md](commands/README.md) - Understand workflows
+3. Try simple requests
+
+### If you want to customize:
+1. See [skills/README.md](skills/README.md) - Create custom skills
+2. See [hooks/README.md](hooks/README.md) - Add automation
+3. See [router/README.md](router/README.md) - Understand decision logic
+
+---
+
+## Quick Links
+
+- [📖 AGENTS.md](../AGENTS.md) - Core Ruleset
+- [📖 README.md](../README.md) - Project Overview
+- [🔧 Settings](settings.json) - Configuration

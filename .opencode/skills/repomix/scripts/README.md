@@ -1,4 +1,4 @@
-# Repomix Scripts
+﻿# Repomix Scripts
 
 Utility scripts for batch processing repositories with Repomix.
 
@@ -88,7 +88,7 @@ Loads .env files in order of precedence:
 1. Process environment (highest priority)
 2. `./repomix/.env` (skill-specific)
 3. `./skills/.env` (skills directory)
-4. `./.claude/.env` (lowest priority)
+4. `./.opencode/.env` (lowest priority)
 
 ### Command Line Options
 
@@ -177,3 +177,4 @@ chmod +x repomix_batch.py
 **No repositories specified:**
 - Provide repository paths as arguments
 - Or use `-f` flag with JSON config file
+

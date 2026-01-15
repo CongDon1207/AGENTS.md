@@ -1,251 +1,251 @@
-# 📚 Skills - Kho Kiến Thức Chuyên Môn
+﻿# ðŸ“š Skills - Kho Kiáº¿n Thá»©c ChuyÃªn MÃ´n
 
-## Skills là gì?
+## Skills lÃ  gÃ¬?
 
-**Skills** là các "bộ kiến thức chuyên sâu" mà AI sẽ học khi cần làm việc chuyên môn. Giống như khi bạn cần làm món ăn đặc biệt, bạn sẽ mở sách dạy nấu ăn để xem công thức vậy.
+**Skills** lÃ  cÃ¡c "bá»™ kiáº¿n thá»©c chuyÃªn sÃ¢u" mÃ  AI sáº½ há»c khi cáº§n lÃ m viá»‡c chuyÃªn mÃ´n. Giá»‘ng nhÆ° khi báº¡n cáº§n lÃ m mÃ³n Äƒn Ä‘áº·c biá»‡t, báº¡n sáº½ má»Ÿ sÃ¡ch dáº¡y náº¥u Äƒn Ä‘á»ƒ xem cÃ´ng thá»©c váº­y.
 
-**Ví dụ đơn giản:**
-- Cần làm **giao diện đẹp** → AI load skill `ui-ux-pro-max` (50 styles thiết kế)
-- Cần làm **React component** → AI load skill `frontend-development` (best practices React)
-- Cần **sửa bug khó** → AI load skill `debugging` (kỹ thuật debug chuyên nghiệp)
+**VÃ­ dá»¥ Ä‘Æ¡n giáº£n:**
+- Cáº§n lÃ m **giao diá»‡n Ä‘áº¹p** → AI load skill `ui-ux-pro-max` (50 styles thiáº¿t káº¿)
+- Cáº§n lÃ m **React component** → AI load skill `frontend-development` (best practices React)
+- Cáº§n **sá»­a bug khÃ³** → AI load skill `debugging` (ká»¹ thuáº­t debug chuyÃªn nghiá»‡p)
 
 ---
 
-## Khi Nào AI Load Skills?
+## Khi NÃ o AI Load Skills?
 
-| Tình huống | AI có load skill? |
+| TÃ¬nh huá»‘ng | AI cÃ³ load skill? |
 |------------|-------------------|
-| "Sửa typo trong text" | ❌ Không (quá đơn giản) |
-| "Tạo button màu xanh" | ❌ Không (không cần kiến thức đặc biệt) |
-| "Thiết kế dashboard đẹp" | ✅ Có (cần kiến thức UI/UX) |
-| "Tối ưu database chậm" | ✅ Có (cần kiến thức performance) |
-| "Implement OAuth2" | ✅ Có (cần kiến thức authentication) |
+| "Sá»­a typo trong text" | âŒ KhÃ´ng (quÃ¡ Ä‘Æ¡n giáº£n) |
+| "Táº¡o button mÃ u xanh" | âŒ KhÃ´ng (khÃ´ng cáº§n kiáº¿n thá»©c Ä‘áº·c biá»‡t) |
+| "Thiáº¿t káº¿ dashboard Ä‘áº¹p" | âœ… CÃ³ (cáº§n kiáº¿n thá»©c UI/UX) |
+| "Tá»‘i Æ°u database cháº­m" | âœ… CÃ³ (cáº§n kiáº¿n thá»©c performance) |
+| "Implement OAuth2" | âœ… CÃ³ (cáº§n kiáº¿n thá»©c authentication) |
 
-**Nguyên tắc:** Chỉ load khi thực sự cần, không load thừa.
+**NguyÃªn táº¯c:** Chá»‰ load khi thá»±c sá»± cáº§n, khÃ´ng load thá»«a.
 
 ---
 
-## Danh Sách 59 Skills Theo Nhóm
+## Danh SÃ¡ch 59 Skills Theo NhÃ³m
 
-### 🎨 Nhóm Giao Diện & Thiết Kế (11 skills)
+### ðŸŽ¨ NhÃ³m Giao Diá»‡n & Thiáº¿t Káº¿ (11 skills)
 
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
+| Skill | DÃ¹ng Khi NÃ o | CÃ³ GÃ¬ BÃªn Trong |
 |-------|--------------|-----------------|
-| **ui-ux-pro-max** | Cần thiết kế đẹp, chuyên nghiệp | 50 styles, 21 bảng màu, 50 cặp fonts |
-| **frontend-design** | Tạo giao diện production-ready | Hướng dẫn thiết kế chuẩn |
-| **frontend-design-pro** | Cần ảnh thật (Unsplash/Pexels) | Tích hợp ảnh stock chất lượng |
-| **frontend-development** | Viết code React/TypeScript | Best practices, patterns chuẩn |
-| **ui-styling** | Dùng Tailwind, shadcn/ui | Components và styling guide |
-| **threejs** | Làm 3D, WebGL | Hướng dẫn Three.js đầy đủ |
-| **web-frameworks** | Dùng Next.js, Turborepo | Setup và best practices |
-| **webapp-testing** | Test giao diện với Playwright | Kỹ thuật test UI |
+| **ui-ux-pro-max** | Cáº§n thiáº¿t káº¿ Ä‘áº¹p, chuyÃªn nghiá»‡p | 50 styles, 21 báº£ng mÃ u, 50 cáº·p fonts |
+| **frontend-design** | Táº¡o giao diá»‡n production-ready | HÆ°á»›ng dáº«n thiáº¿t káº¿ chuáº©n |
+| **frontend-design-pro** | Cáº§n áº£nh tháº­t (Unsplash/Pexels) | TÃ­ch há»£p áº£nh stock cháº¥t lÆ°á»£ng |
+| **frontend-development** | Viáº¿t code React/TypeScript | Best practices, patterns chuáº©n |
+| **ui-styling** | DÃ¹ng Tailwind, shadcn/ui | Components vÃ  styling guide |
+| **threejs** | LÃ m 3D, WebGL | HÆ°á»›ng dáº«n Three.js Ä‘áº§y Ä‘á»§ |
+| **web-frameworks** | DÃ¹ng Next.js, Turborepo | Setup vÃ  best practices |
+| **webapp-testing** | Test giao diá»‡n vá»›i Playwright | Ká»¹ thuáº­t test UI |
 
-### 🔧 Nhóm Backend & Database (4 skills)
+### ðŸ”§ NhÃ³m Backend & Database (4 skills)
 
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
+| Skill | DÃ¹ng Khi NÃ o | CÃ³ GÃ¬ BÃªn Trong |
 |-------|--------------|-----------------|
-| **backend-development** | Viết API, server logic | Node.js, Python, Go, Rust guides |
-| **databases** | Làm việc với MongoDB, PostgreSQL | Queries, optimization, migrations |
-| **better-auth** | Implement đăng nhập, OAuth | OAuth2, 2FA, session management |
-| **payment-integration** | Tích hợp thanh toán | SePay (VN), Polar (quốc tế) |
+| **backend-development** | Viáº¿t API, server logic | Node.js, Python, Go, Rust guides |
+| **databases** | LÃ m viá»‡c vá»›i MongoDB, PostgreSQL | Queries, optimization, migrations |
+| **better-auth** | Implement Ä‘Äƒng nháº­p, OAuth | OAuth2, 2FA, session management |
+| **payment-integration** | TÃ­ch há»£p thanh toÃ¡n | SePay (VN), Polar (quá»‘c táº¿) |
 
-### 🐛 Nhóm Sửa Lỗi & Testing (5 skills)
+### ðŸ› NhÃ³m Sá»­a Lá»—i & Testing (5 skills)
 
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
+| Skill | DÃ¹ng Khi NÃ o | CÃ³ GÃ¬ BÃªn Trong |
 |-------|--------------|-----------------|
-| **debugging** | Debug lỗi khó, phức tạp | Framework debug 4 bước |
-| **bug-diagnosis** | Phân tích nguyên nhân lỗi | Quy trình chẩn đoán bug |
-| **test-generation** | Viết test theo BDD | Given/When/Then templates |
-| **tasks-test-generation** | Viết unit test | xUnit (C#), Jest (JS) |
-| **chrome-devtools** | Debug trên browser | Puppeteer, performance analysis |
+| **debugging** | Debug lá»—i khÃ³, phá»©c táº¡p | Framework debug 4 bÆ°á»›c |
+| **bug-diagnosis** | PhÃ¢n tÃ­ch nguyÃªn nhÃ¢n lá»—i | Quy trÃ¬nh cháº©n Ä‘oÃ¡n bug |
+| **test-generation** | Viáº¿t test theo BDD | Given/When/Then templates |
+| **tasks-test-generation** | Viáº¿t unit test | xUnit (C#), Jest (JS) |
+| **chrome-devtools** | Debug trÃªn browser | Puppeteer, performance analysis |
 
-### 🏗️ Nhóm Kiến Trúc & Hiệu Năng (3 skills)
+### ðŸ—ï¸ NhÃ³m Kiáº¿n TrÃºc & Hiá»‡u NÄƒng (3 skills)
 
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
+| Skill | DÃ¹ng Khi NÃ o | CÃ³ GÃ¬ BÃªn Trong |
 |-------|--------------|-----------------|
-| **arch-performance-optimization** | App chạy chậm | Kỹ thuật tối ưu performance |
-| **arch-security-review** | Review bảo mật | OWASP Top 10, security checklist |
-| **arch-cross-service-integration** | Kết nối nhiều services | Message bus, API patterns |
+| **arch-performance-optimization** | App cháº¡y cháº­m | Ká»¹ thuáº­t tá»‘i Æ°u performance |
+| **arch-security-review** | Review báº£o máº­t | OWASP Top 10, security checklist |
+| **arch-cross-service-integration** | Káº¿t ná»‘i nhiá»u services | Message bus, API patterns |
 
-### 📚 Nhóm Tài Liệu & Lập Kế Hoạch (7 skills)
+### ðŸ“š NhÃ³m TÃ i Liá»‡u & Láº­p Káº¿ Hoáº¡ch (7 skills)
 
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
+| Skill | DÃ¹ng Khi NÃ o | CÃ³ GÃ¬ BÃªn Trong |
 |-------|--------------|-----------------|
-| **documentation** | Lên kế hoạch viết docs | Framework 4 phases |
-| **tasks-documentation** | Viết docs thực tế | Templates cho comments, API docs |
-| **feature-docs** | Viết docs cho tính năng | Template với test cases |
-| **readme-improvement** | Cải thiện README | Best practices README |
-| **planning** | Lập kế hoạch kỹ thuật | Framework planning |
-| **plan-analysis** | Phân tích kế hoạch có sẵn | Đánh giá impact, risks |
-| **project-index** | Tạo index cấu trúc dự án | Scan và generate docs/structure.md |
+| **documentation** | LÃªn káº¿ hoáº¡ch viáº¿t docs | Framework 4 phases |
+| **tasks-documentation** | Viáº¿t docs thá»±c táº¿ | Templates cho comments, API docs |
+| **feature-docs** | Viáº¿t docs cho tÃ­nh nÄƒng | Template vá»›i test cases |
+| **readme-improvement** | Cáº£i thiá»‡n README | Best practices README |
+| **planning** | Láº­p káº¿ hoáº¡ch ká»¹ thuáº­t | Framework planning |
+| **plan-analysis** | PhÃ¢n tÃ­ch káº¿ hoáº¡ch cÃ³ sáºµn | ÄÃ¡nh giÃ¡ impact, risks |
+| **project-index** | Táº¡o index cáº¥u trÃºc dá»± Ã¡n | Scan vÃ  generate docs/structure.md |
 
-### 🤖 Nhóm AI & Đa Phương Tiện (3 skills)
+### ðŸ¤– NhÃ³m AI & Äa PhÆ°Æ¡ng Tiá»‡n (3 skills)
 
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
+| Skill | DÃ¹ng Khi NÃ o | CÃ³ GÃ¬ BÃªn Trong |
 |-------|--------------|-----------------|
-| **ai-multimodal** | Xử lý audio, video, ảnh | Google Gemini API guides |
-| **ai-artist** | Viết prompt cho AI | Prompt engineering techniques |
-| **google-adk-python** | Xây dựng AI agents | Google ADK framework |
+| **ai-multimodal** | Xá»­ lÃ½ audio, video, áº£nh | Google Gemini API guides |
+| **ai-artist** | Viáº¿t prompt cho AI | Prompt engineering techniques |
+| **google-adk-python** | XÃ¢y dá»±ng AI agents | Google ADK framework |
 
-### ⚙️ Nhóm DevOps & Công Cụ (7 skills)
+### ⚙️ NhÃ³m DevOps & CÃ´ng Cá»¥ (7 skills)
 
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
+| Skill | DÃ¹ng Khi NÃ o | CÃ³ GÃ¬ BÃªn Trong |
 |-------|--------------|-----------------|
 | **devops** | Deploy, CI/CD | Cloudflare, Docker, GCP |
-| **mcp-builder** | Tạo MCP server | Hướng dẫn build MCP |
-| **mcp-management** | Quản lý MCP tools | Discover, execute MCP |
-| **repomix** | Đóng gói code cho AI | Pack codebase thành 1 file |
+| **mcp-builder** | Táº¡o MCP server | HÆ°á»›ng dáº«n build MCP |
+| **mcp-management** | Quáº£n lÃ½ MCP tools | Discover, execute MCP |
+| **repomix** | ÄÃ³ng gÃ³i code cho AI | Pack codebase thÃ nh 1 file |
 | **package-upgrade** | Upgrade dependencies | Analyze breaking changes |
-| **media-processing** | Xử lý video, ảnh | FFmpeg, ImageMagick guides |
+| **media-processing** | Xá»­ lÃ½ video, áº£nh | FFmpeg, ImageMagick guides |
 
-### 🔍 Nhóm Review & Chất Lượng (4 skills)
+### ðŸ” NhÃ³m Review & Cháº¥t LÆ°á»£ng (4 skills)
 
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
+| Skill | DÃ¹ng Khi NÃ o | CÃ³ GÃ¬ BÃªn Trong |
 |-------|--------------|-----------------|
-| **code-review** | Review code kỹ lưỡng | Checklist review chuyên sâu |
-| **dual-pass-review** | Review 2 lượt bắt buộc | Đảm bảo chất lượng |
-| **tasks-code-review** | Review PR nhanh | Checklist ngắn gọn |
-| **tasks-spec-update** | Cập nhật specs | Sync docs với code |
+| **code-review** | Review code ká»¹ lÆ°á»¡ng | Checklist review chuyÃªn sÃ¢u |
+| **dual-pass-review** | Review 2 lÆ°á»£t báº¯t buá»™c | Äáº£m báº£o cháº¥t lÆ°á»£ng |
+| **tasks-code-review** | Review PR nhanh | Checklist ngáº¯n gá»n |
+| **tasks-spec-update** | Cáº­p nháº­t specs | Sync docs vá»›i code |
 
-### 🔬 Nhóm Nghiên Cứu & Giải Quyết Vấn Đề (5 skills)
+### ðŸ”¬ NhÃ³m NghiÃªn Cá»©u & Giáº£i Quyáº¿t Váº¥n Äá» (5 skills)
 
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
+| Skill | DÃ¹ng Khi NÃ o | CÃ³ GÃ¬ BÃªn Trong |
 |-------|--------------|-----------------|
-| **research** | Nghiên cứu công nghệ | Framework research |
-| **problem-solving** | Bị stuck, không biết làm gì | 6 kỹ thuật giải quyết |
-| **sequential-thinking** | Vấn đề phức tạp nhiều bước | Structured thinking |
-| **feature-investigation** | Tìm hiểu code hiện có | Trace flow, explain logic |
-| **branch-comparison** | So sánh branches | Git diff analysis |
+| **research** | NghiÃªn cá»©u cÃ´ng nghá»‡ | Framework research |
+| **problem-solving** | Bá»‹ stuck, khÃ´ng biáº¿t lÃ m gÃ¬ | 6 ká»¹ thuáº­t giáº£i quyáº¿t |
+| **sequential-thinking** | Váº¥n Ä‘á» phá»©c táº¡p nhiá»u bÆ°á»›c | Structured thinking |
+| **feature-investigation** | TÃ¬m hiá»ƒu code hiá»‡n cÃ³ | Trace flow, explain logic |
+| **branch-comparison** | So sÃ¡nh branches | Git diff analysis |
 
-### 📱 Nhóm Mobile & E-commerce (2 skills)
+### ðŸ“± NhÃ³m Mobile & E-commerce (2 skills)
 
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
+| Skill | DÃ¹ng Khi NÃ o | CÃ³ GÃ¬ BÃªn Trong |
 |-------|--------------|-----------------|
-| **mobile-development** | Làm app mobile | React Native, Flutter, Swift |
-| **shopify** | Làm app Shopify | APIs, themes, extensions |
+| **mobile-development** | LÃ m app mobile | React Native, Flutter, Swift |
+| **shopify** | LÃ m app Shopify | APIs, themes, extensions |
 
-### 🛠️ Nhóm Quản Lý Skills (3 skills)
+### ðŸ› ï¸ NhÃ³m Quáº£n LÃ½ Skills (3 skills)
 
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
+| Skill | DÃ¹ng Khi NÃ o | CÃ³ GÃ¬ BÃªn Trong |
 |-------|--------------|-----------------|
-| **skill-creator** | Tạo skill mới | Template và hướng dẫn |
-| **skill-share** | Chia sẻ skill qua Slack | Auto-share workflow |
-| **claude-code** | Dùng Claude Code | Commands, MCP, hooks |
+| **skill-creator** | Táº¡o skill má»›i | Template vÃ  hÆ°á»›ng dáº«n |
+| **skill-share** | Chia sáº» skill qua Slack | Auto-share workflow |
+| **OpenCode-code** | DÃ¹ng OpenCode | Commands, MCP, hooks |
 
-### 📄 Nhóm Xử Lý Tài Liệu (4 skills)
+### ðŸ“„ NhÃ³m Xá»­ LÃ½ TÃ i Liá»‡u (4 skills)
 
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
+| Skill | DÃ¹ng Khi NÃ o | CÃ³ GÃ¬ BÃªn Trong |
 |-------|--------------|-----------------|
-| **docx** | Tạo/sửa Word | python-docx guides |
-| **pdf** | Xử lý PDF | Extract, merge, fill forms |
-| **pptx** | Tạo PowerPoint | Slides, layouts |
-| **xlsx** | Tạo Excel | Formulas, formatting |
+| **docx** | Táº¡o/sá»­a Word | python-docx guides |
+| **pdf** | Xá»­ lÃ½ PDF | Extract, merge, fill forms |
+| **pptx** | Táº¡o PowerPoint | Slides, layouts |
+| **xlsx** | Táº¡o Excel | Formulas, formatting |
 
-### 🔧 Nhóm Tiện Ích (4 skills)
+### ðŸ”§ NhÃ³m Tiá»‡n Ãch (4 skills)
 
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
+| Skill | DÃ¹ng Khi NÃ o | CÃ³ GÃ¬ BÃªn Trong |
 |-------|--------------|-----------------|
-| **docs-seeker** | Tìm tài liệu kỹ thuật | Search strategies |
-| **domain-name-brainstormer** | Tìm tên domain | Generate + check availability |
-| **developer-growth-analysis** | Phân tích coding patterns | Self-improvement insights |
+| **docs-seeker** | TÃ¬m tÃ i liá»‡u ká»¹ thuáº­t | Search strategies |
+| **domain-name-brainstormer** | TÃ¬m tÃªn domain | Generate + check availability |
+| **developer-growth-analysis** | PhÃ¢n tÃ­ch coding patterns | Self-improvement insights |
 
 ---
 
-## Cấu Trúc Một Skill
+## Cáº¥u TrÃºc Má»™t Skill
 
-Mỗi skill là một thư mục chứa:
+Má»—i skill lÃ  má»™t thÆ° má»¥c chá»©a:
 
 ```
 skill-name/
-├── SKILL.md          ← File chính (AI đọc file này)
-├── references/       ← Tài liệu tham khảo (nếu có)
-│   ├── api.md
-│   └── examples.md
-└── scripts/          ← Scripts hỗ trợ (nếu có)
-    └── helper.js
+â”œâ”€â”€ SKILL.md          â† File chÃ­nh (AI Ä‘á»c file nÃ y)
+â”œâ”€â”€ references/       â† TÃ i liá»‡u tham kháº£o (náº¿u cÃ³)
+â”‚   â”œâ”€â”€ api.md
+â”‚   â””â”€â”€ examples.md
+â””â”€â”€ scripts/          â† Scripts há»— trá»£ (náº¿u cÃ³)
+    â””â”€â”€ helper.js
 ```
 
-**File SKILL.md chứa:**
+**File SKILL.md chá»©a:**
 ```markdown
 ---
-name: tên-skill
-description: Mô tả ngắn gọn
+name: tÃªn-skill
+description: MÃ´ táº£ ngáº¯n gá»n
 ---
 
-# Tên Skill
+# TÃªn Skill
 
-## Khi Nào Dùng
-- Tình huống 1
-- Tình huống 2
+## Khi NÃ o DÃ¹ng
+- TÃ¬nh huá»‘ng 1
+- TÃ¬nh huá»‘ng 2
 
-## Hướng Dẫn Chi Tiết
-[Nội dung hướng dẫn...]
+## HÆ°á»›ng Dáº«n Chi Tiáº¿t
+[Ná»™i dung hÆ°á»›ng dáº«n...]
 
-## Ví Dụ
-[Các ví dụ cụ thể...]
+## VÃ­ Dá»¥
+[CÃ¡c vÃ­ dá»¥ cá»¥ thá»ƒ...]
 ```
 
 ---
 
-## Cách AI Chọn Skills
+## CÃ¡ch AI Chá»n Skills
 
-### Ví dụ 1: Không cần skill
+### VÃ­ dá»¥ 1: KhÃ´ng cáº§n skill
 ```
-Bạn: "Đổi màu button từ xanh sang đỏ"
+Báº¡n: "Äá»•i mÃ u button tá»« xanh sang Ä‘á»"
 
-AI phân tích:
-- Việc đơn giản, không cần kiến thức đặc biệt
-- Không load skill nào
+AI phÃ¢n tÃ­ch:
+- Viá»‡c Ä‘Æ¡n giáº£n, khÃ´ng cáº§n kiáº¿n thá»©c Ä‘áº·c biá»‡t
+- KhÃ´ng load skill nÃ o
 
-→ AI làm luôn
+→ AI lÃ m luÃ´n
 ```
 
-### Ví dụ 2: Cần 1 skill
+### VÃ­ dá»¥ 2: Cáº§n 1 skill
 ```
-Bạn: "Tối ưu trang chạy chậm"
+Báº¡n: "Tá»‘i Æ°u trang cháº¡y cháº­m"
 
-AI phân tích:
-- Cần kiến thức performance optimization
+AI phÃ¢n tÃ­ch:
+- Cáº§n kiáº¿n thá»©c performance optimization
 - Load: arch-performance-optimization
 
-→ AI đọc skill, áp dụng techniques
+→ AI Ä‘á»c skill, Ã¡p dá»¥ng techniques
 ```
 
-### Ví dụ 3: Cần nhiều skills
+### VÃ­ dá»¥ 3: Cáº§n nhiá»u skills
 ```
-Bạn: "Xây dựng dashboard đẹp với data từ API"
+Báº¡n: "XÃ¢y dá»±ng dashboard Ä‘áº¹p vá»›i data tá»« API"
 
-AI phân tích:
-- Cần thiết kế đẹp → ui-ux-pro-max
-- Cần code React → frontend-development
-- Cần fetch data → backend-development
+AI phÃ¢n tÃ­ch:
+- Cáº§n thiáº¿t káº¿ Ä‘áº¹p → ui-ux-pro-max
+- Cáº§n code React → frontend-development
+- Cáº§n fetch data → backend-development
 
-→ AI load 3 skills, kết hợp kiến thức
+→ AI load 3 skills, káº¿t há»£p kiáº¿n thá»©c
 ```
 
 ---
 
-## Cài Đặt Dependencies
+## CÃ i Äáº·t Dependencies
 
-Một số skills cần cài thêm phần mềm:
+Má»™t sá»‘ skills cáº§n cÃ i thÃªm pháº§n má»m:
 
-### Cài Tự Động (Khuyến nghị)
+### CÃ i Tá»± Äá»™ng (Khuyáº¿n nghá»‹)
 
 **Windows (PowerShell Admin):**
 ```powershell
-cd .claude\skills
+cd .OpenCode\skills
 .\install.ps1
 ```
 
 **Linux/macOS:**
 ```bash
-cd .claude/skills
+cd .opencode/skills
 ./install.sh
 ```
 
-### Sẽ Cài Những Gì?
+### Sáº½ CÃ i Nhá»¯ng GÃ¬?
 
-| Loại | Phần mềm |
+| Loáº¡i | Pháº§n má»m |
 |------|----------|
 | System tools | FFmpeg, ImageMagick |
 | Node.js packages | rmbg-cli, pnpm, repomix |
@@ -253,57 +253,59 @@ cd .claude/skills
 
 ---
 
-## Tạo Skill Mới
+## Táº¡o Skill Má»›i
 
-Nếu muốn tạo skill riêng:
+Náº¿u muá»‘n táº¡o skill riÃªng:
 
-1. **Tạo thư mục:**
+1. **Táº¡o thÆ° má»¥c:**
 ```
-.claude/skills/ten-skill-cua-ban/
+.opencode/skills/ten-skill-cua-ban/
 ```
 
-2. **Tạo file SKILL.md:**
+2. **Táº¡o file SKILL.md:**
 ```markdown
 ---
 name: ten-skill-cua-ban
-description: Mô tả skill làm gì
+description: MÃ´ táº£ skill lÃ m gÃ¬
 ---
 
-# Tên Skill
+# TÃªn Skill
 
-## Khi Nào Dùng
-- Tình huống sử dụng
+## Khi NÃ o DÃ¹ng
+- TÃ¬nh huá»‘ng sá»­ dá»¥ng
 
-## Hướng Dẫn
-- Bước 1: ...
-- Bước 2: ...
+## HÆ°á»›ng Dáº«n
+- BÆ°á»›c 1: ...
+- BÆ°á»›c 2: ...
 
-## Ví Dụ
-- Ví dụ cụ thể
+## VÃ­ Dá»¥
+- VÃ­ dá»¥ cá»¥ thá»ƒ
 ```
 
-3. **Đăng ký trong settings** (tùy chọn)
+3. **ÄÄƒng kÃ½ trong settings** (tÃ¹y chá»n)
 
-Xem chi tiết: [skill-creator/SKILL.md](skill-creator/SKILL.md)
+Xem chi tiáº¿t: [skill-creator/SKILL.md](skill-creator/SKILL.md)
 
 ---
 
-## Tóm Tắt
+## TÃ³m Táº¯t
 
-| Khái niệm | Giải thích |
+| KhÃ¡i niá»‡m | Giáº£i thÃ­ch |
 |-----------|------------|
-| **Skill là gì** | Bộ kiến thức chuyên môn AI sẽ học |
-| **Có bao nhiêu** | 59 skills chia thành 14 nhóm |
-| **Khi nào load** | Chỉ khi công việc cần kiến thức chuyên sâu |
-| **Ai quyết định** | AI tự động chọn dựa trên yêu cầu |
-| **Có thể tạo thêm** | Có, theo template trong skill-creator |
+| **Skill lÃ  gÃ¬** | Bá»™ kiáº¿n thá»©c chuyÃªn mÃ´n AI sáº½ há»c |
+| **CÃ³ bao nhiÃªu** | 59 skills chia thÃ nh 14 nhÃ³m |
+| **Khi nÃ o load** | Chá»‰ khi cÃ´ng viá»‡c cáº§n kiáº¿n thá»©c chuyÃªn sÃ¢u |
+| **Ai quyáº¿t Ä‘á»‹nh** | AI tá»± Ä‘á»™ng chá»n dá»±a trÃªn yÃªu cáº§u |
+| **CÃ³ thá»ƒ táº¡o thÃªm** | CÃ³, theo template trong skill-creator |
 
 ---
 
-## Xem Thêm
+## Xem ThÃªm
 
-- [Danh sách Agents (Vai trò)](../agents/README.md)
-- [Danh sách Commands (Quy trình)](../commands/README.md)
-- [Router (Bộ định tuyến)](../router/README.md)
-- [Hướng dẫn tạo Skill](skill-creator/SKILL.md)
-- [Cài đặt chi tiết](INSTALLATION.md)
+- [Danh sÃ¡ch Agents (Vai trÃ²)](../agents/README.md)
+- [Danh sÃ¡ch Commands (Quy trÃ¬nh)](../commands/README.md)
+- [Router (Bá»™ Ä‘á»‹nh tuyáº¿n)](../router/README.md)
+- [HÆ°á»›ng dáº«n táº¡o Skill](skill-creator/SKILL.md)
+- [CÃ i Ä‘áº·t chi tiáº¿t](INSTALLATION.md)
+
+

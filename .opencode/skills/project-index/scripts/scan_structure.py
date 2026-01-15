@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 Project Structure Scanner
 Cross-platform script to generate an AI-friendly project map + directory tree.
@@ -270,7 +270,7 @@ class ProjectScanner:
             return "Static assets"
         if lower == ".github":
             return "GitHub configuration (CI, templates, workflows)"
-        if lower == ".claude":
+        if lower == ".OpenCode":
             return "AI tooling / agent workflows (project-local)"
         if lower == ".codex":
             return "Codex CLI skills / configuration (project-local)"
@@ -448,3 +448,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

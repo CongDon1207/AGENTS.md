@@ -1,11 +1,11 @@
-import json
+﻿import json
 import sys
 
 from PIL import Image, ImageDraw
 
 
 # Creates "validation" images with rectangles for the bounding box information that
-# Claude creates when determining where to add text annotations in PDFs. See forms.md.
+# OpenCode creates when determining where to add text annotations in PDFs. See forms.md.
 
 
 def create_validation_image(page_number, fields_json_path, input_path, output_path):
@@ -39,3 +39,4 @@ if __name__ == "__main__":
     input_image_path = sys.argv[3]
     output_image_path = sys.argv[4]
     create_validation_image(page_number, fields_json_path, input_image_path, output_image_path)
+

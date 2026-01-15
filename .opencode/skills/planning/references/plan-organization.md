@@ -1,4 +1,4 @@
-# Plan Creation & Organization
+﻿# Plan Creation & Organization
 
 ## Directory Structure
 
@@ -11,21 +11,21 @@ Use `Plan dir:` from `## Naming` section injected by hooks. This is the full com
 
 ```
 {plan-dir}/                                    # From `Plan dir:` in ## Naming
-├── research/
-│   ├── researcher-XX-report.md
-│   └── ...
-├── reports/
-│   ├── scout-report.md
-│   ├── researcher-report.md
-│   └── ...
-├── plan.md                                    # Overview access point
-├── phase-01-setup-environment.md              # Setup environment
-├── phase-02-implement-database.md             # Database models
-├── phase-03-implement-api-endpoints.md        # API endpoints
-├── phase-04-implement-ui-components.md        # UI components
-├── phase-05-implement-authentication.md       # Auth & authorization
-├── phase-06-implement-profile.md              # Profile page
-└── phase-07-write-tests.md                    # Tests
+â”œâ”€â”€ research/
+â”‚   â”œâ”€â”€ researcher-XX-report.md
+â”‚   â””â”€â”€ ...
+â”œâ”€â”€ reports/
+â”‚   â”œâ”€â”€ scout-report.md
+â”‚   â”œâ”€â”€ researcher-report.md
+â”‚   â””â”€â”€ ...
+â”œâ”€â”€ plan.md                                    # Overview access point
+â”œâ”€â”€ phase-01-setup-environment.md              # Setup environment
+â”œâ”€â”€ phase-02-implement-database.md             # Database models
+â”œâ”€â”€ phase-03-implement-api-endpoints.md        # API endpoints
+â”œâ”€â”€ phase-04-implement-ui-components.md        # UI components
+â”œâ”€â”€ phase-05-implement-authentication.md       # Auth & authorization
+â”œâ”€â”€ phase-06-implement-profile.md              # Profile page
+â””â”€â”€ phase-07-write-tests.md                    # Tests
 ```
 
 ### Active Plan State Tracking
@@ -43,7 +43,7 @@ Check the `## Plan Context` section injected by hooks:
 **After Creating Plan:**
 ```bash
 # Update session state so subagents get the new plan context:
-node .claude/scripts/set-active-plan.cjs {plan-dir}
+node .opencode/scripts/set-active-plan.cjs {plan-dir}
 ```
 
 **Report Output Rules:**
@@ -148,3 +148,4 @@ Each phase file should contain:
 **Next Steps**
 - Dependencies
 - Follow-up tasks
+

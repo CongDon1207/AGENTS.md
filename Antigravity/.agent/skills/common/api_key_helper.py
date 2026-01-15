@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 Common API Key Detection Helper for Gemini Skills
 
@@ -7,8 +7,8 @@ Supports both Google AI Studio and Vertex AI endpoints.
 API Key Detection Order:
 1. Process environment variable
 2. Project root .env file
-3. ./.claude/.env
-4. ./.claude/skills/.env
+3. ./.Antigravity/.env
+4. ./.Antigravity/skills/.env
 5. Skill directory .env file
 
 Vertex AI Configuration:
@@ -29,8 +29,8 @@ def find_api_key(skill_dir: Optional[Path] = None) -> Optional[str]:
     Find GEMINI_API_KEY using 5-step lookup:
     1. Process environment
     2. Project root .env
-    3. ./.claude/.env
-    4. ./.claude/skills/.env
+    3. ./.Antigravity/.env
+    4. ./.Antigravity/skills/.env
     5. Skill directory .env
 
     Args:
@@ -58,16 +58,16 @@ def find_api_key(skill_dir: Optional[Path] = None) -> Optional[str]:
             print(f"✓ Using API key from {project_env}", file=sys.stderr)
             return api_key
 
-    # Step 3: Check ./.claude/.env
-    claude_env = project_dir / '.claude' / '.env'
+    # Step 3: Check ./.Antigravity/.env
+    claude_env = project_dir / '.Antigravity' / '.env'
     if claude_env.exists():
         api_key = load_env_file(claude_env)
         if api_key:
             print(f"✓ Using API key from {claude_env}", file=sys.stderr)
             return api_key
 
-    # Step 4: Check ./.claude/skills/.env
-    claude_skills_env = project_dir / '.claude' / 'skills' / '.env'
+    # Step 4: Check ./.Antigravity/skills/.env
+    claude_skills_env = project_dir / '.Antigravity' / 'skills' / '.env'
     if claude_skills_env.exists():
         api_key = load_env_file(claude_skills_env)
         if api_key:
@@ -161,8 +161,8 @@ def find_env_var(var_name: str, skill_dir: Optional[Path] = None) -> Optional[st
     # Step 2-5: Check .env files in order
     env_files = [
         project_dir / '.env',
-        project_dir / '.claude' / '.env',
-        project_dir / '.claude' / 'skills' / '.env',
+        project_dir / '.Antigravity' / '.env',
+        project_dir / '.Antigravity' / 'skills' / '.env',
         skill_dir / '.env'
     ]
 
@@ -202,8 +202,8 @@ def find_all_api_keys(skill_dir: Optional[Path] = None) -> List[str]:
     # Collect all .env file paths in priority order
     env_files = [
         project_dir / '.env',
-        project_dir / '.claude' / '.env',
-        project_dir / '.claude' / 'skills' / '.env',
+        project_dir / '.Antigravity' / '.env',
+        project_dir / '.Antigravity' / 'skills' / '.env',
         skill_dir / '.env'
     ]
 
@@ -325,30 +325,30 @@ def get_api_key_or_exit(skill_dir: Optional[Path] = None) -> str:
     api_key = find_api_key(skill_dir)
 
     if not api_key:
-        print("\n❌ Error: GEMINI_API_KEY not found!", file=sys.stderr)
-        print("\n📋 Please set your API key using one of these methods (in priority order):", file=sys.stderr)
+        print("\nâŒ Error: GEMINI_API_KEY not found!", file=sys.stderr)
+        print("\nðŸ“‹ Please set your API key using one of these methods (in priority order):", file=sys.stderr)
 
         if skill_dir is None:
             skill_dir = Path(__file__).parent.parent
         project_dir = skill_dir.parent.parent.parent
 
-        print("\n1️⃣  Environment variable (recommended for development):", file=sys.stderr)
+        print("\n1ï¸âƒ£  Environment variable (recommended for development):", file=sys.stderr)
         print("   export GEMINI_API_KEY='your-api-key'", file=sys.stderr)
 
-        print("\n2️⃣  Project root .env file:", file=sys.stderr)
+        print("\n2ï¸âƒ£  Project root .env file:", file=sys.stderr)
         print(f"   echo 'GEMINI_API_KEY=your-api-key' > {project_dir}/.env", file=sys.stderr)
 
-        print("\n3️⃣  .claude/.env file:", file=sys.stderr)
-        print(f"   echo 'GEMINI_API_KEY=your-api-key' > {project_dir}/.claude/.env", file=sys.stderr)
+        print("\n3ï¸âƒ£  .Antigravity/.env file:", file=sys.stderr)
+        print(f"   echo 'GEMINI_API_KEY=your-api-key' > {project_dir}/.Antigravity/.env", file=sys.stderr)
 
-        print("\n4️⃣  .claude/skills/.env file (shared across all Gemini skills):", file=sys.stderr)
-        print(f"   echo 'GEMINI_API_KEY=your-api-key' > {project_dir}/.claude/skills/.env", file=sys.stderr)
+        print("\n4ï¸âƒ£  .Antigravity/skills/.env file (shared across all Gemini skills):", file=sys.stderr)
+        print(f"   echo 'GEMINI_API_KEY=your-api-key' > {project_dir}/.Antigravity/skills/.env", file=sys.stderr)
 
-        print("\n5️⃣  Skill directory .env file:", file=sys.stderr)
+        print("\n5ï¸âƒ£  Skill directory .env file:", file=sys.stderr)
         print(f"   echo 'GEMINI_API_KEY=your-api-key' > {skill_dir}/.env", file=sys.stderr)
 
-        print("\n🔑 Get your API key at: https://aistudio.google.com/apikey", file=sys.stderr)
-        print("\n💡 Tip: Add .env files to .gitignore to avoid committing API keys", file=sys.stderr)
+        print("\nðŸ”‘ Get your API key at: https://aistudio.google.com/apikey", file=sys.stderr)
+        print("\nðŸ’¡ Tip: Add .env files to .gitignore to avoid committing API keys", file=sys.stderr)
         sys.exit(1)
 
     return api_key
@@ -372,8 +372,8 @@ def get_client(skill_dir: Optional[Path] = None):
         from vertexai.generative_models import GenerativeModel
 
         if not vertex_config['project_id']:
-            print("\n❌ Error: VERTEX_PROJECT_ID required when GEMINI_USE_VERTEX=true!", file=sys.stderr)
-            print("\n📋 Set your GCP project ID:", file=sys.stderr)
+            print("\nâŒ Error: VERTEX_PROJECT_ID required when GEMINI_USE_VERTEX=true!", file=sys.stderr)
+            print("\nðŸ“‹ Set your GCP project ID:", file=sys.stderr)
             print("   export VERTEX_PROJECT_ID='your-project-id'", file=sys.stderr)
             print("   Or add to .env file: VERTEX_PROJECT_ID=your-project-id", file=sys.stderr)
             sys.exit(1)
@@ -409,3 +409,4 @@ if __name__ == '__main__':
         print(f"\n✓ Vertex AI enabled:")
         print(f"  Project: {vertex_config['project_id']}")
         print(f"  Location: {vertex_config['location']}")
+

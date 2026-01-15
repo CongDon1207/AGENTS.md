@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 Database performance analysis tool for MongoDB and PostgreSQL.
 Analyzes slow queries, recommends indexes, and generates reports.
@@ -13,7 +13,7 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 # Windows UTF-8 compatibility
-sys.path.insert(0, str(Path.home() / '.claude' / 'scripts'))
+sys.path.insert(0, str(Path.home() / '.Antigravity' / 'scripts'))
 try:
     from win_compat import ensure_utf8_stdout
     ensure_utf8_stdout()
@@ -454,3 +454,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

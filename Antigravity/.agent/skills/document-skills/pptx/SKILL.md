@@ -1,6 +1,6 @@
----
+﻿---
 name: pptx
-description: "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts, (4) Adding comments or speaker notes, or any other presentation tasks"
+description: "Presentation creation, editing, and analysis. When Antigravity needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts, (4) Adding comments or speaker notes, or any other presentation tasks"
 license: Proprietary. LICENSE.txt has complete terms
 ---
 
@@ -57,11 +57,11 @@ When creating a new PowerPoint presentation from scratch, use the **html2pptx** 
 4. **State your approach**: Explain your design choices before writing code
 
 **Requirements**:
-- ✅ State your content-informed design approach BEFORE writing code
-- ✅ Use web-safe fonts only: Arial, Helvetica, Times New Roman, Georgia, Courier New, Verdana, Tahoma, Trebuchet MS, Impact
-- ✅ Create clear visual hierarchy through size, weight, and color
-- ✅ Ensure readability: strong contrast, appropriately sized text, clean alignment
-- ✅ Be consistent: repeat patterns, spacing, and visual language across slides
+- âœ… State your content-informed design approach BEFORE writing code
+- âœ… Use web-safe fonts only: Arial, Helvetica, Times New Roman, Georgia, Courier New, Verdana, Tahoma, Trebuchet MS, Impact
+- âœ… Create clear visual hierarchy through size, weight, and color
+- âœ… Ensure readability: strong contrast, appropriately sized text, clean alignment
+- âœ… Be consistent: repeat patterns, spacing, and visual language across slides
 
 #### Color Palette Selection
 
@@ -98,7 +98,7 @@ When creating a new PowerPoint presentation from scratch, use the **html2pptx** 
 **Geometric Patterns**:
 - Diagonal section dividers instead of horizontal
 - Asymmetric column widths (30/70, 40/60, 25/75)
-- Rotated text headers at 90° or 270°
+- Rotated text headers at 90Â° or 270Â°
 - Circular/hexagonal frames for images
 - Triangular accent shapes in corners
 - Overlapping shapes for depth
@@ -129,7 +129,7 @@ When creating a new PowerPoint presentation from scratch, use the **html2pptx** 
 **Layout Innovations**:
 - Full-bleed images with text overlays
 - Sidebar column (20-30% width) for navigation/context
-- Modular grid systems (3×3, 4×4 blocks)
+- Modular grid systems (3Ã—3, 4Ã—4 blocks)
 - Z-pattern or F-pattern content flow
 - Floating text boxes over colored shapes
 - Magazine-style multi-column layouts
@@ -149,7 +149,7 @@ When creating a new PowerPoint presentation from scratch, use the **html2pptx** 
 
 ### Workflow
 1. **MANDATORY - READ ENTIRE FILE**: Read [`html2pptx.md`](html2pptx.md) completely from start to finish. **NEVER set any range limits when reading this file.** Read the full file content for detailed syntax, critical formatting rules, and best practices before proceeding with presentation creation.
-2. Create an HTML file for each slide with proper dimensions (e.g., 720pt × 405pt for 16:9)
+2. Create an HTML file for each slide with proper dimensions (e.g., 720pt Ã— 405pt for 16:9)
    - Use `<p>`, `<h1>`-`<h6>`, `<ul>`, `<ol>` for all text content
    - Use `class="placeholder"` for areas where charts/tables will be added (render with gray background for visibility)
    - **CRITICAL**: Rasterize gradients and icons as PNG images FIRST using Sharp, then reference in HTML
@@ -415,7 +415,7 @@ python scripts/thumbnail.py template.pptx [output_prefix]
 
 **Features**:
 - Creates: `thumbnails.jpg` (or `thumbnails-1.jpg`, `thumbnails-2.jpg`, etc. for large decks)
-- Default: 5 columns, max 30 slides per grid (5×6)
+- Default: 5 columns, max 30 slides per grid (5Ã—6)
 - Custom prefix: `python scripts/thumbnail.py template.pptx my-grid`
   - Note: The output prefix should include the path if you want output in a specific directory (e.g., `workspace/my-grid`)
 - Adjust columns: `--cols 4` (range: 3-6, affects slides per grid)

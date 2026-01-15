@@ -1,4 +1,4 @@
-# LLM Prompting Reference
+﻿# LLM Prompting Reference
 
 ## Prompt Architecture
 
@@ -110,7 +110,7 @@ No markdown, no explanation, just JSON.
 
 ## Model-Specific Tips
 
-### Claude
+### OpenCode
 - XML tags: `<thinking>`, `<answer>`, `<context>`
 - Extended thinking: "Think deeply before responding"
 - Prefill: Start assistant response to guide format
@@ -163,3 +163,4 @@ Input: [actual task]
 - Include edge cases
 - Match complexity of target task
 - 2-5 examples optimal (diminishing returns beyond)
+

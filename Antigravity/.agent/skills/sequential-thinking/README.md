@@ -1,10 +1,10 @@
-# Sequential Thinking Agent Skill
+﻿# Sequential Thinking Agent Skill
 
 Structured, reflective problem-solving methodology converted from the sequential-thinking MCP server into a native Agent Skill.
 
 ## Overview
 
-This skill teaches Claude to apply systematic sequential thinking methodology for complex problem-solving, without relying on external MCP tools. It enables:
+This skill teaches Antigravity to apply systematic sequential thinking methodology for complex problem-solving, without relying on external MCP tools. It enables:
 - Breaking down complex problems into manageable thought sequences
 - Dynamic adjustment of thought count as understanding evolves
 - Revision of previous thoughts when new insights emerge
@@ -15,46 +15,46 @@ This skill teaches Claude to apply systematic sequential thinking methodology fo
 
 ```
 sequential-thinking/
-├── SKILL.md (105 lines)
-│   Core methodology, when to apply, scripts usage
-│
-├── package.json
-│   Test dependencies (jest)
-│
-├── .env.example
-│   Configuration options
-│
-├── scripts/
-│   ├── process-thought.js (executable)
-│   │   Validate and track thoughts deterministically
-│   │
-│   └── format-thought.js (executable)
-│       Format thoughts for display (box/simple/markdown)
-│
-├── tests/
-│   ├── process-thought.test.js
-│   │   Validation, tracking, history tests
-│   │
-│   └── format-thought.test.js
-│       Formatting tests (all formats)
-│
-└── references/
-    ├── core-patterns.md (95 lines)
-    │   Essential revision & branching patterns
-    │
-    ├── examples-api.md (88 lines)
-    │   API design example walkthrough
-    │
-    ├── examples-debug.md (90 lines)
-    │   Performance debugging example
-    │
-    ├── examples-architecture.md (94 lines)
-    │   Architecture decision example
-    │
-    ├── advanced-techniques.md (76 lines)
-    │   Spiral refinement, hypothesis testing, convergence
-    │
-    └── advanced-strategies.md (79 lines)
+â”œâ”€â”€ SKILL.md (105 lines)
+â”‚   Core methodology, when to apply, scripts usage
+â”‚
+â”œâ”€â”€ package.json
+â”‚   Test dependencies (jest)
+â”‚
+â”œâ”€â”€ .env.example
+â”‚   Configuration options
+â”‚
+â”œâ”€â”€ scripts/
+â”‚   â”œâ”€â”€ process-thought.js (executable)
+â”‚   â”‚   Validate and track thoughts deterministically
+â”‚   â”‚
+â”‚   â””â”€â”€ format-thought.js (executable)
+â”‚       Format thoughts for display (box/simple/markdown)
+â”‚
+â”œâ”€â”€ tests/
+â”‚   â”œâ”€â”€ process-thought.test.js
+â”‚   â”‚   Validation, tracking, history tests
+â”‚   â”‚
+â”‚   â””â”€â”€ format-thought.test.js
+â”‚       Formatting tests (all formats)
+â”‚
+â””â”€â”€ references/
+    â”œâ”€â”€ core-patterns.md (95 lines)
+    â”‚   Essential revision & branching patterns
+    â”‚
+    â”œâ”€â”€ examples-api.md (88 lines)
+    â”‚   API design example walkthrough
+    â”‚
+    â”œâ”€â”€ examples-debug.md (90 lines)
+    â”‚   Performance debugging example
+    â”‚
+    â”œâ”€â”€ examples-architecture.md (94 lines)
+    â”‚   Architecture decision example
+    â”‚
+    â”œâ”€â”€ advanced-techniques.md (76 lines)
+    â”‚   Spiral refinement, hypothesis testing, convergence
+    â”‚
+    â””â”€â”€ advanced-strategies.md (79 lines)
         Uncertainty management, revision cascades, meta-thinking
 ```
 
@@ -91,7 +91,7 @@ Thought 2/5: [Further analysis]
 
 **Implicit Mode**: Apply methodology internally without cluttering output
 
-## When Claude Should Use This Skill
+## When Antigravity Should Use This Skill
 
 Automatically activated for:
 - Complex problem decomposition
@@ -181,3 +181,4 @@ Skill conversion:
 - Extracts methodology as instructions
 - Adds executable scripts for deterministic validation
 - Makes tool-independent while preserving functionality
+

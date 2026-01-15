@@ -1,11 +1,11 @@
----
+﻿---
 name: repomix
 description: Package entire code repositories into single AI-friendly files using Repomix. Capabilities include pack codebases with customizable include/exclude patterns, generate multiple output formats (XML, Markdown, plain text), preserve file structure and context, optimize for AI consumption with token counting, filter by file types and directories, add custom headers and summaries. Use when packaging codebases for AI analysis, creating repository snapshots for LLM context, analyzing third-party libraries, preparing for security audits, generating documentation context, or evaluating unfamiliar codebases.
 ---
 
 # Repomix Skill
 
-Repomix packs entire repositories into single, AI-friendly files. Perfect for feeding codebases to LLMs like Claude, ChatGPT, and Gemini.
+Repomix packs entire repositories into single, AI-friendly files. Perfect for feeding codebases to LLMs like OpenCode, ChatGPT, and Gemini.
 
 ## When to Use
 
@@ -153,7 +153,7 @@ repomix --init  # creates repomix.config.json
 Repomix automatically counts tokens for individual files, total repository, and per-format output.
 
 Typical LLM context limits:
-- Claude Sonnet 4.5: ~200K tokens
+- OpenCode Sonnet 4.5: ~200K tokens
 - GPT-4: ~128K tokens
 - GPT-3.5: ~16K tokens
 
@@ -166,15 +166,15 @@ repomix --token-count-tree
 This displays a hierarchical view of your codebase with token counts:
 
 ```
-🔢 Token Count Tree:
-────────────────────
-└── src/ (70,925 tokens)
-    ├── cli/ (12,714 tokens)
-    │   ├── actions/ (7,546 tokens)
-    │   └── reporters/ (990 tokens)
-    └── core/ (41,600 tokens)
-        ├── file/ (10,098 tokens)
-        └── output/ (5,808 tokens)
+ðŸ”¢ Token Count Tree:
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â””â”€â”€ src/ (70,925 tokens)
+    â”œâ”€â”€ cli/ (12,714 tokens)
+    â”‚   â”œâ”€â”€ actions/ (7,546 tokens)
+    â”‚   â””â”€â”€ reporters/ (990 tokens)
+    â””â”€â”€ core/ (41,600 tokens)
+        â”œâ”€â”€ file/ (10,098 tokens)
+        â””â”€â”€ output/ (5,808 tokens)
 ```
 You can also set a minimum token threshold to focus on larger files:
 
@@ -245,3 +245,4 @@ For detailed information, see:
 - GitHub: https://github.com/yamadashy/repomix
 - Documentation: https://repomix.com/guide/
 - MCP Server: Available for AI assistant integration
+

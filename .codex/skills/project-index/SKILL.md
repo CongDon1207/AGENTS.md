@@ -1,4 +1,4 @@
----
+﻿---
 name: project-index
 description: Generate and maintain project structure index for fast AI navigation. Creates docs/structure.md with optimized file index. Load this skill when starting new project, after major changes, or when docs/structure.md is outdated.
 ---
@@ -31,35 +31,35 @@ This skill includes pre-built scripts that work on all platforms:
 ### Node.js Script
 ```bash
 # Basic usage (from project root)
-node .claude/skills/project-index/scripts/scan-structure.js . 4
+node .codex/skills/project-index/scripts/scan-structure.js . 4
 
 # Output to file
-node .claude/skills/project-index/scripts/scan-structure.js . 4 > docs/structure.md
+node .codex/skills/project-index/scripts/scan-structure.js . 4 > docs/structure.md
 
 # JSON format
-node .claude/skills/project-index/scripts/scan-structure.js . 4 json
+node .codex/skills/project-index/scripts/scan-structure.js . 4 json
 ```
 
 ### Python Script
 ```bash
 # Basic usage
-python .claude/skills/project-index/scripts/scan_structure.py . 4
+python .codex/skills/project-index/scripts/scan_structure.py . 4
 
 # Output to file  
-python .claude/skills/project-index/scripts/scan_structure.py . 4 > docs/structure.md
+python .codex/skills/project-index/scripts/scan_structure.py . 4 > docs/structure.md
 
 # JSON format
-python .claude/skills/project-index/scripts/scan_structure.py . 4 json
+python .codex/skills/project-index/scripts/scan_structure.py . 4 json
 ```
 
 ### Script Features
-- ✅ Cross-platform (Windows, macOS, Linux)
-- ✅ Auto-detect entry points (main.*, index.*, app.*, server.*)
-- ✅ Auto-detect config files (package.json, tsconfig.*, etc.)
-- ✅ Auto-detect key files (README, CHANGELOG, LICENSE)
-- ✅ File distribution by language/type
-- ✅ Customizable depth and ignore patterns
-- ✅ Output: Markdown or JSON
+- âœ… Cross-platform (Windows, macOS, Linux)
+- âœ… Auto-detect entry points (main.*, index.*, app.*, server.*)
+- âœ… Auto-detect config files (package.json, tsconfig.*, etc.)
+- âœ… Auto-detect key files (README, CHANGELOG, LICENSE)
+- âœ… File distribution by language/type
+- âœ… Customizable depth and ignore patterns
+- âœ… Output: Markdown or JSON
 
 ---
 
@@ -70,10 +70,10 @@ python .claude/skills/project-index/scripts/scan_structure.py . 4 json
 **Option A: Use Built-in Scripts (Recommended)**
 ```bash
 # Node.js
-node .claude/skills/project-index/scripts/scan-structure.js . 4
+node .codex/skills/project-index/scripts/scan-structure.js . 4
 
 # Python
-python .claude/skills/project-index/scripts/scan_structure.py . 4
+python .codex/skills/project-index/scripts/scan_structure.py . 4
 ```
 
 **Option B: VS Code Tools**
@@ -231,10 +231,10 @@ After generating `docs/structure.md`, AI should:
 test -f docs/structure.md && echo "EXISTS" || echo "NEEDS GENERATION"
 
 # Generate with Node.js script
-node .claude/skills/project-index/scripts/scan-structure.js . 4 > docs/structure.md
+node .codex/skills/project-index/scripts/scan-structure.js . 4 > docs/structure.md
 
 # Generate with Python script
-python .claude/skills/project-index/scripts/scan_structure.py . 4 > docs/structure.md
+python .codex/skills/project-index/scripts/scan_structure.py . 4 > docs/structure.md
 
 # Quick check last modified (Linux/macOS)
 stat docs/structure.md | grep Modify
@@ -251,7 +251,7 @@ When generating structure as AI agent:
 
 ### Method 1: Use Built-in Script (Fast)
 ```bash
-node .claude/skills/project-index/scripts/scan-structure.js . 4 > docs/structure.md
+node .codex/skills/project-index/scripts/scan-structure.js . 4 > docs/structure.md
 ```
 
 ### Method 2: Use VS Code Tools (No Script Required)
@@ -275,3 +275,4 @@ node .claude/skills/project-index/scripts/scan-structure.js . 4 > docs/structure
 4. **Patterns over lists**: For large folders, show patterns instead of listing all files
 5. **Version control**: Commit structure.md so team shares same understanding
 6. **Use scripts**: Prefer built-in scripts over platform-specific commands
+

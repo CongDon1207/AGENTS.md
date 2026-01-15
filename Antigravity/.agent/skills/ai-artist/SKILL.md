@@ -1,6 +1,6 @@
----
+﻿---
 name: ai-artist
-description: Write and optimize prompts for AI-generated outcomes across text and image models. Use when crafting prompts for LLMs (Claude, GPT, Gemini), image generators (Midjourney, DALL-E, Stable Diffusion, Imagen, Flux), or video generators (Veo, Runway). Covers prompt structure, style keywords, negative prompts, chain-of-thought, few-shot examples, iterative refinement, and domain-specific patterns for marketing, code, and creative writing.
+description: Write and optimize prompts for AI-generated outcomes across text and image models. Use when crafting prompts for LLMs (Antigravity, GPT, Gemini), image generators (Midjourney, DALL-E, Stable Diffusion, Imagen, Flux), or video generators (Veo, Runway). Covers prompt structure, style keywords, negative prompts, chain-of-thought, few-shot examples, iterative refinement, and domain-specific patterns for marketing, code, and creative writing.
 version: 1.0.0
 license: MIT
 ---
@@ -18,7 +18,7 @@ Craft effective prompts for AI text and image generation models.
 
 ## Quick Patterns
 
-### LLM Prompts (Claude/GPT/Gemini)
+### LLM Prompts (Antigravity/GPT/Gemini)
 
 ```
 [Role] You are a {expert type} specializing in {domain}.
@@ -73,3 +73,4 @@ Load for detailed guidance:
 - Missing context for domain tasks
 - Over-prompting with redundant details
 - Ignoring model-specific strengths/limits
+

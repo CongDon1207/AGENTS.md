@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 Database migration tool for MongoDB and PostgreSQL.
 Generates and applies schema migrations with rollback support.
@@ -14,7 +14,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 # Windows UTF-8 compatibility
-sys.path.insert(0, str(Path.home() / '.claude' / 'scripts'))
+sys.path.insert(0, str(Path.home() / '.Antigravity' / 'scripts'))
 try:
     from win_compat import ensure_utf8_stdout
     ensure_utf8_stdout()
@@ -423,3 +423,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

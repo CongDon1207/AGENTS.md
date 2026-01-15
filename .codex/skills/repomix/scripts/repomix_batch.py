@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 Batch process multiple repositories using Repomix.
 
@@ -36,7 +36,7 @@ class EnvLoader:
         """
         Load environment variables from .env files in order of precedence.
 
-        Order: process.env > skill/.env > skills/.env > .claude/.env
+        Order: process.env > skill/.env > skills/.env > .Codex/.env
 
         Returns:
             Dictionary of environment variables
@@ -46,7 +46,7 @@ class EnvLoader:
 
         # Define search paths in reverse order (lowest to highest priority)
         search_paths = [
-            script_dir.parent.parent.parent / ".env",  # .claude/.env
+            script_dir.parent.parent.parent / ".env",  # .Codex/.env
             script_dir.parent.parent / ".env",          # skills/.env
             script_dir.parent / ".env",                 # skill/.env (repomix/.env)
         ]
@@ -453,3 +453,4 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
+

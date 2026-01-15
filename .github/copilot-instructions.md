@@ -1,93 +1,104 @@
+# AGENTS.md - Working Conventions
 
-**MANDATORY AI WORKFLOW — MUST COMPLY 100%**
-> **Hard requirement:**  outputs (comments,explanations) **must be in Vietnamese**. The rules below are written in English for precise parsing.
-### Objectives
+---
 
-* Fix according to the exact requirement, no scope creep; prioritize minimal, clear, idempotent solutions.
-* Modify only necessary files; do not create new files unless strictly required with justification.
+## 1) Language
+- **Repository artifacts (mandatory)**: All documentation/guides, code comments, and any text written into files must be in **English**.
+- **Conversation**: Replies in the chat should be in **Vietnamese**.
 
-### Required Reading
+---
 
-* `README.md`, `AGENTS.md`, and relevant documents under `docs/*` (architecture, data-flow, makefile-guide).
-* `Makefile`, `docker-compose*.yml`, `.env*` files (reference only; do not overwrite).
+## 2) Core Principles (Non-negotiable)
+- Clarify Ambiguity First: If a requirement is unclear or incomplete, ask 1-2 clarifying questions before proceeding. Never guess.
+- Code Only What Was Asked: Follow the PRD/ticket scope strictly; no extra features.
+- Minimum Viable Change: Deliver the simplest, most idempotent fix that works; avoid over-engineering.
+- Reuse Before Rewriting: Prefer existing modules or utilities; avoid duplication.
+- File Length Limit: Keep every file under 300 LOC; if a change would exceed this, pause and propose a refactor or split plan.
+- Configuration and Secrets: Load all secrets or config from environment variables only; never hardcode.
+- When writing code, aim for simplicity and readability, not just brevity. Short code that is hard to read is worse than slightly longer code that is clear.
+- Clean Up Temporary Files: Delete any temporary test files immediately after use.
 
-### Response Workflow (applies to every response)
+### Core Directives
+- WRITE CODE ONLY TO SPEC.
+- MINIMUM, NOT MAXIMUM.
+- ONE SIMPLE SOLUTION.
+- CLARIFY, DON'T ASSUME.
 
-* **Requirement**: Quote 1–2 lines precisely restating the user’s request.
-* **Plan**: 2–3 short ordered steps.
-* **Changes**: List modified files with exact `path:line`; minimal patches; no architecture/pattern changes.
-* **Test**: Provide verification commands and pass criteria; state if service restart is required and why.
-* **Result**: Summarize changes, root cause, and post-fix status.
+### Philosophy (Non-negotiables)
+- Do not add unnecessary files or modules; if a new file is unavoidable, justify it.
+- Do not change architecture or patterns unless explicitly required and justified.
+- Prioritize readability and maintainability over clever or complex code.
 
-### Constraints
+---
 
-* No new files unless mandatory; if added, specify reason and files replaced/deleted.
-* Do not alter architecture/patterns unless essential.
-* Patch >300 lines: pause and propose refactor/split plan before proceeding.
-* Language: Vietnamese for explanations; keep logs/errors/commands in original context.
-* Favor simple, sufficient solutions; reuse existing code; only introduce complexity when necessary.
-* Do not touch code outside scope.
-* Create new files only when strictly necessary, and remove unused ones.
-* Use MCP only when truly beneficial; select correct server/tool; avoid unnecessary MCP calls.
-* Do not remove or alter any requirements in the task; keep all intact, even if irrelevant, unless explicitly told to remove.
-* Do not compress, omit, or reinterpret requirements; if unclear, ask 1–2 clarifying questions before proceeding.
+## 3) File-reading Rules (Mandatory)
+- **Before editing/creating files**: Read all relevant files in full to understand context.
+- **Before starting a task**: Read at minimum `README.md` and relevant files in `docs/*` (if present).
+- **If docs are missing or likely stale**: Use `rg` to locate the source of truth quickly.
 
-### Command Execution Rules
+---
 
-* Prefer `rg` for searches; read files in ≤250 line chunks.
-* Run only necessary commands; avoid heavy/long operations; no destructive actions (rm/reset) unless requested.
-* No commits; no new libraries unless absolutely required to fix.
-* On permission/resource errors: report clearly and suggest safe manual steps.
-* For major changes: Kill old process → restart new server.
+## 4) Project Structure Index
 
-### Answer Formatting
+> **File**: `docs/structure.md` - Single source of truth for project layout.
 
-* Short title (if needed); concise, active tone.
-* **Bullets**: bold keyword, one-line description.
-* Use backticks for commands, file paths, environment vars, identifiers.
-* Cite file edits as `path:line` (not ranges). Example: `influxdb/init/onboarding.sh:42`.
-* Do not add ANSI/strange formatting; do not mix bold with monospace.
+### When to use `docs/structure.md`
+- **Hard-to-locate tasks** (large repo/monorepo): read it first to get the map and narrow the search area.
+- **Very broad keywords** (e.g., auth/payment/logging): use structure to pick the right folder before searching deeper.
+- **New project / onboarding**: structure gives a fast overview of the main areas.
 
-### Definition of Done (DoD)
+### When to use `rg`
+- **Normal tasks**: use `rg` directly to find the real implementation (does not depend on whether structure is up to date).
+- **You already have concrete identifiers** (file name / function / class / route / endpoint): `rg` is faster than structure.
+- **You suspect structure is stale**: prefer `rg` first, then refresh structure if needed.
 
-* Requirement met; nothing extra; verify/tests pass; no redundant files; `.env` untouched.
-* Secrets safe; >300-line files considered for refactor; root cause and applied changes documented.
+### When to Update
+- **Project has no `docs/structure.md`**: Generate it using `skills/project-index/SKILL.md`.
+- **After major changes**: Added/removed modules, restructured folders.
+- **Periodic refresh**: Weekly or when index feels outdated.
+- **User says**: "update structure", "refresh index", "scan project".
 
-### MCP Tooling Rules
+### How to Generate/Update
+```
+Load: skills/project-index/SKILL.md
+- Scan project tree
+- Identify key files and patterns
+- Write to docs/structure.md
+```
 
-* Prefer MCP for: search, file read/write, command execution, internal queries. Use alternatives only if MCP fails; state reason briefly.
-* If MCP unavailable/timeout/error: specify cause briefly and suggest safe manual fallback.
-* For document/code-related queries: call `context7.search` first. Use `top_k <= 5`, request snippets ±3 sentences with metadata. Do not pull full text.
-* For optional params (paths, repo, ruleset), read from `memory.get` before asking user.
-* For pipelines/special checks: call `serena.*`, request concise JSON (summary, next\_actions).
-* Summarize tool output ≤250 words before reasoning; avoid long verbatim dumps.
-* Token limits: input ≤3000, output ≤600. If exceeded, reduce `top_k` or narrow scope.
-* Tool timeout: 8s, 1 retry with lower `top_k`. If still failing: report briefly and propose next step.
-* Do not store secrets in memory. Use memory for short-term context; use context7 for document search.
+---
 
-**MCP decision rules (cost-aware):**
+## 5) Dynamic Context Loading
 
-* Call MCP only when needing unseen content, command execution, or validation. If summarizing known context → do not call.
-* Scope limiting to reduce tokens:
+> **Golden Rule**: Only load context when matching triggers are detected.
 
-  * **search**: `top_k ≤ 5`, narrow queries, ±3 sentence snippets + metadata only.
-  * **read\_file**: use offset/limit, ≤250 lines per read; prefer multiple small reads over full.
-  * **commands/logs**: add `--no-pager`, use `tail/head/grep`; no long dumps.
-* Avoid duplication: don’t repeat prior content; prefer ≤250 word references/summaries.
-* Checkpoint after 3–5 tool calls: summarize ≤100 words of findings; if incomplete, refine query/path before continuing.
-* Abort/shrink if exceeding token budget: if input >3000 or output >600, split queries or reduce `top_k`.
+### Automatic Context Triggers
+- **Keywords**: If the request matches a domain (e.g., "debug", "test", "plan", "review"), ALWAYS load the corresponding **Skill** (`skills/**/SKILL.md`) or **Agent** (`agents/**`) first.
+- **Slash Commands**: Treat `/command` as an explicit instruction to load `commands/<command>.md` (e.g., `/fix`, `/plan`, `/test`).
+- **Complex Tasks**: For multi-step objectives, load `workflows/**` to orchestrate the process.
 
-### Clarifying Ambiguities
+### Hierarchy of Context
+1. **Workflows** (`workflows/**`): High-level orchestration for multi-step processes.
+2. **Agents** (`agents/**`): Specific personas/mindsets for a task type.
+3. **Skills** (`skills/**`): Domain-specific knowledge and playbooks.
+4. **Commands** (`commands/**`): Reusable execution scripts/procedures.
 
-* If lacking info (org/bucket/token, endpoint, test conditions, etc.), ask 1–2 clarifying questions before making changes.
-* Require user to supply missing info; do not guess.
+### Discovery
+If a request is unclear, check `router/decision-flow.md` or scan `skills/` and `commands/` directories to find the best tool for the job. Never guess if a specialized tool exists.
 
-### Example Response Format
+---
 
-* **Requirement**: “…”
-* **Plan**: 1) … 2) … 3) …
-* **Changes**: modified `path:line` …; reason …
-* **Test**: run `command`; expected …
-* **Result**: pass/fail + root cause
+## 6) Execution Discipline
+- **Run only necessary commands**; avoid destructive commands (`rm`, `git reset`...) unless explicitly requested.
+- **Timeout**: Default 60s; cap at 70-80s for potentially long-running commands.
+- **Permission errors**: Explain clearly and propose safe manual steps.
+- **New dependencies**: Do not add unless truly necessary and user agrees.
 
-> **Reminder:** Despite English rules, **all outputs must be in Vietnamese**.
+---
+
+## 7) Auto-Documentation
+After completing impactful changes (feature/bugfix/schema/architecture), update briefly:
+- `README.md`: If stable info (stack/versions/overview) affected.
+- `HANDOFF.md`: Current status + next steps + latest test results.
+- `CHANGELOG.md`: Add one line: `YYYY-MM-DD: <Fix|Add|Change|Remove> <what> at <path> - <impact> (completed).`
+- `docs/structure.md`: If added/removed files or restructured folders.

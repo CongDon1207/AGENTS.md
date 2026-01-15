@@ -1,4 +1,4 @@
----
+﻿---
 name: chrome-devtools
 description: Browser automation, debugging, and performance analysis using Puppeteer CLI scripts. Use for automating browsers, taking screenshots, analyzing performance, monitoring network traffic, web scraping, form automation, and JavaScript debugging.
 license: Apache-2.0
@@ -16,10 +16,10 @@ Skills can exist in **project-scope** or **user-scope**. Priority: project-scope
 ```bash
 # Detect skill location
 SKILL_DIR=""
-if [ -d ".claude/skills/chrome-devtools/scripts" ]; then
-  SKILL_DIR=".claude/skills/chrome-devtools/scripts"
-elif [ -d "$HOME/.claude/skills/chrome-devtools/scripts" ]; then
-  SKILL_DIR="$HOME/.claude/skills/chrome-devtools/scripts"
+if [ -d ".codex/skills/chrome-devtools/scripts" ]; then
+  SKILL_DIR=".codex/skills/chrome-devtools/scripts"
+elif [ -d "$HOME/.codex/skills/chrome-devtools/scripts" ]; then
+  SKILL_DIR="$HOME/.codex/skills/chrome-devtools/scripts"
 fi
 cd "$SKILL_DIR"
 ```
@@ -53,7 +53,7 @@ When page structure is unknown, use `aria-snapshot.js` to get a YAML-formatted a
 node aria-snapshot.js --url https://example.com
 
 # Save to file in snapshots directory
-node aria-snapshot.js --url https://example.com --output ./.claude/chrome-devtools/snapshots/page.yaml
+node aria-snapshot.js --url https://example.com --output ./.codex/chrome-devtools/snapshots/page.yaml
 ```
 
 ### Example YAML Output
@@ -117,15 +117,15 @@ node select-ref.js --ref e5 --action hover
 ### Store Snapshots
 
 Skills can exist in **project-scope** or **user-scope**. Priority: project-scope > user-scope.
-Store snapshots for analysis in `<project>/.claude/chrome-devtools/snapshots/`:
+Store snapshots for analysis in `<project>/.codex/chrome-devtools/snapshots/`:
 
 ```bash
 # Create snapshots directory
-mkdir -p .claude/chrome-devtools/snapshots
+mkdir -p .codex/chrome-devtools/snapshots
 
 # Capture and store with timestamp
 SESSION="$(date +%Y%m%d-%H%M%S)"
-node aria-snapshot.js --url https://example.com --output .claude/chrome-devtools/snapshots/$SESSION.yaml
+node aria-snapshot.js --url https://example.com --output .codex/chrome-devtools/snapshots/$SESSION.yaml
 ```
 
 ### Workflow: Unknown Page Structure
@@ -169,7 +169,7 @@ node navigate.js --url http://localhost:3000
 
 ```bash
 # Install dependencies
-cd .claude/skills/chrome-devtools/scripts
+cd .codex/skills/chrome-devtools/scripts
 npm install  # Installs puppeteer, sharp, debug, yargs
 
 # Test (browser stays running for session reuse)
@@ -205,7 +205,7 @@ node navigate.js --url about:blank --close true
 ## Available Scripts
 
 Skills can exist in **project-scope** or **user-scope**. Priority: project-scope > user-scope.
-All in `.claude/skills/chrome-devtools/scripts/`:
+All in `.codex/skills/chrome-devtools/scripts/`:
 
 | Script | Purpose |
 |--------|---------|
@@ -232,14 +232,14 @@ All in `.claude/skills/chrome-devtools/scripts/`:
 ## Writing Custom Test Scripts
 
 Skills can exist in **project-scope** or **user-scope**. Priority: project-scope > user-scope.
-For complex automation, write scripts to `<project>/.claude/chrome-devtools/tmp/`:
+For complex automation, write scripts to `<project>/.codex/chrome-devtools/tmp/`:
 
 ```bash
 # Create tmp directory for test scripts
-mkdir -p $SKILL_DIR/.claude/chrome-devtools/tmp
+mkdir -p $SKILL_DIR/.codex/chrome-devtools/tmp
 
 # Write a test script
-cat > $SKILL_DIR/.claude/chrome-devtools/tmp/login-test.js << 'EOF'
+cat > $SKILL_DIR/.codex/chrome-devtools/tmp/login-test.js << 'EOF'
 import { getBrowser, getPage, disconnectBrowser, outputJSON } from '../scripts/lib/browser.js';
 
 async function loginTest() {
@@ -265,7 +265,7 @@ loginTest();
 EOF
 
 # Run the test
-node $SKILL_DIR/.claude/chrome-devtools/tmp/login-test.js
+node $SKILL_DIR/.codex/chrome-devtools/tmp/login-test.js
 ```
 
 **Key principles for custom scripts**:
@@ -278,17 +278,17 @@ node $SKILL_DIR/.claude/chrome-devtools/tmp/login-test.js
 ## Screenshots
 
 Skills can exist in **project-scope** or **user-scope**. Priority: project-scope > user-scope.
-Store screenshots for analysis in `<project>/.claude/chrome-devtools/screenshots/`:
+Store screenshots for analysis in `<project>/.codex/chrome-devtools/screenshots/`:
 
 ```bash
 # Basic screenshot
-node screenshot.js --url https://example.com --output ./.claude/chrome-devtools/screenshots/page.png
+node screenshot.js --url https://example.com --output ./.codex/chrome-devtools/screenshots/page.png
 
 # Full page
-node screenshot.js --url https://example.com --output ./.claude/chrome-devtools/screenshots/page.png --full-page true
+node screenshot.js --url https://example.com --output ./.codex/chrome-devtools/screenshots/page.png --full-page true
 
 # Specific element
-node screenshot.js --url https://example.com --selector ".main-content" --output ./.claude/chrome-devtools/screenshots/element.png
+node screenshot.js --url https://example.com --selector ".main-content" --output ./.codex/chrome-devtools/screenshots/element.png
 ```
 
 ### Auto-Compression (Sharp)
@@ -297,16 +297,16 @@ Screenshots >5MB auto-compress using Sharp (4-5x faster than ImageMagick):
 
 ```bash
 # Default: compress if >5MB
-node screenshot.js --url https://example.com --output ./.claude/chrome-devtools/screenshots/page.png
+node screenshot.js --url https://example.com --output ./.codex/chrome-devtools/screenshots/page.png
 
 # Custom threshold (3MB)
-node screenshot.js --url https://example.com --output ./.claude/chrome-devtools/screenshots/page.png --max-size 3
+node screenshot.js --url https://example.com --output ./.codex/chrome-devtools/screenshots/page.png --max-size 3
 
 # Disable compression
-node screenshot.js --url https://example.com --output ./.claude/chrome-devtools/screenshots/page.png --no-compress
+node screenshot.js --url https://example.com --output ./.codex/chrome-devtools/screenshots/page.png --no-compress
 ```
 
-Store screenshots for analysis in `<project>/.claude/chrome-devtools/screenshots/`.
+Store screenshots for analysis in `<project>/.codex/chrome-devtools/screenshots/`.
 
 ## Console Log Collection & Analysis
 
@@ -324,19 +324,19 @@ node console.js --url https://example.com --types error,warn --duration 5000
 
 ### Session Storage Pattern
 
-Store logs for analysis in `<project>/.claude/chrome-devtools/logs/<session>/`:
+Store logs for analysis in `<project>/.codex/chrome-devtools/logs/<session>/`:
 
 ```bash
 # Create session directory
 SESSION="$(date +%Y%m%d-%H%M%S)"
-mkdir -p .claude/chrome-devtools/logs/$SESSION
+mkdir -p .codex/chrome-devtools/logs/$SESSION
 
 # Capture and store
-node console.js --url https://example.com --duration 10000 > .claude/chrome-devtools/logs/$SESSION/console.json
-node network.js --url https://example.com > .claude/chrome-devtools/logs/$SESSION/network.json
+node console.js --url https://example.com --duration 10000 > .codex/chrome-devtools/logs/$SESSION/console.json
+node network.js --url https://example.com > .codex/chrome-devtools/logs/$SESSION/network.json
 
 # View errors
-jq '.messages[] | select(.type=="error")' .claude/chrome-devtools/logs/$SESSION/console.json
+jq '.messages[] | select(.type=="error")' .codex/chrome-devtools/logs/$SESSION/console.json
 ```
 
 ### Root Cause Analysis
@@ -375,7 +375,7 @@ If script fails:
 
 ```bash
 # 1. Capture current state (without navigating to preserve state)
-node screenshot.js --output ./.claude/skills/chrome-devtools/screenshots/debug.png
+node screenshot.js --output ./.codex/skills/chrome-devtools/screenshots/debug.png
 
 # 2. Get console errors
 node console.js --url about:blank --types error --duration 1000
@@ -470,3 +470,4 @@ If images don't appear in screenshots, they may be waiting for animation trigger
 - `./references/puppeteer-reference.md` - Puppeteer API patterns
 - `./references/performance-guide.md` - Core Web Vitals optimization
 - `./scripts/README.md` - Detailed script options
+

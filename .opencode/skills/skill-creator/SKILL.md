@@ -1,6 +1,6 @@
----
+﻿---
 name: skill-creator
-description: Guide for creating effective skills, adding skill references, skill scripts or optimizing existing skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, frameworks, libraries or plugins usage, or API and tool integrations.
+description: Guide for creating effective skills, adding skill references, skill scripts or optimizing existing skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends OpenCode's capabilities with specialized knowledge, workflows, frameworks, libraries or plugins usage, or API and tool integrations.
 license: Complete terms in LICENSE.txt
 ---
 
@@ -10,15 +10,15 @@ This skill provides guidance for creating effective skills.
 
 ## About Skills
 
-Skills are modular, self-contained packages that extend Claude's capabilities by providing
+Skills are modular, self-contained packages that extend OpenCode's capabilities by providing
 specialized knowledge, workflows, and tools. Think of them as "onboarding guides" for specific
-domains or tasks—they transform Claude from a general-purpose agent into a specialized agent
+domains or tasks—they transform OpenCode from a general-purpose agent into a specialized agent
 equipped with procedural knowledge that no model can fully possess.
 
 **IMPORTANT:**
-- Skills are not documentation, they are practical instructions for Claude Code to use the tools, packages, plugins or APIs to achieve the tasks.
-- Each skill teaches Claude how to perform a specific development task, not what a tool does.
-- Claude Code can activate multiple skills automatically to achieve the user's request.
+- Skills are not documentation, they are practical instructions for OpenCode to use the tools, packages, plugins or APIs to achieve the tasks.
+- Each skill teaches OpenCode how to perform a specific development task, not what a tool does.
+- OpenCode can activate multiple skills automatically to achieve the user's request.
 
 ### What Skills Provide
 
@@ -32,19 +32,19 @@ equipped with procedural knowledge that no model can fully possess.
 Every skill consists of a required SKILL.md file and optional bundled resources:
 
 ```
-.claude/skills/
-└── skill-name/
-    ├── SKILL.md (required)
-    │   ├── YAML frontmatter metadata (required)
-    │   │   ├── name: (required)
-    │   │   ├── description: (required)
-    │   │   ├── license: (optional)
-    │   │   └── version: (optional)
-    │   └── Markdown instructions (required)
-    └── Bundled Resources (optional)
-        ├── scripts/          - Executable code (Python/Bash/etc.)
-        ├── references/       - Documentation intended to be loaded into context as needed
-        └── assets/           - Files used in output (templates, icons, fonts, etc.)
+.opencode/skills/
+â””â”€â”€ skill-name/
+    â”œâ”€â”€ SKILL.md (required)
+    â”‚   â”œâ”€â”€ YAML frontmatter metadata (required)
+    â”‚   â”‚   â”œâ”€â”€ name: (required)
+    â”‚   â”‚   â”œâ”€â”€ description: (required)
+    â”‚   â”‚   â”œâ”€â”€ license: (optional)
+    â”‚   â”‚   â””â”€â”€ version: (optional)
+    â”‚   â””â”€â”€ Markdown instructions (required)
+    â””â”€â”€ Bundled Resources (optional)
+        â”œâ”€â”€ scripts/          - Executable code (Python/Bash/etc.)
+        â”œâ”€â”€ references/       - Documentation intended to be loaded into context as needed
+        â””â”€â”€ assets/           - Files used in output (templates, icons, fonts, etc.)
 ```
 
 #### Requirements (**IMPORTANT**)
@@ -52,14 +52,14 @@ Every skill consists of a required SKILL.md file and optional bundled resources:
 - Skill should be combined into specific topics, for example: `cloudflare`, `cloudflare-r2`, `cloudflare-workers`, `docker`, `gcloud` should be combined into `devops`
 - `SKILL.md` should be **less than 100 lines** and include the references of related markdown files and scripts.
 - Each script or referenced markdown file should be also **less than 100 lines**, remember that you can always split them into multiple files (**progressive disclosure** principle).
-- Descriptions in metadata of `SKILL.md` files should be both concise and still contains enough usecases of the references and scripts, this will help skills can be activated automatically during the implementation process of Claude Code.
+- Descriptions in metadata of `SKILL.md` files should be both concise and still contains enough usecases of the references and scripts, this will help skills can be activated automatically during the implementation process of OpenCode.
 - **Referenced markdowns**:
   - Sacrifice grammar for the sake of concision when writing these files.
   - Can reference other markdown files or scripts as well.
 - **Referenced scripts**:
   - Prefer nodejs or python scripts instead of bash script, because bash scripts are not well-supported on Windows.
   - If you're going to write python scripts, make sure you have `requirements.txt`
-  - Make sure scripts respect `.env` file follow this order: `process.env` > `.claude/skills/${SKILL}/.env` > `.claude/skills/.env` > `.claude/.env` 
+  - Make sure scripts respect `.env` file follow this order: `process.env` > `.opencode/skills/${SKILL}/.env` > `.opencode/skills/.env` > `.opencode/.env` 
   - Create `.env.example` files to show the required environment variables.
   - Always write tests for these scripts.
 
@@ -70,7 +70,7 @@ Every skill consists of a required SKILL.md file and optional bundled resources:
 - Referenced scripts: no limit on length, just make sure it works, no compile issues, no runtime issues, no dependencies issues, no environment issues, no platform issues.
 
 **Why?**
-Better **context engineering**: leverage **progressive disclosure** technique of Agent Skills, when agent skills are activated, Claude Code will consider to load only relevant files into the context, instead of reading all long `SKILL.md` as before.
+Better **context engineering**: leverage **progressive disclosure** technique of Agent Skills, when agent skills are activated, OpenCode will consider to load only relevant files into the context, instead of reading all long `SKILL.md` as before.
 
 #### SKILL.md (required)
 
@@ -78,7 +78,7 @@ Better **context engineering**: leverage **progressive disclosure** technique of
 **File size:** Under 100 lines, if you need more, plit it to multiple files in `references` folder.
 `SKILL.md` is always short and concise, straight to the point, treat it as a quick reference guide.
 
-**Metadata Quality:** The `name` and `description` in YAML frontmatter determine when Claude will use the skill. Be specific about what the skill does and when to use it. Use the third-person (e.g. "This skill should be used when..." instead of "Use this skill when...").
+**Metadata Quality:** The `name` and `description` in YAML frontmatter determine when OpenCode will use the skill. Be specific about what the skill does and when to use it. Use the third-person (e.g. "This skill should be used when..." instead of "Use this skill when...").
 
 #### Bundled Resources (optional)
 
@@ -89,38 +89,38 @@ Executable code (Python/Bash/etc.) for tasks that require deterministic reliabil
 - **When to include**: When the same code is being rewritten repeatedly or deterministic reliability is needed
 - **Example**: `scripts/rotate_pdf.py` for PDF rotation tasks
 - **Benefits**: Token efficient, deterministic, may be executed without loading into context
-- **Note**: Scripts may still need to be read by Claude for patching or environment-specific adjustments
+- **Note**: Scripts may still need to be read by OpenCode for patching or environment-specific adjustments
 
 **IMPORTANT:**
 - Write tests for scripts.
 - Run tests and make sure it works, if tests fail, fix them and run tests again, repeat until tests pass.
 - Run scripts manually with some usecases to make sure it works.
-- Make sure scripts respect `.env` file follow this order: `process.env` > `.claude/skills/docs-seeker/.env` > `.claude/skills/.env` > `.claude/.env`
+- Make sure scripts respect `.env` file follow this order: `process.env` > `.opencode/skills/docs-seeker/.env` > `.opencode/skills/.env` > `.opencode/.env`
 
 ##### References (`references/`)
 
-Documentation and reference material intended to be loaded as needed into context to inform Claude's process and thinking.
+Documentation and reference material intended to be loaded as needed into context to inform OpenCode's process and thinking.
 
-- **When to include**: For documentation that Claude should reference while working
+- **When to include**: For documentation that OpenCode should reference while working
 - **Examples**: `references/finance.md` for financial schemas, `references/mnda.md` for company NDA template, `references/policies.md` for company policies, `references/api_docs.md` for API specifications
 - **Use cases**: Database schemas, API documentation, domain knowledge, company policies, detailed workflow guides
-- **Benefits**: Keeps SKILL.md lean, loaded only when Claude determines it's needed
+- **Benefits**: Keeps SKILL.md lean, loaded only when OpenCode determines it's needed
 - **Best practice**: If files are large (>100 lines), include grep search patterns in SKILL.md
 - **Avoid duplication**: Information should live in either SKILL.md or references files, not both. Prefer references files for detailed information unless it's truly core to the skill—this keeps SKILL.md lean while making information discoverable without hogging the context window. Keep only essential procedural instructions and workflow guidance in SKILL.md; move detailed reference material, schemas, and examples to references files.
 
 **IMPORTANT:**
 - Referenced markdown files should be also **less than 100 lines**, remember that you can always split them into multiple files (**progressive disclosure** principle).
-- Referenced markdown files are practical instructions for Claude Code to use the tools, packages, plugins or APIs to achieve the tasks.
-- Each skill teaches Claude how to perform a specific development task, not what a tool does.
+- Referenced markdown files are practical instructions for OpenCode to use the tools, packages, plugins or APIs to achieve the tasks.
+- Each skill teaches OpenCode how to perform a specific development task, not what a tool does.
 
 ##### Assets (`assets/`)
 
-Files not intended to be loaded into context, but rather used within the output Claude produces.
+Files not intended to be loaded into context, but rather used within the output OpenCode produces.
 
 - **When to include**: When the skill needs files that will be used in the final output
 - **Examples**: `assets/logo.png` for brand assets, `assets/slides.pptx` for PowerPoint templates, `assets/frontend-template/` for HTML/React boilerplate, `assets/font.ttf` for typography
 - **Use cases**: Templates, images, icons, boilerplate code, fonts, sample documents that get copied or modified
-- **Benefits**: Separates output resources from documentation, enables Claude to use files without loading them into context
+- **Benefits**: Separates output resources from documentation, enables OpenCode to use files without loading them into context
 
 ### Progressive Disclosure Design Principle
 
@@ -128,7 +128,7 @@ Skills use a three-level loading system to manage context efficiently:
 
 1. **Metadata (name + description)** - Always in context (~100 words)
 2. **SKILL.md body** - When skill triggers (<5k words)
-3. **Bundled resources** - As needed by Claude (Unlimited*)
+3. **Bundled resources** - As needed by OpenCode (Unlimited*)
 
 *Unlimited because scripts can be executed without reading into context window.
 
@@ -177,7 +177,7 @@ Example: When building a `big-query` skill to handle queries like "How many user
 
 To establish the skill's contents, analyze each concrete example to create a list of the reusable resources to include: scripts, references, and assets.
 
-- Make sure scripts respect `.env` file follow this order: `process.env` > `.claude/skills/docs-seeker/.env` > `.claude/skills/.env` > `.claude/.env`
+- Make sure scripts respect `.env` file follow this order: `process.env` > `.opencode/skills/docs-seeker/.env` > `.opencode/skills/.env` > `.opencode/.env`
 - Make sure scripts have tests.
 
 ### Step 3: Initializing the Skill
@@ -205,7 +205,7 @@ After initialization, customize or remove the generated SKILL.md and example fil
 
 ### Step 4: Edit the Skill
 
-When editing the (newly-generated or existing) skill, remember that the skill is being created for another instance of Claude to use. Focus on including information that would be beneficial and non-obvious to Claude. Consider what procedural knowledge, domain-specific details, or reusable assets would help another Claude instance execute these tasks more effectively.
+When editing the (newly-generated or existing) skill, remember that the skill is being created for another instance of OpenCode to use. Focus on including information that would be beneficial and non-obvious to OpenCode. Consider what procedural knowledge, domain-specific details, or reusable assets would help another OpenCode instance execute these tasks more effectively.
 
 #### Start with Reusable Skill Contents
 
@@ -221,7 +221,7 @@ To complete SKILL.md, answer the following questions:
 
 1. What is the purpose of the skill, in a few sentences?
 2. When should the skill be used?
-3. In practice, how should Claude use the skill? All reusable skill contents developed above should be referenced so that Claude knows how to use them.
+3. In practice, how should OpenCode use the skill? All reusable skill contents developed above should be referenced so that OpenCode knows how to use them.
 
 ### Step 5: Packaging a Skill
 
@@ -260,7 +260,8 @@ After testing the skill, users may request improvements. Often this happens righ
 4. Implement changes and test again
 
 ## References
-- [Agent Skills](https://docs.claude.com/en/docs/claude-code/skills.md)
-- [Agent Skills Spec](.claude/skills/agent_skills_spec.md)
-- [Agent Skills Overview](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview.md)
-- [Best Practices](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices.md)
+- [Agent Skills](https://docs.OpenCode.com/en/docs/OpenCode-code/skills.md)
+- [Agent Skills Spec](.opencode/skills/agent_skills_spec.md)
+- [Agent Skills Overview](https://docs.OpenCode.com/en/docs/agents-and-tools/agent-skills/overview.md)
+- [Best Practices](https://docs.OpenCode.com/en/docs/agents-and-tools/agent-skills/best-practices.md)
+

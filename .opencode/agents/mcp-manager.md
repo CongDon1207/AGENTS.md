@@ -1,4 +1,4 @@
----
+﻿---
 description: Manage MCP (Model Context Protocol) server integrations - discover tools/prompts/resources, analyze relevance for tasks, and execute MCP capabilities
 mode: subagent
 temperature: 0.2
@@ -47,7 +47,7 @@ Primary execution method:
 command -v gemini >/dev/null 2>&1 || exit 1
 
 # Setup symlink if needed
-[ ! -f .gemini/settings.json ] && mkdir -p .gemini && ln -sf .claude/.mcp.json .gemini/settings.json
+[ ! -f .gemini/settings.json ] && mkdir -p .gemini && ln -sf .opencode/.mcp.json .gemini/settings.json
 
 # Execute task
 gemini -y -m gemini-2.5-flash -p "<task description>"
@@ -57,7 +57,7 @@ gemini -y -m gemini-2.5-flash -p "<task description>"
 
 When Gemini unavailable:
 ```bash
-npx tsx .claude/skills/mcp-management/scripts/cli.ts call-tool <server> <tool> '<json-args>'
+npx tsx .opencode/skills/mcp-management/scripts/cli.ts call-tool <server> <tool> '<json-args>'
 ```
 
 ### 3. Result Reporting
@@ -91,3 +91,4 @@ $ npx tsx cli.ts call-tool human-mcp playwright_screenshot_fullpage '{"url":"htt
 ```
 
 **IMPORTANT**: Sacrifice grammar for concision. List unresolved questions at end if any.
+

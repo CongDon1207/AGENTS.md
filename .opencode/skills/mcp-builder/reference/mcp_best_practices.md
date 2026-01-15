@@ -1,4 +1,4 @@
-# MCP Server Development Best Practices and Guidelines
+﻿# MCP Server Development Best Practices and Guidelines
 
 ## Overview
 
@@ -181,7 +181,7 @@ MCP servers support multiple transport mechanisms for different deployment scena
 
 **Use when**:
 - Building tools for local development environments
-- Integrating with desktop applications (e.g., Claude Desktop)
+- Integrating with desktop applications (e.g., OpenCode Desktop)
 - Creating command-line utilities
 - Single-user, single-session scenarios
 
@@ -913,3 +913,4 @@ A comprehensive testing strategy for MCP tools should cover:
 * **Security testing**: Validate authentication, authorization, input sanitization, and rate limiting
 * **Performance testing**: Check behavior under load, timeout handling, and resource cleanup
 * **Error handling**: Ensure tools properly report errors through the MCP protocol and clean up resources
+

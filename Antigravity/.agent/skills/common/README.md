@@ -1,4 +1,4 @@
-# Common Skill Utilities
+﻿# Common Skill Utilities
 
 This directory contains shared utilities used across multiple skills.
 
@@ -36,19 +36,19 @@ The helper checks for `GEMINI_API_KEY` in this order:
    echo 'GEMINI_API_KEY=your-api-key' > .env
    ```
 
-3. **.claude/.env file**
+3. **.agent/.env file**
    ```bash
-   echo 'GEMINI_API_KEY=your-api-key' > .claude/.env
+   echo 'GEMINI_API_KEY=your-api-key' > .agent/.env
    ```
 
-4. **.claude/skills/.env file** (shared across all Gemini skills)
+4. **.agent/skills/.env file** (shared across all Gemini skills)
    ```bash
-   echo 'GEMINI_API_KEY=your-api-key' > .claude/skills/.env
+   echo 'GEMINI_API_KEY=your-api-key' > .agent/skills/.env
    ```
 
 5. **Skill directory `.env` file**
    ```bash
-   echo 'GEMINI_API_KEY=your-api-key' > .claude/skills/your-skill/.env
+   echo 'GEMINI_API_KEY=your-api-key' > .agent/skills/your-skill/.env
    ```
 
 ### Vertex AI Support
@@ -118,3 +118,4 @@ If the API key is not found, the helper will:
 For Vertex AI, if `VERTEX_PROJECT_ID` is missing when `GEMINI_USE_VERTEX=true`, the helper will provide clear instructions.
 
 This ensures users get immediate, actionable feedback when configuration is missing.
+

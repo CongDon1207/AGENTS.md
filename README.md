@@ -66,3 +66,9 @@ Extend the system by adding Markdown files to the respective directories:
 ## 📄 License
 
 Apache 2.0 - See [LICENSE](LICENSE) for details.
+
+---
+
+## 🌎 Acknowledgments & Attribution
+
+This repository is compiled from multiple public open-source repositories. I am not the original author of the underlying content; my contribution lies in selecting, customizing, and adapting it to fit specific use cases and workflows. All credit belongs to the original authors and the open-source community.

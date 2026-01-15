@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 /**
  * Project Structure Scanner
  * Cross-platform script to generate an AI-friendly project map + directory tree.
@@ -133,7 +133,7 @@ function describeTopLevelEntry(name, isDir) {
   if (['scripts', 'tools'].includes(lower)) return 'Automation scripts / tooling';
   if (['public', 'static', 'assets'].includes(lower)) return 'Static assets';
   if (lower === '.github') return 'GitHub configuration (CI, templates, workflows)';
-  if (lower === '.claude') return 'AI tooling / agent workflows (project-local)';
+  if (lower === '.OpenCode') return 'AI tooling / agent workflows (project-local)';
   if (lower === '.codex') return 'Codex CLI skills / configuration (project-local)';
   if (['infra', 'infrastructure', 'deploy', 'ops', 'k8s', 'terraform'].includes(lower)) {
     return 'Infrastructure / deployment';
@@ -415,3 +415,4 @@ if (require.main === module) {
 }
 
 module.exports = { ProjectScanner };
+

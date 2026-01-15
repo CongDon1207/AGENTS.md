@@ -1,4 +1,4 @@
----
+﻿---
 name: planning
 description: Use when you need to plan technical solutions that are scalable, secure, and maintainable.
 license: MIT
@@ -61,19 +61,19 @@ Load: `references/output-standards.md`
 **Plan Directory Structure**
 ```
 plans/
-└── {date}-plan-name/
-    ├── research/
-    │   ├── researcher-XX-report.md
-    │   └── ...
-    ├── reports/
-    │   ├── XX-report.md
-    │   └── ...
-    ├── scout/
-    │   ├── scout-XX-report.md
-    │   └── ...
-    ├── plan.md
-    ├── phase-XX-phase-name-here.md
-    └── ...
+â””â”€â”€ {date}-plan-name/
+    â”œâ”€â”€ research/
+    â”‚   â”œâ”€â”€ researcher-XX-report.md
+    â”‚   â””â”€â”€ ...
+    â”œâ”€â”€ reports/
+    â”‚   â”œâ”€â”€ XX-report.md
+    â”‚   â””â”€â”€ ...
+    â”œâ”€â”€ scout/
+    â”‚   â”œâ”€â”€ scout-XX-report.md
+    â”‚   â””â”€â”€ ...
+    â”œâ”€â”€ plan.md
+    â”œâ”€â”€ phase-XX-phase-name-here.md
+    â””â”€â”€ ...
 ```
 
 ## Active Plan State
@@ -92,7 +92,7 @@ Check the `## Plan Context` section injected by hooks:
 1. **If "Plan:" shows a path**: Ask "Continue with existing plan? [Y/n]"
 2. **If "Suggested:" shows a path**: Inform user, ask if they want to activate or create new
 3. **If "Plan: none"**: Create new plan using naming from `## Naming` section
-4. **Update on create**: Run `node .claude/scripts/set-active-plan.cjs {plan-dir}`
+4. **Update on create**: Run `node .codex/scripts/set-active-plan.cjs {plan-dir}`
 
 ### Report Output Location
 
@@ -113,3 +113,4 @@ All agents writing reports MUST:
 - Validate against existing codebase patterns
 
 **Remember:** Plan quality determines implementation success. Be comprehensive and consider all solution aspects.
+

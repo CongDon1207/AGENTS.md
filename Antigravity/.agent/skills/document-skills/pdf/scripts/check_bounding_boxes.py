@@ -1,9 +1,9 @@
-from dataclasses import dataclass
+﻿from dataclasses import dataclass
 import json
 import sys
 
 
-# Script to check that the `fields.json` file that Claude creates when analyzing PDFs
+# Script to check that the `fields.json` file that Antigravity creates when analyzing PDFs
 # does not have overlapping bounding boxes. See forms.md.
 
 
@@ -14,7 +14,7 @@ class RectAndField:
     field: dict
 
 
-# Returns a list of messages that are printed to stdout for Claude to read.
+# Returns a list of messages that are printed to stdout for Antigravity to read.
 def get_bounding_box_messages(fields_json_stream) -> list[str]:
     messages = []
     fields = json.load(fields_json_stream)
@@ -68,3 +68,4 @@ if __name__ == "__main__":
         messages = get_bounding_box_messages(f)
     for msg in messages:
         print(msg)
+

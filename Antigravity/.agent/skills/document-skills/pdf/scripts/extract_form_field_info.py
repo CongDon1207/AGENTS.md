@@ -1,11 +1,11 @@
-import json
+﻿import json
 import sys
 
 from pypdf import PdfReader
 
 
 # Extracts data for the fillable form fields in a PDF and outputs JSON that
-# Claude uses to fill the fields. See forms.md.
+# Antigravity uses to fill the fields. See forms.md.
 
 
 # This matches the format used by PdfReader `get_fields` and `update_page_form_field_values` methods.
@@ -150,3 +150,4 @@ if __name__ == "__main__":
         print("Usage: extract_form_field_info.py [input pdf] [output json]")
         sys.exit(1)
     write_field_info(sys.argv[1], sys.argv[2])
+

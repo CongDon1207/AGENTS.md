@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 Excel Formula Recalculation Script
 Recalculates all formulas in an Excel file using LibreOffice
@@ -12,7 +12,7 @@ import platform
 from pathlib import Path
 
 # Windows UTF-8 compatibility
-sys.path.insert(0, str(Path.home() / '.claude' / 'scripts'))
+sys.path.insert(0, str(Path.home() / '.Codex' / 'scripts'))
 try:
     from win_compat import ensure_utf8_stdout
     ensure_utf8_stdout()

@@ -1,4 +1,4 @@
-# Usage Patterns
+﻿# Usage Patterns
 
 Practical workflows and patterns for using Repomix in different scenarios.
 
@@ -144,9 +144,9 @@ repomix --include "$(cat staged-files.txt | tr '\n' ',')" -o .context/latest.xml
 {"version": "2.0.0", "tasks": [{"label": "Package for AI", "type": "shell", "command": "repomix --include 'src/**' --remove-comments --copy"}]}
 ```
 
-### Claude Code
+### Antigravity
 ```bash
-repomix --style markdown --copy  # Then paste into Claude
+repomix --style markdown --copy  # Then paste into Antigravity
 ```
 
 ## Language-Specific Patterns
@@ -230,3 +230,4 @@ npx repomix --remote https://github.com/owner/repo/commit/abc123  # Specific com
 **Review:** Verify no sensitive data → check completeness → validate format → test with LLM
 
 **Iteration:** Refine patterns → adjust format → optimize tokens → document patterns
+

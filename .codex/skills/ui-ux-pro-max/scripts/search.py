@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 UI/UX Pro Max Search - BM25 search engine for UI/UX style guides
@@ -13,7 +13,7 @@ from core import CSV_CONFIG, AVAILABLE_STACKS, MAX_RESULTS, search, search_stack
 
 
 def format_output(result):
-    """Format results for Claude consumption (token-optimized)"""
+    """Format results for Codex consumption (token-optimized)"""
     if "error" in result:
         return f"Error: {result['error']}"
 
@@ -59,3 +59,4 @@ if __name__ == "__main__":
         print(json.dumps(result, indent=2, ensure_ascii=False))
     else:
         print(format_output(result))
+

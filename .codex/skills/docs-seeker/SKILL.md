@@ -1,4 +1,4 @@
----
+﻿---
 name: docs-seeker
 description: "Search technical documentation using executable scripts to detect query type, fetch from llms.txt sources (context7.com), and analyze results. Use when user needs: (1) Topic-specific documentation (features/components/concepts), (2) Library/framework documentation, (3) GitHub repository analysis, (4) Documentation discovery with automated agent distribution strategy"
 version: 3.1.0
@@ -92,6 +92,7 @@ cat llms.txt | node scripts/analyze-llms-txt.js -  # → {totalUrls, distributio
 
 ## Environment
 
-Scripts load `.env`: `process.env` > `.claude/skills/docs-seeker/.env` > `.claude/skills/.env` > `.claude/.env`
+Scripts load `.env`: `process.env` > `.codex/skills/docs-seeker/.env` > `.codex/skills/.env` > `.codex/.env`
 
 See `.env.example` for configuration options.
+

@@ -72,12 +72,68 @@ Use `code-review` skills to perform comprehensive code quality assessment and be
    - You can use `/scout:ext` (preferred) or `/scout` (fallback) slash command to search the codebase for files needed to complete the task
    - You wait for all scout agents to report back before proceeding with analysis
 
-2. **Systematic Review**: Work through each concern area methodically:
+2. **Two-Phase Report-Driven Review** (CRITICAL):
+
+   **MUST generate TodoWrite tasks for BOTH phases:**
+   ```
+   Phase 1 todos:
+   - [ ] Create review report file
+   - [ ] Review [file1] - document in report
+   - [ ] Review [file2] - document in report
+   - [ ] ... (one todo per changed file)
+
+   Phase 2 todos:
+   - [ ] Read accumulated report for big picture
+   - [ ] Assess architecture coherence
+   - [ ] Generate final recommendations
+   ```
+
+   **ALWAYS create a report file FIRST** using naming pattern from `## Naming` section.
+
+   **Phase 1: File-by-File Review (Build Report)**
+   For EACH changed file, review and UPDATE the report with:
+   ```markdown
+   ### [filename]
+   - **Change Summary:** [what changed]
+   - **Purpose:** [why this change was made]
+   - **Issues Found:** [list any problems]
+   - **Suggestions:** [improvements if any]
+   ```
+
+   Review each file for:
+   - Code quality and adherence to standards
+   - Correct patterns and anti-patterns
+   - Performance issues within the file
+   - Security vulnerabilities
+   - Naming and readability
+
+   **Phase 2: Holistic Review (Review the Report)**
+   After ALL files reviewed, READ the accumulated report and generate FINAL assessment:
+   - Review the report as a whole to see big picture
+   - Evaluate technical solution plan completeness
+   - Check responsibility placement: Are new files/methods in the right layer?
+   - Detect code duplication across files (same logic in multiple places)
+   - Assess architecture coherence: Does the solution follow Clean Architecture?
+   - Backend: Are CQRS patterns correct? Event handlers vs direct calls?
+   - Frontend: Are components, stores, services properly separated?
+   - Cross-cutting: Is the feature split correctly between backend and frontend?
+   - Generate final recommendations prioritized by severity
+
+3. **Systematic Review**: Work through each concern area methodically:
    - **Class Responsibility Violations** (CRITICAL - check first):
      - Backend: Mapping methods in Handler → should be in Command/DTO
      - Frontend: Constants at module level → should be static in Model class
      - Frontend: Display logic in Component → should be getter in Model
      - Frontend: Column arrays in Component → should be static in Model
+   - **Magic Numbers** (check for unexplained literals):
+     - Flag: `if (status == 3)`, `timeout = 30000`, `retry > 5`
+     - Fix: Use named constants (`StatusApproved`, `DEFAULT_TIMEOUT_MS`, `MAX_RETRY_COUNT`)
+   - **Naming Issues** (check for clarity and intent):
+     - Flag: vague names (`data`, `temp`, `val`, `result`), abbreviations (`usr`, `mgr`, `cnt`)
+     - Fix: Descriptive names revealing intent (`userData`, `validatedOrders`, `userCount`)
+   - **Performance Issues** (CRITICAL):
+     - Flag: O(n²) nested loops, GetAll then Select one property, GetAll without pagination
+     - Fix: Use dictionary/lookup for O(n), project in query, always use PageBy()
    - Code structure and organization
    - Logic correctness and edge cases
    - Type safety and error handling
@@ -114,6 +170,21 @@ Structure your review as a comprehensive report with:
 
 ### Overall Assessment
 [Brief overview of code quality and main findings]
+
+### Holistic Architecture Review
+**Changes Summary:** [What the total changes accomplish as a technical solution]
+
+| Aspect | Assessment | Issues Found |
+|--------|------------|--------------|
+| Responsibility Placement | ✅/⚠️/❌ | [Are new files/methods in correct layers?] |
+| Code Duplication | ✅/⚠️/❌ | [Same logic duplicated across files?] |
+| Architecture Coherence | ✅/⚠️/❌ | [Follows Clean Architecture?] |
+| Backend Patterns | ✅/⚠️/❌ | [CQRS, events, repositories correct?] |
+| Frontend Patterns | ✅/⚠️/❌ | [Components, stores, services separated?] |
+| Backend-Frontend Split | ✅/⚠️/❌ | [Feature correctly distributed?] |
+
+**Architecture Improvements Needed:**
+- [List any architectural issues that need fixing]
 
 ### Class Responsibility Violations
 | File   | Violation      | Fix          |

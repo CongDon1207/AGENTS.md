@@ -1,15 +1,4 @@
 - category: ai-ml
-  description: Write and optimize prompts for AI-generated outcomes across text and
-    image models. Use when crafting prompts for LLMs (Claude, GPT, Gemini), image
-    generators (Midjourney, DALL-E, Stable Diffusion, Imagen, Flux), or video generators
-    (Veo, Runway). Covers prompt structure, style keywords, negative prompts, chain-of-thought,
-    few-shot examples, iterative refinement, and domain-specific patterns for marketing,
-    code, and creative writing.
-  has_references: true
-  has_scripts: false
-  name: ai-artist
-  path: ai-artist/SKILL.md
-- category: ai-ml
   description: Process and generate multimedia content using Google Gemini API for
     better vision capabilities. Capabilities include analyze audio files (transcription
     with timestamps, summarization, speech understanding, music/sound analysis up
@@ -29,27 +18,6 @@
   has_scripts: true
   name: ai-multimodal
   path: ai-multimodal/SKILL.md
-- category: other
-  description: Quick decision guide for cross-service communication patterns. For
-    implementation details, use the backend-message-bus skill.
-  has_references: false
-  has_scripts: false
-  name: arch-cross-service-integration
-  path: arch-cross-service-integration/SKILL.md
-- category: other
-  description: Use when analyzing and improving performance for database queries,
-    API endpoints, or frontend rendering.
-  has_references: false
-  has_scripts: false
-  name: arch-performance-optimization
-  path: arch-performance-optimization/SKILL.md
-- category: other
-  description: Use when reviewing code for security vulnerabilities, implementing
-    authorization, or ensuring data protection.
-  has_references: false
-  has_scripts: false
-  name: arch-security-review
-  path: arch-security-review/SKILL.md
 - category: backend
   description: Build robust backend systems with modern technologies (Node.js, Python,
     Go, Rust), frameworks (NestJS, FastAPI, Django), databases (PostgreSQL, MongoDB,
@@ -76,24 +44,6 @@
   has_scripts: true
   name: better-auth
   path: better-auth/SKILL.md
-- category: other
-  description: Use when the user asks to compare branches, analyze git diffs, review
-    changes between branches, update specifications based on code changes, or analyze
-    what changed. Triggers on keywords like "compare branches", "git diff", "what
-    changed", "branch comparison", "code changes", "spec update".
-  has_references: false
-  has_scripts: false
-  name: branch-comparison
-  path: branch-comparison/SKILL.md
-- category: other
-  description: Use when the user asks to debug, diagnose, fix a bug, troubleshoot
-    errors, investigate issues, or pastes error messages/stack traces. Triggers on
-    keywords like "bug", "error", "fix", "not working", "broken", "debug", "stack
-    trace", "exception", "crash", "issue".
-  has_references: false
-  has_scripts: false
-  name: bug-diagnosis
-  path: bug-diagnosis/SKILL.md
 - category: multimedia
   description: Browser automation, debugging, and performance analysis using Puppeteer
     CLI scripts. Use for automating browsers, taking screenshots, analyzing performance,
@@ -102,17 +52,6 @@
   has_scripts: true
   name: chrome-devtools
   path: chrome-devtools/SKILL.md
-- category: dev-tools
-  description: Activate when users ask about Claude Code installation, slash commands
-    (/cook, /plan, /fix, /test, /docs, /design, /git), creating/managing Agent Skills,
-    configuring MCP servers, setting up hooks/plugins, IDE integration (VS Code, JetBrains),
-    CI/CD workflows, enterprise deployment (SSO, RBAC, sandboxing), troubleshooting
-    authentication/performance issues, or advanced features (extended thinking, caching,
-    checkpointing).
-  has_references: true
-  has_scripts: false
-  name: claude-code
-  path: claude-code/skill.md
 - category: utilities
   description: Use when receiving code review feedback (especially if unclear or technically
     questionable), when completing tasks or major features requiring review before
@@ -125,6 +64,14 @@
   has_scripts: false
   name: code-review
   path: code-review/SKILL.md
+- category: utilities
+  description: Simplifies and refines code for clarity, consistency, and maintainability
+    while preserving all functionality. Focuses on recently modified code unless instructed
+    otherwise. Uses code-simplifier:code-simplifier subagent for execution.
+  has_references: false
+  has_scripts: false
+  name: code-simplifier
+  path: code-simplifier/SKILL.md
 - category: database
   description: Work with MongoDB (document database, BSON documents, aggregation pipelines,
     Atlas cloud) and PostgreSQL (relational database, SQL queries, psql CLI, pgAdmin).
@@ -146,15 +93,6 @@
   has_scripts: true
   name: debugging
   path: debugging/SKILL.md
-- category: other
-  description: Analyzes your recent Claude Code chat history to identify coding patterns,
-    development gaps, and areas for improvement, curates relevant learning resources
-    from HackerNews, and automatically sends a personalized growth report to your
-    Slack DMs.
-  has_references: false
-  has_scripts: false
-  name: developer-growth-analysis
-  path: developer-growth-analysis/SKILL.md
 - category: infrastructure
   description: Deploy and manage cloud infrastructure on Cloudflare (Workers, R2,
     D1, KV, Pages, Durable Objects, Browser Rendering), Docker containers, and Google
@@ -216,60 +154,6 @@
   has_scripts: false
   name: document-skills/xlsx
   path: document-skills/xlsx/SKILL.md
-- category: other
-  description: Use for PLANNING documentation with phased analysis (4 phases), gap
-    identification, and structured knowledge modeling. Best for documentation audits,
-    completeness analysis, and documentation strategy planning. NOT for writing actual
-    docs (use tasks-documentation instead).
-  has_references: false
-  has_scripts: false
-  name: documentation
-  path: documentation/SKILL.md
-- category: other
-  description: Generates creative domain name ideas for your project and checks availability
-    across multiple TLDs (.com, .io, .dev, .ai, etc.). Saves hours of brainstorming
-    and manual checking.
-  has_references: false
-  has_scripts: false
-  name: domain-name-brainstormer
-  path: domain-name-brainstormer/SKILL.md
-- category: other
-  description: Use AFTER any code changes (feature implementation, bug fix, refactor)
-    to enforce mandatory dual-pass review. First pass reviews unstaged changes for
-    correctness and convention compliance. Second pass ONLY executes if first pass
-    made any corrections. Ensures work follows project conventions, development rules,
-    and best practices before task completion.
-  has_references: false
-  has_scripts: false
-  name: dual-pass-review
-  path: dual-pass-review/SKILL.md
-- category: other
-  description: Use when the user asks to generate comprehensive feature documentation
-    with verified test cases, create feature README with code evidence, or document
-    a complete feature with test verification. Triggers on keywords like "feature
-    documentation", "document feature", "comprehensive docs", "feature README", "test
-    verification", "verified documentation".
-  has_references: false
-  has_scripts: false
-  name: feature-docs
-  path: feature-docs/SKILL.md
-- category: other
-  description: Use when the user asks to implement a new feature, enhancement, add
-    functionality, build something new, or create new capabilities. Triggers on keywords
-    like "implement", "add feature", "build", "create new", "develop", "enhancement".
-  has_references: false
-  has_scripts: false
-  name: feature-implementation
-  path: feature-implementation/SKILL.md
-- category: other
-  description: Use when the user asks to investigate, understand, explore, or explain
-    how a feature works, asks about existing logic, or wants to understand code flow.
-    Triggers on keywords like "how does", "explain", "investigate", "understand",
-    "what does", "where is", "how works", "logic flow", "trace", "explore feature".
-  has_references: false
-  has_scripts: false
-  name: feature-investigation
-  path: feature-investigation/SKILL.md
 - category: frontend
   description: Create distinctive, production-grade frontend interfaces with high
     design quality. Use this skill when the user asks to build web components, pages,
@@ -355,15 +239,6 @@
   has_scripts: false
   name: mobile-development
   path: mobile-development/SKILL.md
-- category: other
-  description: Use when the user asks to analyze package upgrades, check for outdated
-    dependencies, plan npm/NuGet updates, or assess breaking changes in package updates.
-    Triggers on keywords like "upgrade packages", "outdated", "npm update", "breaking
-    changes", "dependency upgrade", "package update", "version upgrade".
-  has_references: false
-  has_scripts: false
-  name: package-upgrade
-  path: package-upgrade/SKILL.md
 - category: backend
   description: Implement payment integrations with SePay (Vietnamese payment gateway
     with VietQR, bank transfers, cards) and Polar (global SaaS monetization platform
@@ -377,15 +252,6 @@
   has_scripts: true
   name: payment-integration
   path: payment-integration/SKILL.md
-- category: other
-  description: Use when the user provides an implementation plan file and asks to
-    analyze it, assess impact, update specifications, or verify planned changes. Triggers
-    on keywords like "analyze plan", "implementation plan", "assess impact", "update
-    spec from plan", "verify plan".
-  has_references: false
-  has_scripts: false
-  name: plan-analysis
-  path: plan-analysis/SKILL.md
 - category: utilities
   description: Use when you need to plan technical solutions that are scalable, secure,
     and maintainable.
@@ -393,15 +259,6 @@
   has_scripts: false
   name: planning
   path: planning/SKILL.md
-- category: utilities
-  description: Transforms workflow to use Manus-style persistent markdown files for
-    planning, progress tracking, and knowledge storage. Use when starting complex
-    tasks, multi-step projects, research tasks, or when the user mentions planning,
-    organizing work, tracking progress, or wants structured output.
-  has_references: false
-  has_scripts: false
-  name: planning-with-files
-  path: planning-with-files/SKILL.md
 - category: utilities
   description: Apply systematic problem-solving techniques for complexity spirals
     (simplification cascades), innovation blocks (collision-zone thinking), recurring
@@ -412,23 +269,6 @@
   has_scripts: false
   name: problem-solving
   path: problem-solving/SKILL.md
-- category: other
-  description: Generate and maintain a project structure index for fast AI navigation.
-    Creates docs/structure.md with an AI-friendly map + tree. Use when starting a
-    new project, after major changes, or when docs/structure.md is stale.
-  has_references: false
-  has_scripts: true
-  name: project-index
-  path: project-index/SKILL.md
-- category: other
-  description: Use when the user asks to create or improve a README file, project
-    documentation, getting started guide, or installation instructions. Triggers on
-    keywords like "README", "getting started", "installation guide", "project overview",
-    "setup instructions".
-  has_references: false
-  has_scripts: false
-  name: readme-improvement
-  path: readme-improvement/SKILL.md
 - category: dev-tools
   description: Package entire code repositories into single AI-friendly files using
     Repomix. Capabilities include pack codebases with customizable include/exclude
@@ -482,56 +322,6 @@
   has_scripts: true
   name: skill-creator
   path: skill-creator/SKILL.md
-- category: other
-  description: A skill that creates new Claude skills and automatically shares them
-    on Slack using Rube for seamless team collaboration and skill discovery.
-  has_references: false
-  has_scripts: false
-  name: skill-share
-  path: skill-share/SKILL.md
-- category: utilities
-  description: Use for QUICK PR reviews with structured checklists (architecture,
-    patterns, security, performance). Provides step-by-step review process, git diff
-    commands, and review report templates. Best for pull request reviews and pre-commit
-    checks. NOT for deep refactoring analysis (use code-review instead).
-  has_references: false
-  has_scripts: false
-  name: tasks-code-review
-  path: tasks-code-review/SKILL.md
-- category: other
-  description: Use for WRITING documentation with ready-to-use code templates (C#
-    XML docs, TypeScript JSDoc, API docs, README patterns). Best for implementing
-    actual documentation, adding code comments, and creating docs from scratch. NOT
-    for documentation planning (use documentation instead).
-  has_references: false
-  has_scripts: false
-  name: tasks-documentation
-  path: tasks-documentation/SKILL.md
-- category: other
-  description: Use when updating specifications, comparing branches, or ensuring documentation
-    reflects current implementation.
-  has_references: false
-  has_scripts: false
-  name: tasks-spec-update
-  path: tasks-spec-update/SKILL.md
-- category: other
-  description: Use for DEVELOPER-focused unit/integration test code with xUnit (C#)
-    and Jest (Angular) patterns. Provides ready-to-use test templates for commands,
-    queries, entities, and components. Best for implementing actual test code. NOT
-    for QA test specifications (use test-generation instead).
-  has_references: false
-  has_scripts: false
-  name: tasks-test-generation
-  path: tasks-test-generation/SKILL.md
-- category: other
-  description: Use for QA-focused BDD test specifications (Given/When/Then) with traceability
-    matrices, coverage analysis, and comprehensive test case documentation. Best for
-    QA teams, acceptance testing, and feature documentation with test cases. NOT for
-    writing unit test code (use tasks-test-generation instead).
-  has_references: false
-  has_scripts: false
-  name: test-generation
-  path: test-generation/SKILL.md
 - category: frontend
   description: Build immersive 3D web experiences with Three.js - WebGL/WebGPU library
     for scenes, cameras, geometries, materials, lights, animations, loaders, post-processing,
@@ -586,11 +376,20 @@
   has_scripts: true
   name: web-frameworks
   path: web-frameworks/SKILL.md
-- category: other
-  description: Toolkit for interacting with and testing local web applications using
-    Playwright. Supports verifying frontend functionality, debugging UI behavior,
-    capturing browser screenshots, and viewing browser logs.
+- category: learning
+  description: Teach Claude a new pattern, preference, or convention explicitly. Use
+    when you want to save a correction, preference, or coding pattern for future sessions.
+    Triggers on keywords like "remember this", "always do", "never do", "learn this pattern",
+    "/learn".
+  has_references: false
+  has_scripts: false
+  name: learn
+  path: learn/SKILL.md
+- category: learning
+  description: Manage learned patterns - list, view, archive, boost or penalize confidence.
+    Use when you want to see what patterns Claude has learned, review pattern effectiveness,
+    or manage the pattern library.
   has_references: false
   has_scripts: true
-  name: webapp-testing
-  path: webapp-testing/SKILL.md
+  name: learned-patterns
+  path: learned-patterns/SKILL.md

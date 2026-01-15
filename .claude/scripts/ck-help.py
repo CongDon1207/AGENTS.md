@@ -6,7 +6,7 @@ Scans .claude/commands/ directory to build catalog at runtime.
 Usage:
     python ck-help.py                    # Overview with quick start
     python ck-help.py fix                # Category guide with workflow
-    python ck-help.py plan/fast          # Command details
+    python ck-help.py plan:fast          # Command details
     python ck-help.py debug login error  # Task recommendations
     python ck-help.py auth               # Search (unknown word)
 """
@@ -77,18 +77,18 @@ CATEGORY_GUIDES = {
     "plan": {
         "title": "Planning",
         "workflow": [
-            ("Quick plan", "`/plan/fast` \"your task\""),
-            ("Deep research", "`/plan/hard` \"complex task\""),
-            ("Validate", "`/plan/validate` (interview to confirm decisions)"),
+            ("Quick plan", "`/plan:fast` \"your task\""),
+            ("Deep research", "`/plan:hard` \"complex task\""),
+            ("Validate", "`/plan:validate` (interview to confirm decisions)"),
             ("Execute plan", "`/code` (runs the plan)"),
         ],
-        "tip": "Use /plan/validate to confirm assumptions before coding",
+        "tip": "Use /plan:validate to confirm assumptions before coding",
     },
     "cook": {
         "title": "Implementation",
         "workflow": [
             ("Quick impl", "`/cook` \"your feature\""),
-            ("Auto mode", "`/cook/auto` \"trust me bro\""),
+            ("Auto mode", "`/cook:auto` \"trust me bro\""),
             ("Test", "`/test`"),
         ],
         "tip": "Cook is standalone - it plans internally. Use /plan → /code for explicit planning",
@@ -96,7 +96,7 @@ CATEGORY_GUIDES = {
     "bootstrap": {
         "title": "Project Setup",
         "workflow": [
-            ("Quick start", "`/bootstrap/auto/fast` \"requirements\""),
+            ("Quick start", "`/bootstrap:auto:fast` \"requirements\""),
             ("Full setup", "`/bootstrap` \"detailed requirements\""),
         ],
         "tip": "Include tech stack preferences in description",
@@ -105,65 +105,65 @@ CATEGORY_GUIDES = {
         "title": "Testing",
         "workflow": [
             ("Run tests", "`/test`"),
-            ("Fix failures", "`/fix/test`"),
+            ("Fix failures", "`/fix:test`"),
         ],
         "tip": "Run tests frequently during development",
     },
     "docs": {
         "title": "Documentation",
         "workflow": [
-            ("Initialize", "`/docs/init`"),
-            ("Update", "`/docs/update`"),
+            ("Initialize", "`/docs:init`"),
+            ("Update", "`/docs:update`"),
         ],
         "tip": "Keep docs close to code for accuracy",
     },
     "git": {
         "title": "Git Workflow",
         "workflow": [
-            ("Commit", "`/git/cm`"),
-            ("Push", "`/git/cp`"),
-            ("PR", "`/git/pr`"),
+            ("Commit", "`/git:cm`"),
+            ("Push", "`/git:cp`"),
+            ("PR", "`/git:pr`"),
         ],
         "tip": "Commit often with clear messages",
     },
     "design": {
         "title": "Design",
         "workflow": [
-            ("Quick design", "`/design/fast` \"description\""),
-            ("From screenshot", "`/design/screenshot` <path>"),
-            ("3D design", "`/design/3d` \"description\""),
+            ("Quick design", "`/design:fast` \"description\""),
+            ("From screenshot", "`/design:screenshot` <path>"),
+            ("3D design", "`/design:3d` \"description\""),
         ],
         "tip": "Reference existing designs for consistency",
     },
     "review": {
         "title": "Code Review",
         "workflow": [
-            ("Full review", "`/review/codebase`"),
+            ("Full review", "`/review:codebase`"),
         ],
         "tip": "Review before merging to main",
     },
     "content": {
         "title": "Content Creation",
         "workflow": [
-            ("Quick copy", "`/content/fast` \"requirements\""),
-            ("Quality copy", "`/content/good` \"requirements\""),
-            ("Optimize", "`/content/cro`"),
+            ("Quick copy", "`/content:fast` \"requirements\""),
+            ("Quality copy", "`/content:good` \"requirements\""),
+            ("Optimize", "`/content:cro`"),
         ],
         "tip": "Know your audience before writing",
     },
     "integrate": {
         "title": "Integration",
         "workflow": [
-            ("Polar.sh", "`/integrate/polar`"),
-            ("SePay", "`/integrate/sepay`"),
+            ("Polar.sh", "`/integrate:polar`"),
+            ("SePay", "`/integrate:sepay`"),
         ],
         "tip": "Read API docs before integrating",
     },
     "skill": {
         "title": "Skill Management",
         "workflow": [
-            ("Create", "`/skill/create`"),
-            ("Optimize", "`/skill/optimize`"),
+            ("Create", "`/skill:create`"),
+            ("Optimize", "`/skill:optimize`"),
         ],
         "tip": "Skills extend agent capabilities",
     },
@@ -171,7 +171,7 @@ CATEGORY_GUIDES = {
         "title": "Codebase Exploration",
         "workflow": [
             ("Find files", "`/scout` \"what to find\""),
-            ("External tools", "`/scout/ext` \"query\""),
+            ("External tools", "`/scout:ext` \"query\""),
         ],
         "tip": "Be specific about what you're looking for",
     },
@@ -201,11 +201,9 @@ CATEGORY_GUIDES = {
 
 
 def detect_prefix(commands_dir: Path) -> str:
-    """Legacy hook: commands used to support a /ck: namespace.
-
-    This repo uses canonical command names like `/fix/ui` (no `/ck:` prefix).
-    """
-    return ""
+    """Detect if commands use /ck: prefix based on directory structure."""
+    ck_commands_dir = commands_dir / "ck"
+    return "ck:" if ck_commands_dir.exists() and ck_commands_dir.is_dir() else ""
 
 
 def parse_frontmatter(file_path: Path) -> dict:
@@ -250,15 +248,15 @@ def discover_commands(commands_dir: Path, prefix: str) -> dict:
         parts = rel_path.parts
 
         # Get command name from path
-        # e.g., fix/fast.md -> fix/fast, plan.md -> plan
+        # e.g., fix/fast.md -> fix:fast, plan.md -> plan
         if len(parts) == 1:
             # Root command: plan.md -> plan
             cmd_name = parts[0].replace('.md', '')
             category = "core"
         else:
-            # Nested command: fix/fast.md -> fix/fast
+            # Nested command: fix/fast.md -> fix:fast
             category = parts[0]
-            cmd_name = '/'.join([p.replace('.md', '') for p in parts])
+            cmd_name = ':'.join([p.replace('.md', '') for p in parts])
 
         # Parse frontmatter
         fm = parse_frontmatter(md_file)
@@ -306,8 +304,8 @@ def detect_intent(input_str: str, categories: list) -> str:
     if input_lower in [c.lower() for c in categories]:
         return "category"
 
-    # Check if it looks like a command (legacy ':' or canonical '/')
-    if (':' in input_str or '/' in input_str) and ' ' not in input_str:
+    # Check if it looks like a command (has colon)
+    if ':' in input_str:
         return "command"
 
     # Multiple words = task description
@@ -397,28 +395,15 @@ def show_command(data: dict, command: str, prefix: str) -> None:
 
     commands = data["commands"]
 
-    def canonicalize_command_name(value: str) -> str:
-        """Canonicalize input to the repo's command format: /a/b/c.
-
-        Also accepts legacy formats like `plan:fast` or `/ck:plan:fast`.
-        """
-        s = (value or "").strip().lower()
-        if not s:
-            return s
-        if not s.startswith("/"):
-            s = "/" + s
-        s = s.replace("/ck:", "/")
-        s = s.replace(":", "/")
-        s = re.sub(r"/{2,}", "/", s)
-        return s
-
     # Normalize search term
-    search = canonicalize_command_name(command)
+    search = command.lower().replace("/ck:", "").replace("/", "").replace(":", "")
 
     found = None
     for cmds in commands.values():
         for cmd in cmds:
-            if canonicalize_command_name(cmd["name"]) == search:
+            # Normalize command name for comparison
+            name = cmd["name"].lower().replace("/ck:", "").replace("/", "").replace(":", "")
+            if name == search:
                 found = cmd
                 break
         if found:
@@ -427,7 +412,7 @@ def show_command(data: dict, command: str, prefix: str) -> None:
     if not found:
         print(f"Command '{command}' not found.")
         print()
-        do_search(data, command.replace(":", " ").replace("/", " "), prefix)
+        do_search(data, command.replace(":", " "), prefix)
         return
 
     print(f"# `{found['name']}`")
@@ -632,7 +617,7 @@ def show_config_guide() -> None:
     print("**Plan Validation:**")
     print("- `mode: \"prompt\"` - Ask user after plan creation (default)")
     print("- `mode: \"auto\"` - Always run validation interview")
-    print("- `mode: \"off\"` - Skip; user runs `/plan/validate` manually")
+    print("- `mode: \"off\"` - Skip; user runs `/plan:validate` manually")
     print()
     print("Validation interviews the user with critical questions to confirm")
     print("assumptions, risks, and architectural decisions before implementation.")

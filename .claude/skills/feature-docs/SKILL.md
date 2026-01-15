@@ -1,251 +1,203 @@
 ---
 name: feature-docs
-description: Use when the user asks to generate comprehensive feature documentation with verified test cases, create feature README with code evidence, or document a complete feature with test verification. Triggers on keywords like "feature documentation", "document feature", "comprehensive docs", "feature README", "test verification", "verified documentation".
+description: Generate single-file feature documentation with verified test cases. Use for quick feature docs, feature README, any project (not enterprise modules). Outputs single markdown file with code evidence. Triggers on "quick feature docs", "feature readme", "single file docs", "verified documentation". For enterprise module hierarchy, use business-feature-docs instead.
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob, Task, TodoWrite
 ---
 
+<!-- SYNC: Source of truth is docs/templates/skills/feature-docs/SKILL.md -->
+<!-- Keep in sync with .github/skills/feature-docs/SKILL.md -->
+
 # Feature Documentation Generation & Verification
 
-You are to operate as an expert full-stack dotnet angular principle developer, software architect, and technical documentation specialist to generate comprehensive feature documentation with verified test cases.
+Generate comprehensive feature documentation following the **GOLD STANDARD** template pattern.
 
-**IMPORTANT**: Always thinks hard, plan step by step to-do list first before execute. Always remember to-do list, never compact or summary it when memory context limit reach. Always preserve and carry your to-do list through every operation.
-
----
-
-## CRITICAL TASK MANAGEMENT FOR LONG-RUNNING DOCUMENTATION
-
-- This is a multi-phase, long-running task that generates large documentation files
-- Break ALL tasks into the smallest possible atomic units
-- Each sub-task MUST include a brief summary of previous task results to maintain context
-- Before each new sub-task, read the current state of generated files to re-establish context
-- Update progress tracking after EVERY operation
-- Never assume previous context is retained - always verify by reading files
-
-### MANDATORY TODO LIST MANAGEMENT
-
-1. **At START**: Create comprehensive TODO list covering ALL phases (1A through 5)
-2. **Before EACH phase**: Mark current task as "in_progress"
-3. **After EACH phase**: Mark task as "completed", update "Last Task Summary"
-4. **Never skip**: If context is lost, re-read analysis file's `## Progress` section
-5. **Never compact**: Keep full detailed TODO list even if long
-
-### MANDATORY BEFORE EACH PHASE CHECKLIST
-
-```
-[ ] Read the `## Progress` section from analysis notes file
-[ ] Read the `Last Task Summary` from previous phase
-[ ] Read the current state of generated documentation file(s)
-[ ] Confirm what was completed and what needs to be done next
-[ ] Update current task status to "in_progress"
-[ ] Only then proceed with the phase work
-```
+**GOLD STANDARD Reference**: `docs/features/README.ExampleFeature1.md` (Example App)
+**Template File**: `docs/templates/detailed-feature-docs-template.md`
 
 ---
 
-## Core Anti-Hallucination Protocols
+## MANDATORY 26-SECTION STRUCTURE
 
-### ASSUMPTION_VALIDATION_CHECKPOINT
+All feature documentation MUST follow this section order:
 
-Before every major operation:
-
-1. "What assumptions am I making about [X]?"
-2. "Have I verified this with actual code evidence?"
-3. "Could I be wrong about [specific pattern/relationship]?"
-
-### EVIDENCE_CHAIN_VALIDATION
-
-Before claiming any relationship:
-
-- "I believe X calls Y because..." → show actual code
-- "This follows pattern Z because..." → cite specific examples
-
-### DOCUMENTATION_ACCURACY_CHECKPOINT
-
-Before writing any documentation:
-
-- "Have I read the actual code that implements this?"
-- "Are my line number references accurate and current?"
-- "Can I provide a code snippet as evidence?"
-
-### CONTEXT_ANCHOR_SYSTEM
-
-Every 10 operations:
-
-1. Re-read the original task description
-2. Verify current operation aligns with original goals
-3. Update `Current Focus` in `## Progress` section
-4. **CRITICAL**: Re-read last 50 lines of documentation being generated
-
----
-
-## PHASE 1: EXTERNAL MEMORY-DRIVEN FEATURE ANALYSIS
-
-Build knowledge model in `ai_task_analysis_notes/[feature-name].ai_task_analysis_notes_temp.md`.
-
-### PHASE 1A: INITIALIZATION AND DISCOVERY
-
-Initialize with:
-
-- `## Metadata`, `## Progress`, `## Errors`, `## Assumption Validations`
-- `## Performance Metrics`, `## Memory Management`, `## Processed Files`
-- `## File List`, `## Knowledge Graph`, `## Feature Summary`
-
-**Populate `## Progress`** with:
-
-- **Phase**: 1A
-- **Items Processed**: 0
-- **Total Items**: 0
-- **Current Operation**: "initialization"
-- **Current Focus**: "[feature documentation task]"
-- **Last Task Summary**: "Starting feature documentation generation"
-
-### FEATURE-SPECIFIC DISCOVERY
-
-1. **Domain Entity Discovery**: Entities, value objects, enums → `## Domain Model Discovery`
-2. **Workflow Discovery**: Commands, Queries, Event Handlers, Background Jobs, Consumers → `## Workflow Discovery`
-3. **API Discovery**: Controllers, endpoints, DTOs → `## API Discovery`
-4. **Frontend Discovery**: Components, Services, Stores → `## Frontend Discovery`
-5. **Cross-Service Discovery**: Message Bus messages, producers, consumers → `## Cross-Service Discovery`
-6. **Configuration Discovery**: Configuration classes, settings → `## Configuration Discovery`
-
-### PHASE 1B: KNOWLEDGE GRAPH CONSTRUCTION
-
-**IMPORTANT: MUST DO WITH TODO LIST**
-
-For each file, document:
-
-- Standard fields plus:
-- `testableAspects`: What aspects should be tested (P0/P1/P2)
-- `codeSnippets`: Key code snippets with line numbers for documentation
-
-### PHASE 1C: OVERALL ANALYSIS
-
-Write `## Feature Summary`:
-
-- **Feature Overview**: What the feature does
-- **Complete End-to-End Workflows**: From trigger to completion
-- **Key Architectural Patterns**: Design patterns used
-- **Service Responsibilities**: Which service owns what
-- **Integration Points**: Cross-service communication
-- **Security Considerations**: Auth, authz, encryption
-- **Performance Considerations**: Pagination, caching, parallelism
-- **Error Handling Patterns**: How errors are handled
+| # | Section | Stakeholder Focus |
+|---|---------|-------------------|
+| 1 | Executive Summary | PO, BA |
+| 2 | Business Value | PO, BA |
+| 3 | Business Requirements | PO, BA |
+| 4 | Business Rules | BA, Dev |
+| 5 | Process Flows | BA, Dev, Architect |
+| 6 | Design Reference | BA, UX, Dev |
+| 7 | System Design | Dev, Architect |
+| 8 | Architecture | Dev, Architect |
+| 9 | Domain Model | Dev, Architect |
+| 10 | API Reference | Dev, Architect |
+| 11 | Frontend Components | Dev |
+| 12 | Backend Controllers | Dev |
+| 13 | Cross-Service Integration | Dev, Architect |
+| 14 | Security Architecture | Dev, Architect |
+| 15 | Performance Considerations | Dev, Architect, DevOps |
+| 16 | Implementation Guide | Dev |
+| 17 | Test Specifications | QA |
+| 18 | Test Data Requirements | QA |
+| 19 | Edge Cases Catalog | QA, Dev |
+| 20 | Regression Impact | QA |
+| 21 | Troubleshooting | Dev, QA, DevOps |
+| 22 | Operational Runbook | DevOps |
+| 23 | Roadmap and Dependencies | PO, BA |
+| 24 | Related Documentation | All |
+| 25 | Glossary | PO, BA |
+| 26 | Version History | All |
 
 ---
 
-## PHASE 2: FEATURE README GENERATION
+## Phase 1: Feature Analysis
 
-Generate at `docs/README.[FeatureName].md`.
+Build knowledge model in `.ai/workspace/analysis/[feature-name].md`.
 
-**CRITICAL**: Break into sub-tasks, update file incrementally.
+### Discovery Areas
 
-### PHASE 2A: Overview & Architecture Sections
+1. **Domain Entity Discovery**: Entities, value objects, enums
+2. **Workflow Discovery**: Commands, Queries, Event Handlers, Background Jobs
+3. **API Discovery**: Controllers, endpoints, DTOs
+4. **Frontend Discovery**: Components, Services, Stores
+5. **Cross-Service Discovery**: Message Bus messages, producers, consumers
 
-- Title and Overview
-- Table of Contents
-- Key Capabilities
-- Architecture diagram (ASCII art)
-- Service Responsibilities table
-- Design Patterns table
+---
 
-**After**: Update `Last Task Summary`
+## Phase 2: Documentation Generation
 
-### PHASE 2B: Domain Model & Workflow Sections
+Generate at `docs/business-features/{Module}/detailed-features/README.{FeatureName}.md`.
 
-- Entity Relationship Diagram (ASCII art)
-- Entity descriptions with properties
-- Enumerations with values
-- Workflow diagrams and step-by-step processes
-- Code snippets with file paths and line numbers
+### Key Format Examples
 
-**After**: Update `Last Task Summary`
-
-### PHASE 2C: API Reference & Configuration
-
-- Endpoint table
-- Request/Response models
-- Configuration settings
-- Security Considerations
-- Performance Tuning
-
-**After**: Update `Last Task Summary`
-
-### PHASE 2D: Test Specifications Section
-
-**CRITICAL**: Largest section - break into sub-tasks by category.
-
-**Test Case Format**:
-
+**Business Requirements (FR-XX)**:
 ```markdown
-### [Category] Test Specs
+#### FR-{MOD}-01: {Requirement Title}
 
-#### P0 - Critical
-
-##### TS-[CATEGORY]-P0-001: [Test Name]
-
-**Priority:** P0 - Critical
-**Category:** [Category]
-**Component:** [Component]
-
-**Preconditions:**
-
-- [List preconditions]
-
-**Test Steps:**
-| Step | Action | Expected Result |
-| ---- | -------- | --------------- |
-| 1 | [Action] | [Expected] |
-
-**GIVEN** [initial context]
-**WHEN** [action performed]
-**THEN** [expected outcome]
-
-**Code Reference:**
-
-- File: `[file-path]`
-- Lines: [line-range]
-- Key Logic: [description]
+| Aspect          | Details                                 |
+| --------------- | --------------------------------------- |
+| **Description** | {What this requirement enables}         |
+| **Scope**       | {Who can use / affected entities}       |
+| **Evidence**    | `{FilePath}:{LineRange}`                |
 ```
 
-Execute one category at a time:
+**User Stories (US-XX)**:
+```markdown
+#### US-{MOD}-01: {Story Title}
 
-- **Phase 2D-1**: Summary table + first category
-- **Phase 2D-2 through 2D-N**: Remaining categories
-- **Phase 2D-Final**: Update summary table with counts
+**As a** {role}
+**I want** {goal/desire}
+**So that** {benefit/value}
 
-**After each**: Update `Last Task Summary`
+**Acceptance Criteria**:
+- [ ] AC-01: {Criterion with evidence reference}
+- [ ] AC-02: {Criterion with evidence reference}
 
-### PHASE 2E: Final Sections
+**Related Requirements**: FR-{MOD}-01, FR-{MOD}-02
+**Evidence**: `{FilePath}:{LineRange}`
+```
 
-- Troubleshooting
-- Adding New Providers (if applicable)
-- Related Documentation
-- Version History
+**Test Summary Table (MANDATORY)**:
+```markdown
+| Category               | P0 (Critical) | P1 (High) | P2 (Medium) | P3 (Low) | Total |
+| ---------------------- | :-----------: | :-------: | :---------: | :------: | :---: |
+| {Category1}            | {N}           | {N}       | {N}         | {N}      | {N}   |
+| **Total**              | **{N}**       | **{N}**   | **{N}**     | **{N}**  | **{N}**|
+```
+
+**Test Case Format (TC-XX)**:
+```markdown
+#### TC-{MOD}-001: {Test Name} [P0]
+
+**Acceptance Criteria**:
+- ✅ {Passing criteria 1}
+- ✅ {Passing criteria 2}
+
+**GIVEN** {initial context}
+**WHEN** {action performed}
+**THEN** {expected outcome}
+
+**Edge Cases**:
+- ❌ {Invalid scenario} → {Expected error/behavior}
+
+**Evidence**: `{FilePath}:{LineRange}`
+```
+
+**Troubleshooting Format**:
+```markdown
+#### {Issue Title}
+
+**Symptoms**: {Observable problem}
+
+**Causes**:
+1. {Cause 1}
+2. {Cause 2}
+
+**Resolution**:
+- {Step 1}
+- {Step 2}
+```
+
+**Permission Matrix**:
+```markdown
+| Role | View | Create | Edit | Delete | Special |
+|------|:----:|:------:|:----:|:------:|---------|
+| Admin | ✅ | ✅ | ✅ | ✅ | Full access |
+```
 
 ---
 
-## PHASE 3: README VERIFICATION - FIRST PASS
+## Phase 2.5: AI Companion Generation
 
-**PURPOSE**: Verify README matches actual code. NO HALLUCINATION ALLOWED.
+Generate AI-agent optimized companion file alongside the comprehensive documentation.
 
-Verify one section at a time:
+**Output**: `docs/business-features/{Module}/detailed-features/README.{FeatureName}.ai.md`
+**Template**: `docs/templates/detailed-feature-docs-template.ai.md`
 
-- Read ENTIRE section
-- For EACH code reference:
-  - Read actual source file at referenced lines
-  - Compare character-by-character
-  - Verify line numbers are accurate
-  - Log mismatches in `## Verification Log - First Pass`
-  - Correct immediately
+### AI Companion Structure (10 Sections, ~260 lines)
 
-**After**: Update `Last Task Summary`
+| Section | Content | Source from Full Doc |
+|---------|---------|---------------------|
+| Context | Purpose, entities, service | Executive Summary |
+| File Locations | Exact paths to all key files | Implementation Guide |
+| Domain Model | Properties, expressions | Domain Model |
+| API Contracts | Endpoints, request/response shapes | API Reference |
+| Business Rules | Validation, state transitions | Business Rules |
+| Patterns | Required ✅ / Anti-patterns ❌ | Architecture |
+| Integration | Events, dependencies | Cross-Service Integration |
+| Security | Authorization matrix | Security Architecture |
+| Test Scenarios | Key GIVEN/WHEN/THEN cases | Test Specifications |
+| Quick Reference | Decision tree, code snippets | Implementation Guide |
+
+### Compression Rules
+
+1. **Tables over prose** - Convert paragraphs to table rows
+2. **Paths over descriptions** - `File:Line` over "located in..."
+3. **Signatures over examples** - `{ id: string } → { entity: Dto }` over full code
+4. **Decisions over explanations** - What to do, not why
+
+### AI Companion Quality Check
+
+- [ ] File size ≤300 lines
+- [ ] All file paths are exact and current
+- [ ] API contracts include request/response shapes
+- [ ] Business rules have evidence references
+- [ ] Patterns section has ✅/❌ markers
+- [ ] Evidence chain preserved from full doc
 
 ---
 
-## PHASE 4: README VERIFICATION - SECOND PASS
+## Phase 3: Verification (2-Pass System)
 
-Re-verify all first-pass corrections:
+### First Pass
+For EACH code reference:
+- Read actual source file at referenced lines
+- Compare character-by-character
+- Verify line numbers are accurate
+- Log mismatches and correct immediately
 
+### Second Pass
 - Random sampling (10 code references)
 - Cross-reference and TOC verification
 - Completeness check
@@ -254,41 +206,71 @@ Re-verify all first-pass corrections:
 
 ---
 
-## PHASE 5: FINAL VALIDATION AND CLEANUP
+## Anti-Hallucination Protocols
 
-### Phase 5-1: README Consistency Check
+### EVIDENCE_CHAIN_VALIDATION
+Before claiming any relationship:
+- "I believe X calls Y because..." → show actual code
+- "This follows pattern Z because..." → cite specific examples
 
-- Verify test case IDs are unique and sequential
-- Verify table of contents matches sections
-- Verify counts match in summary tables
-
-### Phase 5-2: Final Quality Report
-
-- Count total lines in README
-- Count test cases by priority (P0, P1, P2)
-- Count issues found and corrected during verification
-- Calculate verification coverage percentage
-
-### Phase 5-3: Generate Final Summary
-
-Document under `## Final Validation`:
-
-- **README Accuracy:** [VERIFIED after 2 passes]
-- **Total Issues Found and Corrected:** [X issues]
-- **Generated Files:** List all files
-- **Final Task Summary:** Complete metrics
+### DOCUMENTATION_ACCURACY_CHECKPOINT
+Before writing any documentation:
+- "Have I read the actual code that implements this?"
+- "Are my line number references accurate and current?"
+- "Can I provide a code snippet as evidence?"
 
 ---
 
-## Feature Documentation Guidelines
+## Evidence Verification Protocol (QC)
 
-- **Evidence-based documentation**: Every claim must have code evidence with file path and line numbers
-- **No hallucination tolerance**: If uncertain, mark as "inferred" and verify
-- **Incremental generation**: Break large documents into sections, verify each
-- **Context preservation**: Always re-read generated content before continuing
-- **Multiple verification passes**: Minimum 2 verification passes for README
-- **BDD test format**: All test cases must follow GIVEN/WHEN/THEN format
-- **Priority classification**: P0 (critical), P1 (high), P2 (medium)
-- **Code snippets**: Include actual code with file paths and line numbers for reference
-- **Line number accuracy**: Always verify line numbers are current
-- **Cross-reference consistency**: Ensure all internal references within README are accurate
+### Verification Summary Table
+```markdown
+| Category | Total Claims | Verified | Stale | Missing | Last Verified |
+|----------|-------------|----------|-------|---------|---------------|
+| Business Requirements | {N} | {N} | {N} | {N} | {Date} |
+| Test Specifications | {N} | {N} | {N} | {N} | {Date} |
+| **Total** | **{N}** | **{N}** | **{N}** | **{N}** | |
+```
+
+### Status Markers
+- ✅ Verified - Line numbers match actual source
+- ⚠️ Stale - Line numbers shifted, content still exists
+- ❌ Missing - Referenced code no longer exists
+
+---
+
+## Quality Checklist
+
+- [ ] All 26 mandatory sections present in correct order
+- [ ] Quick Navigation by Role included
+- [ ] Executive Summary with key capabilities
+- [ ] Business Value with ROI analysis
+- [ ] User Stories with acceptance criteria (US-XX format)
+- [ ] Business Requirements use FR-{MOD}-XX format
+- [ ] Business Rules with state transitions
+- [ ] Process Flows with diagrams
+- [ ] System Design with technical decisions log
+- [ ] Security Architecture with authorization matrix
+- [ ] Performance Considerations with targets
+- [ ] Implementation Guide with code examples
+- [ ] Test Summary table with P0-P3 counts
+- [ ] Test Data Requirements and fixtures
+- [ ] Edge Cases Catalog (validation, business, concurrency)
+- [ ] Regression Impact analysis
+- [ ] Test cases use TC-{MOD}-XXX format with GIVEN/WHEN/THEN
+- [ ] Acceptance criteria use ✅/❌ markers
+- [ ] Troubleshooting uses Symptoms/Causes/Resolution format
+- [ ] Operational Runbook with deployment checklist
+- [ ] Roadmap and Dependencies
+- [ ] Evidence Verification Protocol with audit trail
+- [ ] Glossary for non-technical stakeholders
+- [ ] Version History table at end
+- [ ] All code references verified with actual files
+
+### AI Companion Checklist
+- [ ] AI companion file created at `README.{FeatureName}.ai.md`
+- [ ] AI companion ≤300 lines
+- [ ] File locations section complete with exact paths
+- [ ] API contracts include request/response shapes
+- [ ] All evidence references preserved from full doc
+- [ ] Patterns section has required (✅) and anti-patterns (❌)

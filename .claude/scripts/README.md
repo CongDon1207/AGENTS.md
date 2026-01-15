@@ -1,254 +1,153 @@
-# 🔧 Scripts - Công Cụ Hỗ Trợ
+# Claude Code Scripts
 
-## Scripts là gì?
+Centralized utility scripts for Claude Code skills.
 
-**Scripts** là các "công cụ tiện ích" - các chương trình nhỏ giúp tự động hóa những việc lặp đi lặp lại. Giống như hộp công cụ trong nhà - cần thì lấy ra dùng.
+## Installation
 
-**Ví dụ đơn giản:**
-- **scan_skills.py** - Quét tất cả skills, tạo danh sách tự động
-- **worktree.cjs** - Quản lý git worktrees
-- **resolve_env.py** - Đọc và xử lý biến môi trường
-
----
-
-## Cài Đặt
+Install required dependencies:
 
 ```bash
-cd .claude/scripts
 pip install -r requirements.txt
 ```
 
----
+## resolve_env.py
 
-## Danh Sách Scripts
+Centralized environment variable resolver that follows Claude Code's hierarchy.
 
-### 📋 Scripts Quản Lý
+### Priority Order (Highest to Lowest)
 
-| Script | Chức Năng | Cách Dùng |
-|--------|-----------|-----------|
-| **scan_skills.py** | Quét tất cả skills trong thư mục | Tự động tạo danh sách skills |
-| **scan_commands.py** | Quét tất cả commands | Tự động tạo danh sách commands |
-| **generate_catalogs.py** | Tạo catalogs từ skills/commands | Tổng hợp thành file dễ đọc |
+1. **process.env** - Runtime environment variables (HIGHEST)
+2. **PROJECT/.claude/skills/\<skill\>/.env** - Project skill-specific
+3. **PROJECT/.claude/skills/.env** - Project shared across skills
+4. **PROJECT/.claude/.env** - Project global defaults
+5. **~/.claude/skills/\<skill\>/.env** - User skill-specific
+6. **~/.claude/skills/.env** - User shared across skills
+7. **~/.claude/.env** - User global defaults (LOWEST)
 
-### 🌿 Scripts Git
-
-| Script | Chức Năng | Cách Dùng |
-|--------|-----------|-----------|
-| **worktree.cjs** | Quản lý git worktrees | Tạo/xóa/list worktrees |
-| **set-active-plan.cjs** | Đặt plan đang làm | Track task hiện tại |
-
-### ⚙️ Scripts Tiện Ích
-
-| Script | Chức Năng | Cách Dùng |
-|--------|-----------|-----------|
-| **resolve_env.py** | Xử lý biến môi trường | Load .env files |
-| **ck-help.py** | Hiện trợ giúp commands | Tra cứu cách dùng |
-| **win_compat.py** | Tương thích Windows | Fix path issues |
-
-### 📄 Files Dữ Liệu
-
-| File | Chức Năng | Ghi Chú |
-|------|-----------|---------|
-| **skills_data.yaml** | Dữ liệu skills | Được generate tự động |
-| **commands_data.yaml** | Dữ liệu commands | Được generate tự động |
-| **requirements.txt** | Python dependencies | Cài bằng pip |
-
----
-
-## Chi Tiết Scripts Quan Trọng
-
-### 1. resolve_env.py - Xử Lý Biến Môi Trường
-
-**Chức năng:** Đọc biến môi trường theo thứ tự ưu tiên
-
-**Thứ tự ưu tiên (cao → thấp):**
-```
-1. process.env (biến runtime)              ← CAO NHẤT
-2. PROJECT/.claude/skills/<skill>/.env     ← Skill cụ thể trong project
-3. PROJECT/.claude/skills/.env             ← Chung cho skills trong project
-4. PROJECT/.claude/.env                    ← Chung cho project
-5. ~/.claude/skills/<skill>/.env           ← Skill cụ thể của user
-6. ~/.claude/skills/.env                   ← Chung cho skills của user
-7. ~/.claude/.env                          ← Chung cho user
-                                           ← THẤP NHẤT
-```
-
-**Cách dùng:**
-```bash
-# Lấy biến cho skill cụ thể
-python resolve_env.py --skill frontend-development --key API_KEY
-
-# Lấy biến chung
-python resolve_env.py --key DATABASE_URL
-```
-
----
-
-### 2. scan_skills.py - Quét Skills
-
-**Chức năng:** Tự động quét thư mục skills và tạo danh sách
-
-**Cách chạy:**
-```bash
-cd .claude/scripts
-python scan_skills.py
-```
-
-**Output:** File `skills_data.yaml` chứa:
-```yaml
-skills:
-  - name: frontend-development
-    path: skills/frontend-development
-    description: React/TypeScript development
-  - name: debugging
-    path: skills/debugging
-    description: Bug diagnosis framework
-  # ... và tất cả skills khác
-```
-
-**Khi nào dùng:**
-- Sau khi thêm skill mới
-- Cần cập nhật danh sách skills
-
----
-
-### 3. worktree.cjs - Quản Lý Worktrees
-
-**Chức năng:** Quản lý git worktrees (làm nhiều branches song song)
-
-**Git worktree là gì?**
-```
-Bình thường:
-project/
-└── (chỉ 1 branch tại một thời điểm)
-
-Với worktree:
-project/           ← branch main
-project-feature/   ← branch feature (thư mục riêng)
-project-hotfix/    ← branch hotfix (thư mục riêng)
-
-→ Có thể làm nhiều branches cùng lúc!
-```
-
-**Các lệnh:**
-```bash
-# Tạo worktree mới
-node worktree.cjs create feature/login
-
-# Liệt kê worktrees
-node worktree.cjs list
-
-# Xóa worktree
-node worktree.cjs remove feature/login
-```
-
----
-
-### 4. ck-help.py - Trợ Giúp Commands
-
-**Chức năng:** Hiển thị hướng dẫn sử dụng commands
-
-**Cách dùng:**
-```bash
-# Xem tất cả commands
-python ck-help.py
-
-# Xem chi tiết 1 command
-python ck-help.py fix
-
-# Xem command variants
-python ck-help.py fix --all
-```
-
-**Output:**
-```
-/fix - Sửa bugs
-  Variants:
-  - /fix/fast  - Sửa nhanh lỗi đơn giản
-  - /fix/hard  - Sửa lỗi phức tạp
-  - /fix/ui    - Sửa lỗi giao diện
-  ...
-```
-
----
-
-## Cấu Trúc Thư Mục
-
-```
-scripts/
-├── README.md                 ← File này
-│
-├── scan_skills.py           ← Quét skills
-├── scan_commands.py         ← Quét commands
-├── generate_catalogs.py     ← Tạo catalogs
-│
-├── worktree.cjs             ← Quản lý worktrees
-├── worktree.test.cjs        ← Tests cho worktree
-├── set-active-plan.cjs      ← Set plan hiện tại
-│
-├── resolve_env.py           ← Xử lý .env
-├── ck-help.py               ← Trợ giúp
-├── win_compat.py            ← Windows compatibility
-│
-├── skills_data.yaml         ← Data skills (generated)
-├── commands_data.yaml       ← Data commands (generated)
-└── requirements.txt         ← Python dependencies
-```
-
----
-
-## Ví Dụ Sử Dụng
-
-### Ví dụ 1: Cập nhật danh sách skills
+### CLI Usage
 
 ```bash
-# 1. Thêm skill mới vào thư mục skills/
-# 2. Chạy scan
-cd .claude/scripts
-python scan_skills.py
+# Resolve a variable for a specific skill
+python ~/.claude/scripts/resolve_env.py GEMINI_API_KEY --skill ai-multimodal
 
-# 3. Kiểm tra kết quả
-cat skills_data.yaml
+# With verbose output
+python ~/.claude/scripts/resolve_env.py GEMINI_API_KEY --skill ai-multimodal --verbose
+
+# Find all locations where variable is defined
+python ~/.claude/scripts/resolve_env.py GEMINI_API_KEY --find-all
+
+# Show hierarchy for a skill
+python ~/.claude/scripts/resolve_env.py --show-hierarchy --skill ai-multimodal
+
+# Export format for shell sourcing
+eval $(python ~/.claude/scripts/resolve_env.py GEMINI_API_KEY --export)
 ```
 
-### Ví dụ 2: Làm việc song song 2 features
+### Python API Usage
+
+```python
+# Add to sys.path if needed
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path.home() / '.claude' / 'scripts'))
+
+from resolve_env import resolve_env, find_all, show_hierarchy
+
+# Simple resolution
+api_key = resolve_env('GEMINI_API_KEY', skill='ai-multimodal')
+
+# With default value
+api_key = resolve_env('GEMINI_API_KEY', skill='ai-multimodal', default='fallback-key')
+
+# With verbose output
+api_key = resolve_env('GEMINI_API_KEY', skill='ai-multimodal', verbose=True)
+
+# Find all locations
+locations = find_all('GEMINI_API_KEY', skill='ai-multimodal')
+for description, value, path in locations:
+    print(f"{description}: {value}")
+
+# Show hierarchy
+show_hierarchy(skill='ai-multimodal')
+```
+
+### Integration Pattern
+
+Skills should use this script instead of implementing their own resolution logic:
+
+```python
+#!/usr/bin/env python3
+import sys
+from pathlib import Path
+
+# Import centralized resolver
+sys.path.insert(0, str(Path.home() / '.claude' / 'scripts'))
+from resolve_env import resolve_env
+
+# Resolve API key
+api_key = resolve_env('GEMINI_API_KEY', skill='ai-multimodal')
+
+if not api_key:
+    print("Error: GEMINI_API_KEY not found")
+    print("Run: python ~/.claude/scripts/resolve_env.py --show-hierarchy --skill ai-multimodal")
+    sys.exit(1)
+
+# Use api_key...
+```
+
+### Benefits
+
+- **Consistent**: All skills use the same resolution logic
+- **Maintainable**: Single source of truth for hierarchy
+- **Debuggable**: Built-in verbose mode and find-all functionality
+- **Flexible**: Supports both project-local and user-global configs
+- **Clear**: Shows exactly where each value comes from
+
+### Testing
 
 ```bash
-# 1. Tạo worktree cho feature A
-node worktree.cjs create feature/login
+# Test without any config files
+python ~/.claude/scripts/resolve_env.py TEST_VAR --verbose
 
-# 2. Tạo worktree cho feature B  
-node worktree.cjs create feature/payment
+# Test with environment variable
+export TEST_VAR=from-runtime
+python ~/.claude/scripts/resolve_env.py TEST_VAR --verbose
 
-# 3. Làm việc trên feature A
-cd ../project-feature-login
-# ... code ...
-
-# 4. Xong thì xóa worktrees
-node worktree.cjs remove feature/login
+# Test with skill context
+python ~/.claude/scripts/resolve_env.py GEMINI_API_KEY --skill ai-multimodal --find-all
 ```
 
-### Ví dụ 3: Tra cứu command
+## generate_catalogs.py
+
+Generate YAML catalogs from command and skill data files. Outputs to stdout by default for easy consumption by Claude.
+
+### Usage
 
 ```bash
-python ck-help.py fix --all
+# Generate skills catalog (outputs to stdout)
+python .claude/scripts/generate_catalogs.py --skills
+
+# Generate commands catalog (outputs to stdout)
+python .claude/scripts/generate_catalogs.py --commands
+
+# Generate both catalogs (outputs to stdout)
+python .claude/scripts/generate_catalogs.py
+
+# Write to file instead of stdout
+python .claude/scripts/generate_catalogs.py --skills --output guide/SKILLS.yaml
+
+# View help
+python .claude/scripts/generate_catalogs.py --help
 ```
 
----
+### Input Files
 
-## Tóm Tắt
+Located in the same directory as the script:
+- `commands_data.yaml` - Source data for commands
+- `skills_data.yaml` - Source data for skills
 
-| Khái niệm | Giải thích |
-|-----------|------------|
-| **Scripts là gì** | Công cụ tiện ích tự động hóa |
-| **Có bao nhiêu** | ~10 scripts chính |
-| **Viết bằng gì** | Python (.py) và Node.js (.cjs) |
-| **Khi nào dùng** | Khi cần tự động hóa việc lặp lại |
+### Output
 
----
+By default, outputs YAML to stdout. Use `--output PATH` to write to a file instead.
 
-## Xem Thêm
-
-- [Hooks (Tự động hóa)](../hooks/README.md)
-- [Skills (Kiến thức)](../skills/README.md)
-- [Commands (Quy trình)](../commands/README.md)
+**Note:** The script can be run from any directory - it resolves input files relative to the script location.

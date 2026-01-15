@@ -1,241 +1,31 @@
-# 📚 Skills - Kho Kiến Thức Chuyên Môn
+# Skills
+Skills are folders of instructions, scripts, and resources that Claude loads dynamically to improve performance on specialized tasks. Skills teach Claude how to complete specific tasks in a repeatable way, whether that's creating documents with your company's brand guidelines, analyzing data using your organization's specific workflows, or automating personal tasks.
 
-## Skills là gì?
+For more information, check out:
+- [What are skills?](https://support.claude.com/en/articles/12512176-what-are-skills)
+- [Using skills in Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude)
+- [How to create custom skills](https://support.claude.com/en/articles/12512198-creating-custom-skills)
+- [Equipping agents for the real world with Agent Skills](https://anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)
 
-**Skills** là các "bộ kiến thức chuyên sâu" mà AI sẽ học khi cần làm việc chuyên môn. Giống như khi bạn cần làm món ăn đặc biệt, bạn sẽ mở sách dạy nấu ăn để xem công thức vậy.
+# About This Repository
 
-**Ví dụ đơn giản:**
-- Cần làm **giao diện đẹp** → AI load skill `ui-ux-pro-max` (50 styles thiết kế)
-- Cần làm **React component** → AI load skill `frontend-development` (best practices React)
-- Cần **sửa bug khó** → AI load skill `debugging` (kỹ thuật debug chuyên nghiệp)
+This repository contains example skills that demonstrate what's possible with Claude's skills system. These examples range from creative applications (art, music, design) to technical tasks (testing web apps, MCP server generation) to enterprise workflows (communications, branding, etc.).
 
----
+Each skill is self-contained in its own directory with a `SKILL.md` file containing the instructions and metadata that Claude uses. Browse through these examples to get inspiration for your own skills or to understand different patterns and approaches.
 
-## Khi Nào AI Load Skills?
+The example skills in this repo are open source (Apache 2.0). We've also included the document creation & editing skills that power [Claude's document capabilities](https://www.anthropic.com/news/create-files) under the hood in the [`document-skills/`](./document-skills/) folder. These are source-available, not open source, but we wanted to share these with developers as a reference for more complex skills that are actively used in a production AI application.
 
-| Tình huống | AI có load skill? |
-|------------|-------------------|
-| "Sửa typo trong text" | ❌ Không (quá đơn giản) |
-| "Tạo button màu xanh" | ❌ Không (không cần kiến thức đặc biệt) |
-| "Thiết kế dashboard đẹp" | ✅ Có (cần kiến thức UI/UX) |
-| "Tối ưu database chậm" | ✅ Có (cần kiến thức performance) |
-| "Implement OAuth2" | ✅ Có (cần kiến thức authentication) |
+**Note:** These are reference examples for inspiration and learning. They showcase general-purpose capabilities rather than organization-specific workflows or sensitive content.
 
-**Nguyên tắc:** Chỉ load khi thực sự cần, không load thừa.
+## Disclaimer
 
----
+**These skills are provided for demonstration and educational purposes only.** While some of these capabilities may be available in Claude, the implementations and behaviors you receive from Claude may differ from what is shown in these examples. These examples are meant to illustrate patterns and possibilities. Always test skills thoroughly in your own environment before relying on them for critical tasks.
 
-## Danh Sách 59 Skills Theo Nhóm
+# Installation
 
-### 🎨 Nhóm Giao Diện & Thiết Kế (11 skills)
+Some skills require external dependencies (FFmpeg, ImageMagick, Node.js packages, Python packages). Use our automated installation scripts to set up all dependencies:
 
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
-|-------|--------------|-----------------|
-| **ui-ux-pro-max** | Cần thiết kế đẹp, chuyên nghiệp | 50 styles, 21 bảng màu, 50 cặp fonts |
-| **frontend-design** | Tạo giao diện production-ready | Hướng dẫn thiết kế chuẩn |
-| **frontend-design-pro** | Cần ảnh thật (Unsplash/Pexels) | Tích hợp ảnh stock chất lượng |
-| **frontend-development** | Viết code React/TypeScript | Best practices, patterns chuẩn |
-| **ui-styling** | Dùng Tailwind, shadcn/ui | Components và styling guide |
-| **threejs** | Làm 3D, WebGL | Hướng dẫn Three.js đầy đủ |
-| **web-frameworks** | Dùng Next.js, Turborepo | Setup và best practices |
-| **webapp-testing** | Test giao diện với Playwright | Kỹ thuật test UI |
-
-### 🔧 Nhóm Backend & Database (4 skills)
-
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
-|-------|--------------|-----------------|
-| **backend-development** | Viết API, server logic | Node.js, Python, Go, Rust guides |
-| **databases** | Làm việc với MongoDB, PostgreSQL | Queries, optimization, migrations |
-| **better-auth** | Implement đăng nhập, OAuth | OAuth2, 2FA, session management |
-| **payment-integration** | Tích hợp thanh toán | SePay (VN), Polar (quốc tế) |
-
-### 🐛 Nhóm Sửa Lỗi & Testing (5 skills)
-
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
-|-------|--------------|-----------------|
-| **debugging** | Debug lỗi khó, phức tạp | Framework debug 4 bước |
-| **bug-diagnosis** | Phân tích nguyên nhân lỗi | Quy trình chẩn đoán bug |
-| **test-generation** | Viết test theo BDD | Given/When/Then templates |
-| **tasks-test-generation** | Viết unit test | xUnit (C#), Jest (JS) |
-| **chrome-devtools** | Debug trên browser | Puppeteer, performance analysis |
-
-### 🏗️ Nhóm Kiến Trúc & Hiệu Năng (3 skills)
-
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
-|-------|--------------|-----------------|
-| **arch-performance-optimization** | App chạy chậm | Kỹ thuật tối ưu performance |
-| **arch-security-review** | Review bảo mật | OWASP Top 10, security checklist |
-| **arch-cross-service-integration** | Kết nối nhiều services | Message bus, API patterns |
-
-### 📚 Nhóm Tài Liệu & Lập Kế Hoạch (7 skills)
-
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
-|-------|--------------|-----------------|
-| **documentation** | Lên kế hoạch viết docs | Framework 4 phases |
-| **tasks-documentation** | Viết docs thực tế | Templates cho comments, API docs |
-| **feature-docs** | Viết docs cho tính năng | Template với test cases |
-| **readme-improvement** | Cải thiện README | Best practices README |
-| **planning** | Lập kế hoạch kỹ thuật | Framework planning |
-| **plan-analysis** | Phân tích kế hoạch có sẵn | Đánh giá impact, risks |
-| **project-index** | Tạo index cấu trúc dự án | Scan và generate docs/structure.md |
-
-### 🤖 Nhóm AI & Đa Phương Tiện (3 skills)
-
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
-|-------|--------------|-----------------|
-| **ai-multimodal** | Xử lý audio, video, ảnh | Google Gemini API guides |
-| **ai-artist** | Viết prompt cho AI | Prompt engineering techniques |
-| **google-adk-python** | Xây dựng AI agents | Google ADK framework |
-
-### ⚙️ Nhóm DevOps & Công Cụ (7 skills)
-
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
-|-------|--------------|-----------------|
-| **devops** | Deploy, CI/CD | Cloudflare, Docker, GCP |
-| **mcp-builder** | Tạo MCP server | Hướng dẫn build MCP |
-| **mcp-management** | Quản lý MCP tools | Discover, execute MCP |
-| **repomix** | Đóng gói code cho AI | Pack codebase thành 1 file |
-| **package-upgrade** | Upgrade dependencies | Analyze breaking changes |
-| **media-processing** | Xử lý video, ảnh | FFmpeg, ImageMagick guides |
-
-### 🔍 Nhóm Review & Chất Lượng (4 skills)
-
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
-|-------|--------------|-----------------|
-| **code-review** | Review code kỹ lưỡng | Checklist review chuyên sâu |
-| **dual-pass-review** | Review 2 lượt bắt buộc | Đảm bảo chất lượng |
-| **tasks-code-review** | Review PR nhanh | Checklist ngắn gọn |
-| **tasks-spec-update** | Cập nhật specs | Sync docs với code |
-
-### 🔬 Nhóm Nghiên Cứu & Giải Quyết Vấn Đề (5 skills)
-
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
-|-------|--------------|-----------------|
-| **research** | Nghiên cứu công nghệ | Framework research |
-| **problem-solving** | Bị stuck, không biết làm gì | 6 kỹ thuật giải quyết |
-| **sequential-thinking** | Vấn đề phức tạp nhiều bước | Structured thinking |
-| **feature-investigation** | Tìm hiểu code hiện có | Trace flow, explain logic |
-| **branch-comparison** | So sánh branches | Git diff analysis |
-
-### 📱 Nhóm Mobile & E-commerce (2 skills)
-
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
-|-------|--------------|-----------------|
-| **mobile-development** | Làm app mobile | React Native, Flutter, Swift |
-| **shopify** | Làm app Shopify | APIs, themes, extensions |
-
-### 🛠️ Nhóm Quản Lý Skills (3 skills)
-
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
-|-------|--------------|-----------------|
-| **skill-creator** | Tạo skill mới | Template và hướng dẫn |
-| **skill-share** | Chia sẻ skill qua Slack | Auto-share workflow |
-| **claude-code** | Dùng Claude Code | Commands, MCP, hooks |
-
-### 📄 Nhóm Xử Lý Tài Liệu (4 skills)
-
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
-|-------|--------------|-----------------|
-| **docx** | Tạo/sửa Word | python-docx guides |
-| **pdf** | Xử lý PDF | Extract, merge, fill forms |
-| **pptx** | Tạo PowerPoint | Slides, layouts |
-| **xlsx** | Tạo Excel | Formulas, formatting |
-
-### 🔧 Nhóm Tiện Ích (4 skills)
-
-| Skill | Dùng Khi Nào | Có Gì Bên Trong |
-|-------|--------------|-----------------|
-| **docs-seeker** | Tìm tài liệu kỹ thuật | Search strategies |
-| **domain-name-brainstormer** | Tìm tên domain | Generate + check availability |
-| **developer-growth-analysis** | Phân tích coding patterns | Self-improvement insights |
-
----
-
-## Cấu Trúc Một Skill
-
-Mỗi skill là một thư mục chứa:
-
-```
-skill-name/
-├── SKILL.md          ← File chính (AI đọc file này)
-├── references/       ← Tài liệu tham khảo (nếu có)
-│   ├── api.md
-│   └── examples.md
-└── scripts/          ← Scripts hỗ trợ (nếu có)
-    └── helper.js
-```
-
-**File SKILL.md chứa:**
-```markdown
----
-name: tên-skill
-description: Mô tả ngắn gọn
----
-
-# Tên Skill
-
-## Khi Nào Dùng
-- Tình huống 1
-- Tình huống 2
-
-## Hướng Dẫn Chi Tiết
-[Nội dung hướng dẫn...]
-
-## Ví Dụ
-[Các ví dụ cụ thể...]
-```
-
----
-
-## Cách AI Chọn Skills
-
-### Ví dụ 1: Không cần skill
-```
-Bạn: "Đổi màu button từ xanh sang đỏ"
-
-AI phân tích:
-- Việc đơn giản, không cần kiến thức đặc biệt
-- Không load skill nào
-
-→ AI làm luôn
-```
-
-### Ví dụ 2: Cần 1 skill
-```
-Bạn: "Tối ưu trang chạy chậm"
-
-AI phân tích:
-- Cần kiến thức performance optimization
-- Load: arch-performance-optimization
-
-→ AI đọc skill, áp dụng techniques
-```
-
-### Ví dụ 3: Cần nhiều skills
-```
-Bạn: "Xây dựng dashboard đẹp với data từ API"
-
-AI phân tích:
-- Cần thiết kế đẹp → ui-ux-pro-max
-- Cần code React → frontend-development
-- Cần fetch data → backend-development
-
-→ AI load 3 skills, kết hợp kiến thức
-```
-
----
-
-## Cài Đặt Dependencies
-
-Một số skills cần cài thêm phần mềm:
-
-### Cài Tự Động (Khuyến nghị)
-
-**Windows (PowerShell Admin):**
-```powershell
-cd .claude\skills
-.\install.ps1
-```
+## Automated Installation (Recommended)
 
 **Linux/macOS:**
 ```bash
@@ -243,67 +33,117 @@ cd .claude/skills
 ./install.sh
 ```
 
-### Sẽ Cài Những Gì?
-
-| Loại | Phần mềm |
-|------|----------|
-| System tools | FFmpeg, ImageMagick |
-| Node.js packages | rmbg-cli, pnpm, repomix |
-| Python packages | google-genai, pypdf, Pillow |
-
----
-
-## Tạo Skill Mới
-
-Nếu muốn tạo skill riêng:
-
-1. **Tạo thư mục:**
-```
-.claude/skills/ten-skill-cua-ban/
+**Windows (PowerShell as Administrator):**
+```powershell
+cd .claude\skills
+.\install.ps1
 ```
 
-2. **Tạo file SKILL.md:**
+The installation scripts will:
+- Install system tools (FFmpeg, ImageMagick)
+- Install Node.js packages (rmbg-cli, pnpm, wrangler, repomix)
+- Create Python virtual environment
+- Install Python packages (google-genai, pypdf, Pillow, etc.)
+- Install test dependencies
+- Verify all installations
+
+## Manual Installation
+
+For manual installation or troubleshooting, see [INSTALLATION.md](INSTALLATION.md) for detailed instructions.
+
+## What Gets Installed
+
+- **System Tools**: FFmpeg, ImageMagick
+- **Node.js Packages**: rmbg-cli, pnpm, wrangler, repomix
+- **Python Packages**: google-genai, pypdf, python-docx, Pillow, pytest
+
+See [INSTALLATION.md](INSTALLATION.md) for complete dependency list and platform-specific instructions.
+
+# Example Skills
+
+This repository includes a diverse collection of example skills demonstrating different capabilities:
+
+## Creative & Design
+- **algorithmic-art** - Create generative art using p5.js with seeded randomness, flow fields, and particle systems
+- **canvas-design** - Design beautiful visual art in .png and .pdf formats using design philosophies
+- **slack-gif-creator** - Create animated GIFs optimized for Slack's size constraints
+
+## Development & Technical
+- **artifacts-builder** - Build complex claude.ai HTML artifacts using React, Tailwind CSS, and shadcn/ui components
+- **mcp-server** - Guide for creating high-quality MCP servers to integrate external APIs and services
+- **webapp-testing** - Test local web applications using Playwright for UI verification and debugging
+
+## Enterprise & Communication
+- **brand-guidelines** - Apply Anthropic's official brand colors and typography to artifacts
+- **internal-comms** - Write internal communications like status reports, newsletters, and FAQs
+- **theme-factory** - Style artifacts with 10 pre-set professional themes or generate custom themes on-the-fly
+
+## Meta Skills
+- **skill-creator** - Guide for creating effective skills that extend Claude's capabilities
+- **template-skill** - A basic template to use as a starting point for new skills
+
+# Document Skills
+
+The `document-skills/` subdirectory contains skills that Anthropic developed to help Claude create various document file formats. These skills demonstrate advanced patterns for working with complex file formats and binary data:
+
+- **docx** - Create, edit, and analyze Word documents with support for tracked changes, comments, formatting preservation, and text extraction
+- **pdf** - Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms
+- **pptx** - Create, edit, and analyze PowerPoint presentations with support for layouts, templates, charts, and automated slide generation
+- **xlsx** - Create, edit, and analyze Excel spreadsheets with support for formulas, formatting, data analysis, and visualization
+
+**Important Disclaimer:** These document skills are point-in-time snapshots and are not actively maintained or updated. Versions of these skills ship pre-included with Claude. They are primarily intended as reference examples to illustrate how Anthropic approaches developing more complex skills that work with binary file formats and document structures.
+
+# Try in Claude Code, Claude.ai, and the API
+
+## Claude Code
+You can register this repository as a Claude Code Plugin marketplace by running the following command in Claude Code:
+```
+/plugin marketplace add anthropics/skills
+```
+
+After installing the plugin, you can use the skill by just mentioning it. For instance, if you install the document-skills plugin from the marketplace, you can ask Claude Code to do something like: "use the pdf skill to extract the form fields from path/to/some-file.pdf"
+
+## Claude.ai
+
+These example skills are all already available to paid plans in Claude.ai. 
+
+To use any skill from this repository or upload custom skills, follow the instructions in [Using skills in Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude#h_a4222fa77b).
+
+## Claude API
+
+You can use Anthropic's pre-built skills, and upload custom skills, via the Claude API. See the [Skills API Quickstart](https://docs.claude.com/en/api/skills-guide#creating-a-skill) for more.
+
+# Creating a Basic Skill
+
+Skills are simple to create - just a folder with a `SKILL.md` file containing YAML frontmatter and instructions. You can use the **template-skill** in this repository as a starting point:
+
 ```markdown
 ---
-name: ten-skill-cua-ban
-description: Mô tả skill làm gì
+name: my-skill-name
+description: A clear description of what this skill does and when to use it
 ---
 
-# Tên Skill
+# My Skill Name
 
-## Khi Nào Dùng
-- Tình huống sử dụng
+[Add your instructions here that Claude will follow when this skill is active]
 
-## Hướng Dẫn
-- Bước 1: ...
-- Bước 2: ...
+## Examples
+- Example usage 1
+- Example usage 2
 
-## Ví Dụ
-- Ví dụ cụ thể
+## Guidelines
+- Guideline 1
+- Guideline 2
 ```
 
-3. **Đăng ký trong settings** (tùy chọn)
+The frontmatter requires only two fields:
+- `name` - A unique identifier for your skill (lowercase, hyphens for spaces)
+- `description` - A complete description of what the skill does and when to use it
 
-Xem chi tiết: [skill-creator/SKILL.md](skill-creator/SKILL.md)
+The markdown content below contains the instructions, examples, and guidelines that Claude will follow. For more details, see [How to create custom skills](https://support.claude.com/en/articles/12512198-creating-custom-skills).
 
----
+# Partner Skills
 
-## Tóm Tắt
+Skills are a great way to teach Claude how to get better at using specific pieces of software. As we see awesome example skills from partners, we may highlight some of them here:
 
-| Khái niệm | Giải thích |
-|-----------|------------|
-| **Skill là gì** | Bộ kiến thức chuyên môn AI sẽ học |
-| **Có bao nhiêu** | 59 skills chia thành 14 nhóm |
-| **Khi nào load** | Chỉ khi công việc cần kiến thức chuyên sâu |
-| **Ai quyết định** | AI tự động chọn dựa trên yêu cầu |
-| **Có thể tạo thêm** | Có, theo template trong skill-creator |
-
----
-
-## Xem Thêm
-
-- [Danh sách Agents (Vai trò)](../agents/README.md)
-- [Danh sách Commands (Quy trình)](../commands/README.md)
-- [Router (Bộ định tuyến)](../router/README.md)
-- [Hướng dẫn tạo Skill](skill-creator/SKILL.md)
-- [Cài đặt chi tiết](INSTALLATION.md)
+- **Notion** - [Notion Skills for Claude](https://www.notion.so/notiondevs/Notion-Skills-for-Claude-28da4445d27180c7af1df7d8615723d0)

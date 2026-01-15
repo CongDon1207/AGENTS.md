@@ -9,6 +9,21 @@ Stacks: html-tailwind, react, nextjs
 """
 
 import argparse
+import sys
+from pathlib import Path
+
+# Add shared scripts to path for win_compat
+sys.path.insert(0, str(Path.home() / '.claude' / 'scripts'))
+try:
+    from win_compat import ensure_utf8_stdout
+    ensure_utf8_stdout()
+except ImportError:
+    # Fallback if shared utility not available
+    if sys.platform == 'win32':
+        import io
+        if hasattr(sys.stdout, 'buffer'):
+            sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
 from core import CSV_CONFIG, AVAILABLE_STACKS, MAX_RESULTS, search, search_stack
 
 

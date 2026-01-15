@@ -4,16 +4,9 @@ Scan .claude/skills directory and extract skill metadata.
 """
 
 import re
-import sys
-import io
 from pathlib import Path
 from typing import Dict, List
 import yaml
-
-# Ensure Unicode output works on Windows terminals
-if sys.platform == 'win32' and hasattr(sys.stdout, 'buffer'):
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
 
 def extract_frontmatter(content: str) -> Dict:
     """Extract YAML frontmatter from markdown content."""
@@ -69,7 +62,7 @@ def scan_skills(base_path: Path) -> List[Dict]:
             skill_name = f"{parent_name}/{skill_name}"
 
         try:
-            content = skill_file.read_text(encoding='utf-8', errors='replace')
+            content = skill_file.read_text()
             frontmatter = extract_frontmatter(content)
 
             description = frontmatter.get('description', '')
@@ -81,13 +74,12 @@ def scan_skills(base_path: Path) -> List[Dict]:
 
             skills.append({
                 'name': skill_name,
-                'path': skill_file.relative_to(base_path).as_posix(),
+                'path': str(skill_file.relative_to(Path('.claude/skills'))),
                 'description': description,
                 'category': category,
                 'has_scripts': (skill_dir / 'scripts').exists(),
                 'has_references': (skill_dir / 'references').exists()
             })
-
         except Exception as e:
             print(f"Error processing {skill_file}: {e}")
 
@@ -187,10 +179,7 @@ def main():
 
     # Output YAML for processing (generate_catalogs.py reads YAML)
     output_path = Path('.claude/scripts/skills_data.yaml')
-    output_path.write_text(
-        yaml.dump(skills, allow_unicode=True, default_flow_style=False),
-        encoding='utf-8',
-    )
+    output_path.write_text(yaml.dump(skills, allow_unicode=True, default_flow_style=False))
     print(f"\n✓ Saved metadata to {output_path}")
 
 if __name__ == '__main__':

@@ -71,4 +71,6 @@ Apache 2.0 - See [LICENSE](LICENSE) for details.
 
 ## 🌎 Acknowledgments & Attribution
 
-This repository is compiled from multiple public open-source repositories. I am not the original author of the underlying content; my contribution lies in selecting, customizing, and adapting it to fit specific use cases and workflows. All credit belongs to the original authors and the open-source community.
+This repository is curated from multiple public open-source repositories. I am not the original author of the underlying content; my contribution lies in selecting, customizing, and adapting it to fit specific use cases and workflows. All credit belongs to the original authors and the open-source community.
+
+The `.claude` directory is sourced from [original repo](https://github.com/duc01226/EasyPlatform). 

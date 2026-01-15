@@ -1,8 +1,10 @@
 ---
 name: documentation
-description: Use for PLANNING documentation with phased analysis (4 phases), gap identification, and structured knowledge modeling. Best for documentation audits, completeness analysis, and documentation strategy planning. NOT for writing actual docs (use tasks-documentation instead).
+description: Use when the user asks to enhance documentation, add code comments, create API docs, improve technical documentation, or document code. Triggers on keywords like "document", "documentation", "API docs", "comments", "JSDoc", "XML comments", "explain code".
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob, Task, TodoWrite
 ---
+
+> **Skill Variant:** Use this skill for **interactive documentation tasks** where the user is actively engaged. For autonomous documentation generation, use `tasks-documentation` instead.
 
 # Documentation Enhancement
 
@@ -47,7 +49,7 @@ Every 10 operations:
 
 ## PHASE 1: EXTERNAL MEMORY-DRIVEN DOCUMENTATION ANALYSIS
 
-Build a structured knowledge model in `ai_task_analysis_notes/[task-name].ai_task_analysis_notes_temp.md`.
+Build a structured knowledge model in `.ai/workspace/analysis/[task-name].md`.
 
 ### PHASE 1A: INITIALIZATION AND DISCOVERY
 

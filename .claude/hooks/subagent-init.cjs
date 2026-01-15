@@ -19,6 +19,7 @@ const {
   getReportsPath,
   normalizePath
 } = require('./lib/ck-config-utils.cjs');
+const { getTodoStateForSubagent } = require('./lib/todo-state.cjs');
 
 /**
  * Get agent-specific context from config
@@ -108,7 +109,7 @@ async function main() {
 
     // Core rules (minimal)
     lines.push(`## Rules`);
-    lines.push(`- Follow: .claude/workflows/development-rules.md`);
+    lines.push(`- **MUST READ:** .claude/workflows/development-rules.md before implementation`);
     lines.push(`- Reports → ${reportsPath}`);
     lines.push(`- YAGNI / KISS / DRY`);
     lines.push(`- **Class Responsibility:** Logic in LOWEST layer (Model > Service > Component). Mapping → Command/DTO. Constants → Model.`);
@@ -129,6 +130,18 @@ async function main() {
       lines.push(``);
       lines.push(`## Agent Instructions`);
       lines.push(agentContext);
+    }
+
+    // Todo state inheritance (from parent session)
+    const todoState = getTodoStateForSubagent();
+    if (todoState && todoState.hasTodos) {
+      lines.push(``);
+      lines.push(`## Parent Todo Context`);
+      lines.push(`Tasks: ${todoState.taskCount} total, ${todoState.pendingCount} pending`);
+      if (todoState.summaryTodos && todoState.summaryTodos.length > 0) {
+        lines.push(`Active:`);
+        todoState.summaryTodos.forEach(t => lines.push(`  ${t}`));
+      }
     }
 
     // CRITICAL: SubagentStart requires hookSpecificOutput.additionalContext format

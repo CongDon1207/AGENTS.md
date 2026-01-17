@@ -1,4 +1,4 @@
-﻿---
+---
 description: Create a CRO plan for the given content
 model: google/antigravity-OpenCode-opus-4-5-thinking
 ---

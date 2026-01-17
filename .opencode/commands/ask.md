@@ -1,4 +1,4 @@
-﻿---
+---
 description: ⚡ Answer technical and architectural questions.
 ---
 

@@ -1,4 +1,4 @@
-﻿---
+---
 description: Analyze the codebase and create initial documentation
 model: google/antigravity-OpenCode-opus-4-5-thinking
 ---

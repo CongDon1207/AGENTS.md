@@ -1,4 +1,4 @@
-﻿---
+---
 description: Run test suite and fix issues
 model: google/antigravity-OpenCode-opus-4-5-thinking
 ---

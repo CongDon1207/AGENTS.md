@@ -1,4 +1,4 @@
-﻿---
+---
 description: ⚡⚡⚡ Scan & analyze the codebase.
 model: google/antigravity-OpenCode-opus-4-5-thinking
 ---

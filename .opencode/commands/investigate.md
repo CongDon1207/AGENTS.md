@@ -1,3 +1,7 @@
+---
+description: Investigate and explain how an existing feature works
+---
+
 # Investigate Feature: $ARGUMENTS
 
 Investigate and explain how an existing feature or logic works using structured knowledge model construction.

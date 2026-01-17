@@ -1,4 +1,4 @@
-﻿---
+---
 description: ⚡ Use external agentic tools to scout given directories
 model: google/antigravity-OpenCode-opus-4-5-thinking
 ---

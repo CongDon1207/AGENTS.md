@@ -1,3 +1,7 @@
+---
+description: Create a migration plan and implementation approach
+---
+
 # Create Migration: $ARGUMENTS
 
 Create a data or schema migration following EasyPlatform patterns.

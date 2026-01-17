@@ -1,4 +1,4 @@
-﻿---
+---
 description: ⚡⚡⚡⚡ Research & create an implementation plan with 2 approaches
 model: google/antigravity-OpenCode-opus-4-5-thinking
 ---

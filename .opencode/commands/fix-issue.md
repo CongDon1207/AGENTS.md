@@ -1,4 +1,4 @@
-﻿---
+---
 description: Investigate and fix a GitHub issue by number
 allowed-tools: Bash, Read, Write, Edit, Glob, Grep, TodoWrite, Task
 ---

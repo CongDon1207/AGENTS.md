@@ -1,3 +1,7 @@
+---
+description: Perform a security review (plan-only)
+---
+
 # Security Review: $ARGUMENTS
 
 Perform security review on: $ARGUMENTS

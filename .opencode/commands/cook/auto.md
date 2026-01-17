@@ -1,4 +1,4 @@
-﻿---
+---
 description: ⚡⚡ Implement a feature automatically ("trust me bro")
 model: google/antigravity-OpenCode-opus-4-5-thinking
 ---

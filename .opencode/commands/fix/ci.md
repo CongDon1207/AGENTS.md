@@ -1,4 +1,4 @@
-﻿---
+---
 description: Analyze Github Actions logs and fix issues
 model: google/antigravity-OpenCode-opus-4-5-thinking
 ---

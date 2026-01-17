@@ -1,4 +1,4 @@
-﻿---
+---
 name: planning
 description: Use when you need to plan technical solutions that are scalable, secure, and maintainable.
 license: MIT
@@ -83,7 +83,7 @@ Prevents version proliferation by tracking current working plan via session stat
 ### Active vs Suggested Plans
 
 Check the `## Plan Context` section injected by hooks:
-- **"Plan: {path}"** = Active plan, explicitly set via `set-active-plan.cjs` - use for reports
+- **"Plan: {path}"** = Active plan - use for reports
 - **"Suggested: {path}"** = Branch-matched, hint only - do NOT auto-use
 - **"Plan: none"** = No active plan
 
@@ -92,7 +92,7 @@ Check the `## Plan Context` section injected by hooks:
 1. **If "Plan:" shows a path**: Ask "Continue with existing plan? [Y/n]"
 2. **If "Suggested:" shows a path**: Inform user, ask if they want to activate or create new
 3. **If "Plan: none"**: Create new plan using naming from `## Naming` section
-4. **Update on create**: Run `node .opencode/scripts/set-active-plan.cjs {plan-dir}`
+
 
 ### Report Output Location
 

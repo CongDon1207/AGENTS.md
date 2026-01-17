@@ -1,4 +1,4 @@
-﻿---
+---
 description: Analyze and fix small issues [FAST]
 model: google/antigravity-OpenCode-opus-4-5-thinking
 ---

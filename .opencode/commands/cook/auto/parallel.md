@@ -1,4 +1,4 @@
-﻿---
+---
 description: ⚡⚡⚡ Plan parallel phases & execute with fullstack-developer agents
 model: google/antigravity-OpenCode-opus-4-5-thinking
 ---

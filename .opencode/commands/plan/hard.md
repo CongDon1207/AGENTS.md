@@ -1,4 +1,4 @@
-﻿---
+---
 description: Research, analyze, and create an implementation plan
 model: google/antigravity-OpenCode-opus-4-5-thinking
 ---

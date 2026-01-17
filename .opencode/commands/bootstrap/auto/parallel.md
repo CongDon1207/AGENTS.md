@@ -1,4 +1,4 @@
-﻿---
+---
 description: ⚡⚡⚡⚡⚡ Bootstrap project with parallel execution
 model: google/antigravity-OpenCode-opus-4-5-thinking
 ---

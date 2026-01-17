@@ -1,4 +1,4 @@
-﻿---
+---
 description: Optimize an existing agent skill [auto]
 model: google/antigravity-OpenCode-opus-4-5-thinking
 ---

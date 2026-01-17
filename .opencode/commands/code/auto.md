@@ -1,4 +1,4 @@
-﻿---
+---
 description: ⚡⚡⚡ [AUTO] Start coding & testing an existing plan ("trust me bro")
 model: google/antigravity-OpenCode-opus-4-5-thinking
 ---

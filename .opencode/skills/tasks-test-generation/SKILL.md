@@ -1,5 +1,5 @@
 ---
-name: test-generation
+name: tasks-test-generation
 description: Use for DEVELOPER-focused unit/integration test code with xUnit (C#) and Jest (Angular) patterns. Provides ready-to-use test templates for commands, queries, entities, and components. Best for implementing actual test code. NOT for QA test specifications (use test-generation instead).
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash
 ---

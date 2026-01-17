@@ -1,4 +1,8 @@
-﻿# Save Memory Checkpoint
+---
+description: Save a memory checkpoint (progress snapshot)
+---
+
+# Save Memory Checkpoint
 
 Save current analysis, findings, and progress to an external memory file to prevent context loss during long-running tasks.
 

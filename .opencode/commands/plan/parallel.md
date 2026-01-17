@@ -1,4 +1,4 @@
-﻿---
+---
 description: ⚡⚡⚡ Create detailed plan with parallel-executable phases
 model: google/antigravity-OpenCode-opus-4-5-thinking
 ---

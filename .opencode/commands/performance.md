@@ -1,3 +1,7 @@
+---
+description: Analyze and optimize performance (plan-only)
+---
+
 # Analyze Performance: $ARGUMENTS
 
 Analyze and optimize performance for: $ARGUMENTS

@@ -1,4 +1,4 @@
-﻿---
+---
 description: ⚡ No research. Only scout, plan & implement ["trust me bro"]
 model: google/antigravity-OpenCode-opus-4-5-thinking
 ---

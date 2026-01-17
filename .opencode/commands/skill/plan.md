@@ -1,4 +1,4 @@
-﻿---
+---
 description: Plan to create a new agent skill
 model: google/antigravity-OpenCode-opus-4-5-thinking
 ---

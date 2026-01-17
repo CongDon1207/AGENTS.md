@@ -1,4 +1,4 @@
-﻿---
+---
 description: ⚡⚡⚡⚡⚡ Bootstrap a new project step by step
 ---
 

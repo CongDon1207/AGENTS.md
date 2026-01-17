@@ -1,4 +1,4 @@
-﻿# Plan Creation & Organization
+# Plan Creation & Organization
 
 ## Directory Structure
 
@@ -40,11 +40,7 @@ Check the `## Plan Context` section injected by hooks:
 2. If "Suggested:" shows a path → inform user (hint only, do NOT auto-use)
 3. If "Plan: none" → create new plan using naming from `## Naming` section
 
-**After Creating Plan:**
-```bash
-# Update session state so subagents get the new plan context:
-node .opencode/scripts/set-active-plan.cjs {plan-dir}
-```
+
 
 **Report Output Rules:**
 1. Use `Report:` and `Plan dir:` from `## Naming` section

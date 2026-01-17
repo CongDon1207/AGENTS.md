@@ -1,4 +1,4 @@
-﻿---
+---
 description: Start coding an existing plan (no testing)
 model: google/antigravity-OpenCode-opus-4-5-thinking
 ---

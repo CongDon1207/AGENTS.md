@@ -1,4 +1,4 @@
-﻿---
+---
 description: ⚡⚡⚡ Quickly bootstrap a new project automatically
 model: google/antigravity-OpenCode-opus-4-5-thinking
 ---

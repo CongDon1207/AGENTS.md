@@ -3,7 +3,7 @@
 ---
 
 ## 1) Language
-- **Repository artifacts (mandatory)**: All documentation/guides, code comments, and any text written into files must be in **English**.
+- **Repository artifacts (mandatory)**: All documentation/guides, code comments, and any text written into files should be in **English**.
 - **Conversation**: Replies in the chat should be in **Vietnamese**.
 
 ---

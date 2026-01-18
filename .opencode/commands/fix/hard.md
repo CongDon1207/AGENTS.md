@@ -1,6 +1,5 @@
 ---
 description: Use subagents to plan and fix hard issues
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 **Complex fix requiring investigation and planning:**

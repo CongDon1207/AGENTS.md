@@ -8,7 +8,7 @@
 
 Antigravity Kit is a modular system consisting of:
 - **16 Specialist Agents** - Role-based AI personas
-- **42 Skills** - Domain-specific knowledge modules
+- **40 Skills** - Domain-specific knowledge modules
 - **11 Workflows** - Slash command procedures
 
 ---
@@ -19,7 +19,7 @@ Antigravity Kit is a modular system consisting of:
 .agent/
 ├── ARCHITECTURE.md          # This file
 ├── agents/                  # 16 Specialist Agents
-├── skills/                  # 42 Skills (419 files)
+├── skills/                  # 40 Skills
 ├── workflows/               # 11 Slash Commands
 ├── rules/                   # Global Rules
 └── .shared/                 # Shared Resources
@@ -52,7 +52,7 @@ Specialist AI personas for different domains.
 
 ---
 
-## 🧠 Skills (42)
+## 🧠 Skills (40)
 
 Domain-specific knowledge modules. Skills are loaded on-demand based on task context.
 
@@ -60,7 +60,6 @@ Domain-specific knowledge modules. Skills are loaded on-demand based on task con
 | Skill | Description |
 |-------|-------------|
 | `react-patterns` | React hooks, state, performance |
-| `vue-expert` | Vue 3, Composition API, Pinia |
 | `nextjs-best-practices` | App Router, Server Components |
 | `tailwind-patterns` | Tailwind CSS v4 utilities |
 | `frontend-design` | UI/UX patterns, design systems |
@@ -88,7 +87,6 @@ Domain-specific knowledge modules. Skills are loaded on-demand based on task con
 ### Cloud & Infrastructure
 | Skill | Description |
 |-------|-------------|
-| `cloudflare-expert` | Workers, Pages, D1, KV, R2, AI (256 refs) |
 | `docker-expert` | Containerization, Compose |
 | `deployment-procedures` | CI/CD, deploy workflows |
 | `server-management` | Infrastructure management |
@@ -196,8 +194,6 @@ skill-name/
 
 | Skill | Files | Coverage |
 |-------|-------|----------|
-| `cloudflare-expert` | 257 | 60+ Cloudflare products |
-| `vue-expert` | 6 | Cheatsheet, templates, diagnostic |
 | `typescript-expert` | 5 | Utility types, tsconfig, cheatsheet |
 | `ui-ux-pro-max` | 27 | 50 styles, 21 palettes, 50 fonts |
 | `app-builder` | 20 | Full-stack scaffolding |
@@ -209,8 +205,7 @@ skill-name/
 | Metric | Value |
 |--------|-------|
 | **Total Agents** | 16 |
-| **Total Skills** | 42 |
-| **Total Skill Files** | 419 |
+| **Total Skills** | 40 |
 | **Total Workflows** | 11 |
 | **Coverage** | ~90% web/mobile development |
 
@@ -224,7 +219,6 @@ skill-name/
 | API | `backend-specialist` | api-patterns, nodejs-best-practices |
 | Mobile | `mobile-developer` | mobile-design |
 | Database | `database-architect` | database-design, prisma-expert |
-| Cloudflare | - | cloudflare-expert |
 | Security | `security-auditor` | vulnerability-scanner |
 | Testing | `test-engineer` | testing-patterns, webapp-testing |
 | Debug | `debugger` | systematic-debugging |

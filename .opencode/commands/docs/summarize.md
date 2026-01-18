@@ -1,6 +1,5 @@
 ---
 description: ⚡ Analyze the codebase and update documentation
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 Use `docs-manager` agent to analyze the codebase based on `docs/codebase-summary.md` and respond with a summary report.

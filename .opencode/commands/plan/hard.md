@@ -1,6 +1,5 @@
 ---
 description: Research, analyze, and create an implementation plan
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 **Deep planning with research:**
@@ -51,7 +50,6 @@ model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 title: "{Title}"
 description: "{Description}"
-model: google/antigravity-OpenCode-opus-4-5-thinking
 status: pending
 priority: P1
 effort: {total hours}

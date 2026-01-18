@@ -1,6 +1,5 @@
 ---
 description: Fix type errors
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 **Fix TypeScript/type errors:**

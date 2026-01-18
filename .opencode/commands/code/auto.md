@@ -1,6 +1,5 @@
 ---
 description: ⚡⚡⚡ [AUTO] Start coding & testing an existing plan ("trust me bro")
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 **MUST READ** `AGENTS.md` then **THINK HARDER** to start working on the following plan follow the Orchestration Protocol, Core Responsibilities, Subagents Team and Development Rules:
@@ -22,7 +21,6 @@ model: google/antigravity-OpenCode-opus-4-5-thinking
 - In reports, list any unresolved questions at the end, if any.
 - Ensure token efficiency while maintaining high quality.
 
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 ## Step 0: Plan Detection & Phase Selection
@@ -46,7 +44,6 @@ Task(subagent_type="[type]", prompt="[task description]", description="[brief]")
 
 **Rules:** Follow steps 1-5 in order. Each step requires output marker starting with "✓ Step N:". Mark each complete in `TodoWrite` before proceeding. Do not skip steps.
 
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 ## Step 1: Analysis & Task Extraction
@@ -78,7 +75,6 @@ Implement selected plan phase step-by-step following extracted tasks (Step 2.1, 
 
 Mark Step 2 complete in `TodoWrite`, mark Step 3 in_progress.
 
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 ## Step 3: Testing
@@ -107,7 +103,6 @@ Call `code-reviewer` subagent: "Review code changes in **Step 2** of plan phase 
 
 Mark Step 4 complete in TodoWrite, mark Step 5 in_progress.
 
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 ## Step 5: Finalize

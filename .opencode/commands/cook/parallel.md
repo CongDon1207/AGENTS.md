@@ -1,6 +1,5 @@
 ---
 description: ⚡⚡⚡ Parallel implementation - multiple tasks simultaneously
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 Execute these tasks in parallel for maximum efficiency:

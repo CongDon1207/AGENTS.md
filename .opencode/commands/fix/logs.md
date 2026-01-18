@@ -1,6 +1,5 @@
 ---
 description: ⚡ Analyze logs and fix issues
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 **IMPORTANT:** Analyze the skills catalog and activate the skills that are needed for the task during the process.

@@ -1,6 +1,5 @@
 ---
 description: Analyze Github Actions logs and provide a plan to fix the issues
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 Activate `planning` skill.

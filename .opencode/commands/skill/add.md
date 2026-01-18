@@ -1,6 +1,5 @@
 ---
 description: Add new reference files or scripts to a skill
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 Think harder.

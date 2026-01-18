@@ -1,6 +1,5 @@
 ---
 description: Optimize an existing agent skill
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 Think harder.

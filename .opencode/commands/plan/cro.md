@@ -1,6 +1,5 @@
 ---
 description: Create a CRO plan for the given content
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 You are an expert in conversion optimization. Analyze the content based on the given issues:

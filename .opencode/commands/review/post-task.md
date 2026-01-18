@@ -1,6 +1,5 @@
 ---
 description: ⚡⚡⚡ Two-pass code review for task completion
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 # Post-Task Two-Pass Code Review
@@ -15,7 +14,6 @@ Focus: $ARGUMENTS
 This review ensures ALL code changes follow best practices and project conventions.
 Two passes guarantee corrections don't introduce new issues.
 
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 ## Pass 1: Initial Review
@@ -99,7 +97,6 @@ If issues found:
 - Apply minimal, targeted fixes
 - Document any trade-offs made
 
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 ## Final Report
@@ -149,7 +146,6 @@ git checkout -- path/to/file.ts
 git add -p  # Interactive staging
 ```
 
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 ## Integration Notes

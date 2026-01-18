@@ -1,6 +1,5 @@
 ---
 description: Create a new agent skill
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 Ultrathink.

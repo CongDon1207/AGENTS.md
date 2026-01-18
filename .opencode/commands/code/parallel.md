@@ -1,6 +1,5 @@
 ---
 description: ⚡ Execute parallel or sequential phases based on plan structure
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 Execute plan: <plan>$ARGUMENTS</plan>

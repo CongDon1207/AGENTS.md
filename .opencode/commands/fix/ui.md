@@ -1,6 +1,5 @@
 ---
 description: Analyze and fix UI issues
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 **Fix UI/UX issues:**

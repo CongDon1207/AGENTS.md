@@ -1,6 +1,5 @@
 ---
 description: Write journal entries and archive specific plans or all plans
-model: google/antigravity-OpenCode-opus-4-5-thinking
 
 ---
 

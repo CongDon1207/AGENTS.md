@@ -1,6 +1,5 @@
 ---
 description: ⚡⚡⚡ Scan & analyze the codebase.
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 Think harder to scan the codebase and analyze it follow the Orchestration Protocol, Core Responsibilities, Subagents Team and Development Rules: 
@@ -14,7 +13,6 @@ Think harder to scan the codebase and analyze it follow the Orchestration Protoc
 - **IMPORTANT:** Sacrifice grammar for the sake of concision when writing reports.
 - **IMPORTANT:** In reports, list any unresolved questions at the end, if any.
 
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 ## Workflow:

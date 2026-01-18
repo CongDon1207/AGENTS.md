@@ -1,6 +1,5 @@
 ---
 description: ⚡⚡⚡⚡ Thorough implementation with maximum verification
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 **Ultrathink** to plan and implement these tasks with maximum verification:

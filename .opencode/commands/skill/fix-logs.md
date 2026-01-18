@@ -1,6 +1,5 @@
 ---
 description: Fix the agent skill based on `logs.txt` file.
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 Think harder.

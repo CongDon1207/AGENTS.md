@@ -1,6 +1,5 @@
 ---
 description: No research. Only analyze and create an implementation plan
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 **Quick plan without deep research:**
@@ -25,7 +24,6 @@ model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 title: "{Brief title}"
 description: "{One sentence}"
-model: google/antigravity-OpenCode-opus-4-5-thinking
 status: pending
 priority: P2
 effort: {estimate}

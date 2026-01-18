@@ -1,6 +1,5 @@
 ---
 description: ⚡⚡ Analyze & fix issues with parallel fullstack-developer agents
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 **Ultrathink parallel** to fix: <issues>$ARGUMENTS</issues>

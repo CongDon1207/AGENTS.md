@@ -1,6 +1,5 @@
 ---
 description: Analyze the codebase and update documentation
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 **Update project documentation:**

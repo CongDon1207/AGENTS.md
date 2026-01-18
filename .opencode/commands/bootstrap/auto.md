@@ -1,6 +1,5 @@
 ---
 description: ⚡⚡⚡⚡ Bootstrap a new project automatically
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 **Ultrathink** to plan & bootstrap a new project follow the Orchestration Protocol, Core Responsibilities, Subagents Team and Development Rules in your `AGENTS.md` file: 

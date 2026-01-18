@@ -1,6 +1,5 @@
 ---
 description: ⚡⚡ Implement a feature automatically ("trust me bro")
-model: google/antigravity-OpenCode-opus-4-5-thinking
 ---
 
 **Ultrathink** to plan & start working on these tasks follow the Orchestration Protocol, Core Responsibilities, Subagents Team and Development Rules: 

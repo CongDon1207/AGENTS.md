@@ -63,11 +63,11 @@ $ARGUMENTS
 ```
 After PLAN.md is complete, ASK:
 
-"✅ Plan oluşturuldu: docs/PLAN.md
+"✅ Plan created: docs/PLAN.md
 
-Onaylıyor musunuz? (Y/N)
-- Y: Implementation başlatılır
-- N: Planı düzeltirim"
+Do you approve? (Y/N)
+- Y: Start implementation
+- N: I'll revise the plan"
 ```
 
 > 🔴 **DO NOT proceed to Phase 2 without explicit user approval!**
@@ -153,17 +153,17 @@ When invoking ANY subagent, you MUST include:
 1. **Original User Request:** Full text of what user asked
 2. **Decisions Made:** All user answers to Socratic questions
 3. **Previous Agent Work:** Summary of what previous agents did
-4. **Current Plan State:** If `~/.claude/plans/` has a plan, include it
+4. **Current Plan State:** If plan files exist in workspace, include them
 
 **Example with FULL context:**
 ```
 Use the project-planner agent to create PLAN.md:
 
 **CONTEXT:**
-- User Request: "Öğrenciler için sosyal platform, mock data ile"
-- Decisions: Tech=Vue 3, Layout=Grid Widget, Auth=Mock, Design=Genç Dinamik
+- User Request: "A social platform for students, using mock data"
+- Decisions: Tech=Vue 3, Layout=Grid Widgets, Auth=Mock, Design=Youthful & dynamic
 - Previous Work: Orchestrator asked 6 questions, user chose all options
-- Current Plan: ~/.claude/plans/playful-roaming-dream.md exists with initial structure
+- Current Plan: playful-roaming-dream.md exists in workspace with initial structure
 
 **TASK:** Create detailed PLAN.md based on ABOVE decisions. Do NOT infer from folder name.
 ```
@@ -174,8 +174,8 @@ Use the project-planner agent to create PLAN.md:
 ### Step 4: Verification (MANDATORY)
 The LAST agent must run appropriate verification scripts:
 ```bash
-python ~/.claude/skills/vulnerability-scanner/scripts/security_scan.py .
-python ~/.claude/skills/lint-and-validate/scripts/lint_runner.py .
+python .agent/skills/vulnerability-scanner/scripts/security_scan.py .
+python .agent/skills/lint-and-validate/scripts/lint_runner.py .
 ```
 
 ### Step 5: Synthesize Results
@@ -192,7 +192,7 @@ Combine all agent outputs into unified report.
 [Original task summary]
 
 ### Mode
-[Current Claude Code mode: plan/edit/ask]
+[Current Antigravity Agent mode: plan/edit/ask]
 
 ### Agents Invoked (MINIMUM 3)
 | # | Agent | Focus Area | Status |

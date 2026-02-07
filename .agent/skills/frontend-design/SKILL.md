@@ -393,4 +393,26 @@ For deeper guidance on specific areas:
 
 ---
 
+## Related Skills
+
+| Skill | When to Use |
+|-------|-------------|
+| **frontend-design** (this) | Before coding - Learn design principles (color, typography, UX psychology) |
+| **[web-design-guidelines](../web-design-guidelines/SKILL.md)** | After coding - Audit for accessibility, performance, and best practices |
+
+## Post-Design Workflow
+
+After implementing your design, run the audit:
+
+```
+1. DESIGN   → Read frontend-design principles ← YOU ARE HERE
+2. CODE     → Implement the design
+3. AUDIT    → Run web-design-guidelines review
+4. FIX      → Address findings from audit
+```
+
+> **Next Step:** After coding, use `web-design-guidelines` skill to audit your implementation for accessibility, focus states, animations, and performance issues.
+
+---
+
 > **Remember:** Design is THINKING, not copying. Every project deserves fresh consideration based on its unique context and users. **Avoid the Modern SaaS Safe Harbor!**

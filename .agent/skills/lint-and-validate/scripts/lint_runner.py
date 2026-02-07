@@ -14,6 +14,8 @@ Supports:
 import subprocess
 import sys
 import json
+import platform
+import shutil
 from pathlib import Path
 from datetime import datetime
 
@@ -77,14 +79,24 @@ def run_linter(linter: dict, cwd: Path) -> dict:
     }
     
     try:
+        cmd = linter["cmd"]
+        
+        # Windows compatibility for npm/npx
+        if platform.system() == "Windows":
+            if cmd[0] in ["npm", "npx"]:
+                # Force .cmd extension on Windows
+                if not cmd[0].lower().endswith(".cmd"):
+                    cmd[0] = f"{cmd[0]}.cmd"
+        
         proc = subprocess.run(
-            linter["cmd"],
+            cmd,
             cwd=str(cwd),
             capture_output=True,
             text=True,
             encoding='utf-8',
             errors='replace',
-            timeout=120
+            timeout=120,
+            shell=platform.system() == "Windows" # Shell=True often helps with path resolution on Windows
         )
         
         result["output"] = proc.stdout[:2000] if proc.stdout else ""

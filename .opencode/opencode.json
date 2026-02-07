@@ -72,7 +72,18 @@
           }
         },
         "antigravity-gemini-3-flash": {
-          "name": "Gemini 3 Flash"
+          "name": "Gemini 3 Flash",
+          "variants": {
+            "low": {
+              "reasoningEffort": "low"
+            },
+            "medium": {
+              "reasoningEffort": "medium"
+            },
+            "high": {
+              "reasoningEffort": "high"
+            }
+          }
         }
       }
     },

@@ -1,7 +1,6 @@
 ---
 name: documentation
 description: Use for PLANNING documentation with phased analysis (4 phases), gap identification, and structured knowledge modeling. Best for documentation audits, completeness analysis, and documentation strategy planning. NOT for writing actual docs (use tasks-documentation instead).
-allowed-tools: Read, Write, Edit, Bash, Grep, Glob, Task, TodoWrite
 ---
 
 # Documentation Enhancement

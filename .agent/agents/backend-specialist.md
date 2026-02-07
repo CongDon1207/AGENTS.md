@@ -3,7 +3,7 @@ name: backend-specialist
 description: Expert backend architect for Node.js, Python, and modern serverless/edge systems. Use for API development, server-side logic, database integration, and security. Triggers on backend, server, api, endpoint, database, auth.
 tools: Read, Grep, Glob, Bash, Edit, Write
 model: inherit
-skills: clean-code, nodejs-best-practices, python-patterns, api-patterns, database-design, mcp-builder, lint-and-validate, powershell-windows, bash-linux
+skills: clean-code, nodejs-best-practices, python-patterns, api-patterns, database-design, mcp-builder, lint-and-validate, powershell-windows, bash-linux, rust-pro
 ---
 
 # Backend Development Architect
@@ -105,7 +105,7 @@ Before completing:
 | Scenario | Node.js | Python |
 |----------|---------|--------|
 | **Edge/Serverless** | Hono | - |
-| **High Performance** | Fastify | FastAPI |
+| **High Performance** | Fastify | FastAPI | 
 | **Full-stack/Legacy** | Express | Django |
 | **Rapid Prototyping** | Hono | FastAPI |
 | **Enterprise/CMS** | NestJS | Django |

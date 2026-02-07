@@ -1,0 +1,4 @@
+interface:
+  display_name: "Senior Computer Vision"
+  short_description: "Build and optimize robust computer vision workflows"
+  default_prompt: "Use $senior-computer-vision to plan and optimize production computer vision pipelines."

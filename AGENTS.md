@@ -31,60 +31,55 @@
 
 ---
 
-## 3) File-reading Rules (Mandatory)
-- **Before editing/creating files**: Read all relevant files in full to understand context.
-- **Before starting a task**: Read at minimum `README.md` and relevant files in `docs/*` (if present).
-- **If docs are missing or likely stale**: Use `rg` to locate the source of truth quickly.
+## 3) Decision Order & Clarification Gate
+- **Rule precedence (highest to lowest)**:
+  1. Safety and non-destructive behavior
+  2. Core Principles (Section 2)
+  3. Explicit user request and task scope
+  4. Dynamic context loading rules
+  5. Output/formatting preferences
+- **When to ask before execution**:
+  - Missing required inputs (paths, target environment, acceptance criteria)
+  - Multiple valid implementation paths with materially different outcomes
+  - Any potentially destructive or irreversible action
+- **When to execute directly**:
+  - Task is clear, low-risk, and can be completed with minimum viable change
+- **Question workflow**:
+  - Prefer a dedicated question tool when available to ask 1-2 short, decision-driving questions
+  - If no question tool is available, ask in chat first, wait for user answer, then execute
+  - Do not guess missing critical requirements
 
 ---
 
-## 4) Project Structure Index
-
-> **File**: `docs/structure.md` - Single source of truth for project layout.
-
-### When to use `docs/structure.md`
-- **Hard-to-locate tasks** (large repo/monorepo): read it first to get the map and narrow the search area.
-- **Very broad keywords** (e.g., auth/payment/logging): use structure to pick the right folder before searching deeper.
-- **New project / onboarding**: structure gives a fast overview of the main areas.
-
-### When to use `rg`
-- **Normal tasks**: use `rg` directly to find the real implementation (does not depend on whether structure is up to date).
-- **You already have concrete identifiers** (file name / function / class / route / endpoint): `rg` is faster than structure.
-- **You suspect structure is stale**: prefer `rg` first, then refresh structure if needed.
-
-### When to Update
-- **Project has no `docs/structure.md`**: Generate it using `skills/project-index/SKILL.md`.
-- **After major changes**: Added/removed modules, restructured folders.
-- **Periodic refresh**: Weekly or when index feels outdated.
-- **User says**: "update structure", "refresh index", "scan project".
-
-### How to Generate/Update
-```
-Load: skills/project-index/SKILL.md
-- Scan project tree
-- Identify key files and patterns
-- Write to docs/structure.md
-```
+## 4) Context Discovery & File Reading
+- **Before editing/creating files**: Read all relevant files in full to understand context.
+- **Before starting a task**: Read at minimum `README.md` and relevant files in `docs/*` (if present).
+- **Default discovery tool**: Use `rg` to find source-of-truth implementations quickly.
+- **`docs/structure.md` is optional**: Use it when present for broad navigation; do not block work if missing.
+- **Path-agnostic resolution**: Resolve skills/agents/commands/workflows in this order:
+  1. `.codex/...`
+  2. `.opencode/...`
+  3. `.agent/...`
+  4. root-level fallback (`skills/...`, `agents/...`, `commands/...`, `workflows/...`)
+- **If not found in known paths**: Use `rg --files` to locate matching `SKILL.md`, command, workflow, or agent definitions.
+- **Structure index updates**: Create or refresh `docs/structure.md` only when requested, or when a major restructure makes navigation unreliable.
 
 ---
 
 ## 5) Dynamic Context Loading
-
-> **Golden Rule**: Only load context when matching triggers are detected.
-
-### Automatic Context Triggers
-- **Keywords**: If the request matches a domain (e.g., "debug", "test", "plan", "review"), ALWAYS load the corresponding **Skill** (`skills/**/SKILL.md`) or **Agent** (`agents/**`) first.
-- **Slash Commands**: Treat `/command` as an explicit instruction to load `commands/<command>.md` (e.g., `/fix`, `/plan`, `/test`).
-- **Complex Tasks**: For multi-step objectives, load `workflows/**` to orchestrate the process.
-
-### Hierarchy of Context
-1. **Workflows** (`workflows/**`): High-level orchestration for multi-step processes.
-2. **Agents** (`agents/**`): Specific personas/mindsets for a task type.
-3. **Skills** (`skills/**`): Domain-specific knowledge and playbooks.
-4. **Commands** (`commands/**`): Reusable execution scripts/procedures.
-
-### Discovery
-If a request is unclear, check `router/decision-flow.md` or scan `skills/` and `commands/` directories to find the best tool for the job. Never guess if a specialized tool exists.
+- **Skill selection algorithm**:
+  1. Exact skill name match from user request
+  2. Explicit slash command mapping
+  3. Keyword-to-skill intent match
+  4. Workflow-driven skill loading for complex tasks
+  5. `rg`-based fallback discovery in known skill locations
+- **Tie-break rule**: If multiple skills match, choose the smallest set that fully covers the task.
+- **Keywords**: If the request matches a domain (e.g., debug, test, plan, review), load the best matching skill or agent first.
+- **Slash commands**: Treat `/command` as explicit instruction to load the corresponding command file.
+- **Complex tasks**: Start from a workflow, then load the minimal set of supporting skills.
+- **Minimal context rule**: Load only the files needed for the current task; avoid bulk loading.
+- **Transparency rule**: Briefly state which skill(s)/agent(s) are used and why.
+- **Unclear intent**: Ask 1-2 clarifying questions before implementation.
 
 ---
 
@@ -96,9 +91,8 @@ If a request is unclear, check `router/decision-flow.md` or scan `skills/` and `
 
 ---
 
-## 7) Auto-Documentation
+## 7) Auto-Documentation (Conditional)
 After completing impactful changes (feature/bugfix/schema/architecture), update briefly:
-- `README.md`: If stable info (stack/versions/overview) affected.
-- `HANDOFF.md`: Current status + next steps + latest test results.
-- `CHANGELOG.md`: Add one line: `YYYY-MM-DD: <Fix|Add|Change|Remove> <what> at <path> - <impact> (completed).`
-- `docs/structure.md`: If added/removed files or restructured folders.
+- `README.md`: If stable info (stack/versions/overview) is affected.
+- `HANDOFF.md`, `CHANGELOG.md`, `docs/structure.md`: Update if the file exists, or create only when explicitly requested.
+- `CHANGELOG.md` format (when used): `YYYY-MM-DD: <Fix|Add|Change|Remove> <what> at <path> - <impact> (completed).`

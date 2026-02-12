@@ -1,87 +1,100 @@
-# AGENTS.md - AI Agent Management System
+# AGENTS.md - Antigravity Kit
 
-Transform generic AI assistants into a professional engineering team. This repository defines the **rules, roles, and workflows** that enable AI coding agents (OpenCode, Claude, Cursor, Copilot) to work with the consistency and expertise of senior engineers.
+**Turn your AI Coding Assistant into a Professional Engineering Team.**
 
----
-
-## Core Architecture
-
-- **Agents (17 Roles):** Specialized personas with distinct mindsets (e.g., `debugger`, `planner`, `fullstack-developer`, `ui-ux-designer`).
-- **Commands (50+):** Standardized operating procedures for common tasks (e.g., `/fix`, `/code`, `/plan`, `/test`).
-- **Skills (61+):** Modular knowledge packages loaded on demand (e.g., `frontend-development`, `payment-integration`, `senior-data-engineer`, `senior-data-scientist`).
-- **Router:** Decision logic that selects the right agent, command, and skill for the job.
-- **Workflows:** Orchestration protocols for complex, multi-step engineering tasks.
-- **Hooks:** Automated scripts for formatting, review, and context management.
+This repository serves as the core configuration for **Antigravity Kit**, a modular system that provides specialized agents, workflows, and skills to AI models (OpenCode, Cursor, Windsurf, etc.). It transforms a generic AI into a structured, high-performance engineering workforce.
 
 ---
 
-## Project Structure
+## 🏗️ Project Structure
 
-```text
+The kit is organized into modular directories that the AI reads to understand its role, capabilities, and operational rules:
+
+```plaintext
 AGENTS.md/
+├── AGENTS.md                 # Core Operational Protocols & Rules (The "Constitution")
+├── README.md                 # This documentation
 │
-├── AGENTS.md                 # Working conventions (the AI reads this)
-├── README.md                 # Documentation (this file)
+├── .agent/                   # Antigravity Base Layer (Core Library)
+│   ├── agents/               # 20+ Specialist Personas (e.g., Backend, Frontend, DevOps)
+│   ├── skills/               # 35+ Core Skills (e.g., React, Node.js, Testing)
+│   ├── workflows/            # Automation Workflows (e.g., /plan, /deploy)
+│   └── ARCHITECTURE.md       # Detailed System Architecture
 │
-├── .opencode/                # OpenCode control center
-│   ├── agent/                # Role definitions
-│   ├── commands/             # Task procedures
-│   └── skills/               # Knowledge base
+├── .codex/                   # User/Project Specific Extensions (Overrides)
+│   └── skills/               # Custom and Project-specific Skills
 │
-├── .claude/                  # Claude-specific configuration (optional)
-└── .agent/                   # Other agent configs (optional)
+├── .opencode/                # OpenCode Platform Configurations
+│   ├── agent/                # OpenCode Agent definitions
+│   └── README.md             # Skills Catalog (Vietnamese)
+│
+└── .claude/                  # Claude-specific Configuration (Legacy/Optional)
 ```
 
 ---
 
-## Quick Start
+## 🤖 Core Architecture
 
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/your-repo/AGENTS.md
-   ```
+The system operates on a resolution priority (Top → Bottom) defined in `AGENTS.md`, ensuring that user-specific customizations (`.codex`) always override core defaults.
 
-2. **Integrate into Your Project (OpenCode)**
-   Copy the core configuration to your project root:
-   ```bash
-   cp -r AGENTS.md/.opencode your-project/
-   cp AGENTS.md/AGENTS.md your-project/
-   ```
+### Key Components
 
-3. **Start Working**
-   Your AI assistant will automatically detect the configuration in `.opencode/` and `AGENTS.md` to begin working as a structured team.
+-   **Agents (20+ Roles)**:
+    Specialized personas with distinct mindsets and capabilities.
+    -   `orchestrator`: Manages multi-agent coordination.
+    -   `frontend-specialist`: Expert in React, Tailwind, and UI/UX.
+    -   `backend-specialist`: Expert in API design, DB schemas, and Node.js.
+    -   `security-auditor`: Focuses on OWASP and vulnerability scanning.
 
----
+-   **Skills (60+ Modules)**:
+    Modular knowledge packages loaded on-demand.
+    -   **Tech Stack**: Next.js, NestJS, Python, Rust, Docker.
+    -   **Methodologies**: TDD, Clean Code, System Design, Security Auditing.
+    -   **Meta-Skills**: Sequential Thinking, Brainstorming, Problem Solving.
+    -   *Sources*: `.agent/skills` (Core) + `.codex/skills` (Custom).
 
-## Customization
-
-Extend the system by adding Markdown files to the respective directories:
-
-- **New Agent:** Create `.opencode/agent/my-agent.md`
-- **New Command:** Create `.opencode/commands/my-command.md`
-- **New Skill:** Create `.opencode/skills/my-skill/SKILL.md`
-
----
-
-## Featured Skills
-
-### Senior Data Engineer (`senior-data-engineer`)
-World-class data engineering skill for building scalable data pipelines, ETL/ELT systems, and data infrastructure. Expertise in Python, SQL, Spark, Airflow, dbt, Kafka, and the modern data stack. Includes data modeling, pipeline orchestration, data quality, and DataOps.
-
-**Use when:**
-- Designing data architectures
-- Building data pipelines
-- Optimizing data workflows
-- Implementing data governance
-
-**Tech stack:** Python, SQL, R, Scala, Go, Spark, Airflow, dbt, Kafka, Databricks, Docker, Kubernetes
-
+-   **Workflows (Slash Commands)**:
+    Standardized operating procedures invoked via chat.
+    -   `/plan`: Create detailed implementation plans.
+    -   `/create`: Scaffold new features or apps.
+    -   `/debug`: Run systematic root cause analysis.
+    -   `/review`: Perform code reviews.
 
 ---
 
-## License
+## 🚀 Getting Started
 
-Apache 2.0 - See [LICENSE](LICENSE) for details.
+1.  **Installation**
+    Clone this repository or copy the configuration directories (`.agent`, `.codex`, `.opencode`, `AGENTS.md`) into your project root.
+
+2.  **Initialization**
+    Your AI assistant (if configured with Antigravity support) will automatically detect the `AGENTS.md` rules and the `.agent` logic.
+
+3.  **Basic Usage**
+    Start by defining your task or using a workflow command:
+    > "I need to build a new login page. @[frontend-specialist]"
+    > "/plan Refactor the database schema for better performance"
+
+---
+
+## 📜 Operational Conventions
+
+As defined in only `AGENTS.md`:
+
+-   **Language**:
+    -   **Artifacts (Docs, Code Comments)**: MUST be in **English**.
+    -   **Communication (Chat)**: MUST be in **Vietnamese**.
+-   **Workflow**:
+    -   **Clarify First**: AI must ask clarifying questions for ambiguous tasks.
+    -   **Plan**: Complex changes require an approved `implementation_plan.md`.
+    -   **Verify**: All code must be verified with provided scripts (`checklist.py`).
+
+---
+
+## 🔗 References
+
+-   **[System Architecture](.agent/ARCHITECTURE.md)**: Detailed breakdown of all agents and skills.
+-   **[Skills Catalog (.opencode)](.opencode/README.md)**: Detailed guide to available skills (Vietnamese).
 
 ---
 
@@ -89,6 +102,6 @@ Apache 2.0 - See [LICENSE](LICENSE) for details.
 
 This repository is curated from multiple public open-source repositories. I am not the original author of the underlying content; my contribution lies in selecting, customizing, and adapting it to fit specific use cases and workflows. All credit belongs to the original authors and the open-source community.
 
-The `.claude` directory is sourced from [original repo](https://github.com/duc01226/EasyPlatform).
-
-The `.agent` directory is sourced from [original repo](https://github.com/vudovn/antigravity-kit).
+- The `.claude` directory is sourced from [original repo](https://github.com/duc01226/EasyPlatform).
+- The `.agent` directory is sourced from [original repo](https://github.com/vudovn/antigravity-kit).
+- Besides, the [antigravity-ide](https://github.com/Dokhacgiakhoa/antigravity-ide.git) is integrated automatically to project many fields.

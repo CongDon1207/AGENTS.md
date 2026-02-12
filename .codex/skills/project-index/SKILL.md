@@ -1,4 +1,4 @@
-﻿---
+---
 name: project-index
 description: Generate and maintain project structure index for fast AI navigation. Creates docs/structure.md with optimized file index. Load this skill when starting new project, after major changes, or when docs/structure.md is outdated.
 ---

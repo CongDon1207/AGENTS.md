@@ -1,4 +1,4 @@
-﻿---
+---
 name: ai-artist
 description: Write and optimize prompts for AI-generated outcomes across text and image models. Use when crafting prompts for LLMs (Codex, GPT, Gemini), image generators (Midjourney, DALL-E, Stable Diffusion, Imagen, Flux), or video generators (Veo, Runway). Covers prompt structure, style keywords, negative prompts, chain-of-thought, few-shot examples, iterative refinement, and domain-specific patterns for marketing, code, and creative writing.
 version: 1.0.0

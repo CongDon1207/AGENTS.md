@@ -1,7 +1,7 @@
 ---
 name: template-skill
-description: Replace with description of the skill and when Codex should use it.
+description: Starter template for creating new skills. Use when defining a new skill scaffold with frontmatter and concise execution instructions.
 ---
 
-# Insert instructions below
+# Add skill instructions below
 

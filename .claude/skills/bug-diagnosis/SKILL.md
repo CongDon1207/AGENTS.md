@@ -1,7 +1,6 @@
 ---
 name: bug-diagnosis
 description: Use when the user asks to debug, diagnose, fix a bug, troubleshoot errors, investigate issues, or pastes error messages/stack traces. Triggers on keywords like "bug", "error", "fix", "not working", "broken", "debug", "stack trace", "exception", "crash", "issue".
-allowed-tools: Read, Write, Edit, Bash, Grep, Glob, Task, WebFetch, WebSearch, TodoWrite
 ---
 
 # Bug Diagnosis & Debugging

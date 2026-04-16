@@ -1,8 +1,6 @@
 ---
-name: Debugging
+name: debugging
 description: Systematic debugging framework ensuring root cause investigation before fixes. Includes four-phase debugging process, backward call stack tracing, multi-layer validation, and verification protocols. Use when encountering bugs, test failures, unexpected behavior, performance issues, or before claiming work complete. Prevents random fixes, masks over symptoms, and false completion claims.
-version: 3.0.0
-languages: all
 ---
 
 # Debugging
@@ -63,25 +61,12 @@ Run the command. Read the output. Then claim the result.
 
 **Load when:** About to claim work complete, fixed, or passing
 
-### 5. EasyPlatform-Specific (`references/easyplatform-debugging.md`)
-
-Platform-specific debugging patterns for the Easy.Platform .NET 9 + Angular 19 monorepo.
-
-**Covers:**
-- Backend error patterns (PlatformValidationResult, PlatformException, EnsureFound)
-- Frontend error patterns (observerLoadingErrorState, stores, forms)
-- Common bug categories by layer
-- Platform-specific investigation workflow
-
-**Load when:** Debugging issues in EasyPlatform codebase
-
 ## Quick Reference
 
 ```
 Bug → systematic-debugging.md (Phase 1-4)
   Error deep in stack? → root-cause-tracing.md (trace backward)
   Found root cause? → defense-in-depth.md (add layers)
-  EasyPlatform issue? → easyplatform-debugging.md (platform patterns)
   About to claim success? → verification.md (verify first)
 ```
 

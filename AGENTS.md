@@ -56,34 +56,13 @@
 - **Before starting a task**: Read at minimum `README.md` and relevant files in `docs/*` (if present).
 - **Default discovery tool**: Use `rg` to find source-of-truth implementations quickly.
 - **`docs/structure.md` is optional**: Use it when present for broad navigation; do not block work if missing.
-- **Path-agnostic resolution**: Resolve skills/agents/commands/workflows in this order:
-  1. `.codex/...`
-  2. `.opencode/...`
-  3. `.agent/...`
-  4. root-level fallback (`skills/...`, `agents/...`, `commands/...`, `workflows/...`)
-- **If not found in known paths**: Use `rg --files` to locate matching `SKILL.md`, command, workflow, or agent definitions.
 - **Structure index updates**: Create or refresh `docs/structure.md` only when requested, or when a major restructure makes navigation unreliable.
 
 ---
 
-## 5) Dynamic Context Loading
-- **Skill selection algorithm**:
-  1. Exact skill name match from user request
-  2. Explicit slash command mapping
-  3. Keyword-to-skill intent match
-  4. Workflow-driven skill loading for complex tasks
-  5. `rg`-based fallback discovery in known skill locations
-- **Tie-break rule**: If multiple skills match, choose the smallest set that fully covers the task.
-- **Keywords**: If the request matches a domain (e.g., debug, test, plan, review), load the best matching skill or agent first.
-- **Slash commands**: Treat `/command` as explicit instruction to load the corresponding command file.
-- **Complex tasks**: Start from a workflow, then load the minimal set of supporting skills.
-- **Minimal context rule**: Load only the files needed for the current task; avoid bulk loading.
-- **Transparency rule**: Briefly state which skill(s)/agent(s) are used and why.
-- **Unclear intent**: Ask 1-2 clarifying questions before implementation.
 
----
 
-## 6) Execution Discipline
+## 5) Execution Discipline
 - **Run only necessary commands**; avoid destructive commands (`rm`, `git reset`...) unless explicitly requested.
 - **Timeout**: Default 60s; cap at 70-80s for potentially long-running commands.
 - **Permission errors**: Explain clearly and propose safe manual steps.
@@ -91,7 +70,7 @@
 
 ---
 
-## 7) Auto-Documentation (Conditional)
+## 6) Auto-Documentation (Conditional)
 After completing impactful changes (feature/bugfix/schema/architecture), update briefly:
 - `README.md`: If stable info (stack/versions/overview) is affected.
 - `HANDOFF.md`, `CHANGELOG.md`, `docs/structure.md`: Update if the file exists, or create only when explicitly requested.

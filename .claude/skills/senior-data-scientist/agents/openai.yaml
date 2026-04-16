@@ -1,0 +1,4 @@
+interface:
+  display_name: "Senior Data Scientist"
+  short_description: "Drive modeling and experiments with scientific rigor"
+  default_prompt: "Use $senior-data-scientist to plan experiments and model evaluation rigorously."

@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp -r \"D:/PromptTechnique/AGENTS.md/.codex/skills/ai-artist/references/\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/ai-artist/references/\")",
+      "Bash(cp -r \"D:/PromptTechnique/AGENTS.md/.codex/skills/backend-development/references/\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/backend-development/references/\")",
+      "Bash(cp -r \"D:/PromptTechnique/AGENTS.md/.codex/skills/chrome-devtools/references/\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/chrome-devtools/references/\")",
+      "Bash(cp -r \"D:/PromptTechnique/AGENTS.md/.codex/skills/code-review/references/\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/code-review/references/\")",
+      "Bash(cp -r \"D:/PromptTechnique/AGENTS.md/.codex/skills/databases/references/\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/databases/references/\")",
+      "Bash(cp -r \"D:/PromptTechnique/AGENTS.md/.codex/skills/chrome-devtools/scripts/\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/chrome-devtools/scripts/\")",
+      "Bash(cp -r \"D:/PromptTechnique/AGENTS.md/.codex/skills/databases/scripts/\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/databases/scripts/\")",
+      "Bash(cp -r \"D:/PromptTechnique/AGENTS.md/.codex/skills/debugging/scripts/\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/debugging/scripts/\")",
+      "Bash(cp -r \"D:/PromptTechnique/AGENTS.md/.codex/skills/docs-seeker/references/\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/docs-seeker/references/\")",
+      "Bash(cp -r \"D:/PromptTechnique/AGENTS.md/.codex/skills/docs-seeker/scripts/\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/docs-seeker/scripts/\")",
+      "Bash(cp -r \"D:/PromptTechnique/AGENTS.md/.codex/skills/frontend-design/references/\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/frontend-design/references/\")",
+      "Bash(cp -r \"D:/PromptTechnique/AGENTS.md/.codex/skills/frontend-development/resources/\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/frontend-development/resources/\")",
+      "Bash(cp -r \"D:/PromptTechnique/AGENTS.md/.codex/skills/mcp-builder/reference/\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/mcp-builder/reference/\")",
+      "Bash(cp -r \"D:/PromptTechnique/AGENTS.md/.codex/skills/mcp-builder/scripts/\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/mcp-builder/scripts/\")",
+      "Bash(cp \"D:/PromptTechnique/AGENTS.md/.codex/skills/mcp-builder/LICENSE.txt\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/mcp-builder/LICENSE.txt\")",
+      "Bash(cp -r \"D:/PromptTechnique/AGENTS.md/.codex/skills/senior-computer-vision/references/\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/senior-computer-vision/references/\")",
+      "Bash(cp -r \"D:/PromptTechnique/AGENTS.md/.codex/skills/senior-computer-vision/scripts/\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/senior-computer-vision/scripts/\")",
+      "Bash(cp -r \"D:/PromptTechnique/AGENTS.md/.codex/skills/senior-computer-vision/agents/\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/senior-computer-vision/agents/\")",
+      "Bash(cp -r \"D:/PromptTechnique/AGENTS.md/.codex/skills/senior-data-engineer/references/\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/senior-data-engineer/references/\")",
+      "Bash(cp -r \"D:/PromptTechnique/AGENTS.md/.codex/skills/senior-data-engineer/scripts/\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/senior-data-engineer/scripts/\")",
+      "Bash(cp -r \"D:/PromptTechnique/AGENTS.md/.codex/skills/sequential-thinking/references/\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/sequential-thinking/references/\")",
+      "Bash(cp -r \"D:/PromptTechnique/AGENTS.md/.codex/skills/sequential-thinking/scripts/\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/sequential-thinking/scripts/\")",
+      "Bash(cp -r \"D:/PromptTechnique/AGENTS.md/.codex/skills/sequential-thinking/tests/\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/sequential-thinking/tests/\")",
+      "Bash(cp \"D:/PromptTechnique/AGENTS.md/.codex/skills/sequential-thinking/package.json\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/sequential-thinking/package.json\")",
+      "Bash(cp \"D:/PromptTechnique/AGENTS.md/.codex/skills/sequential-thinking/README.md\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/sequential-thinking/README.md\")",
+      "Bash(cp -r \"D:/PromptTechnique/AGENTS.md/.codex/skills/document-skills/\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/document-skills-tmp/\")",
+      "Bash(cp -r \"D:/PromptTechnique/AGENTS.md/.claude/skills/document-skills-tmp/.\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/document-skills/\")",
+      "Bash(rm -rf \"D:/PromptTechnique/AGENTS.md/.claude/skills/document-skills-tmp\")",
+      "Bash(cp \"D:/PromptTechnique/AGENTS.md/.codex/skills/document-skills/SKILL.md\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/document-skills/SKILL.md\")",
+      "Bash(cp \"D:/PromptTechnique/AGENTS.md/.codex/skills/document-skills/forms.md\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/document-skills/forms.md\")",
+      "Bash(cp \"D:/PromptTechnique/AGENTS.md/.codex/skills/document-skills/reference.md\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/document-skills/reference.md\")",
+      "Bash(cp \"D:/PromptTechnique/AGENTS.md/.codex/skills/document-skills/LICENSE.txt\" \"D:/PromptTechnique/AGENTS.md/.claude/skills/document-skills/LICENSE.txt\")"
+    ]
+  }
+}

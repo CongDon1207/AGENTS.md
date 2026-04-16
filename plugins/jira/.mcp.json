@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "jira": {
+      "type": "http",
+      "url": "https://mcp.atlassian.com/v1/mcp",
+      "note": "Official Atlassian Rovo MCP server for Jira Cloud. OAuth 2.1 is the default auth flow; API token auth is available only if your Atlassian admin enables it."
+    }
+  }
+}

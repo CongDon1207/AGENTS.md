@@ -1,0 +1,41 @@
+{
+  "name": "jira",
+  "version": "0.1.0",
+  "description": "Jira Cloud access in Codex through the official Atlassian Rovo MCP server.",
+  "author": {
+    "name": "Local Workspace"
+  },
+  "homepage": "https://support.atlassian.com/atlassian-rovo-mcp-server/docs/getting-started-with-the-atlassian-remote-mcp-server/",
+  "license": "MIT",
+  "keywords": [
+    "jira",
+    "atlassian",
+    "mcp",
+    "issue-tracking",
+    "project-management"
+  ],
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Jira",
+    "shortDescription": "Connect Codex to Jira Cloud over Atlassian MCP",
+    "longDescription": "Connect Codex to Jira Cloud through the official Atlassian Rovo MCP server. After OAuth or admin-approved API token authentication, Codex can search, summarize, create, and update Jira work items using your existing Atlassian permissions.",
+    "developerName": "Local Workspace",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://www.atlassian.com/software/jira",
+    "privacyPolicyURL": "https://www.atlassian.com/legal/privacy-policy",
+    "termsOfServiceURL": "https://www.atlassian.com/legal/cloud-terms-of-service",
+    "defaultPrompt": [
+      "Find my open Jira issues and summarize blockers",
+      "Create a Jira issue from this bug report",
+      "Search recent Jira incidents across my projects"
+    ],
+    "brandColor": "#0C66E4",
+    "composerIcon": "./assets/jira-icon.svg",
+    "logo": "./assets/jira-icon.svg",
+    "screenshots": []
+  }
+}

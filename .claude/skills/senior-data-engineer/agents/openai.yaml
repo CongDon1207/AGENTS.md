@@ -1,0 +1,4 @@
+interface:
+  display_name: "Senior Data Engineer"
+  short_description: "Design and run robust data engineering workflows"
+  default_prompt: "Use $senior-data-engineer to design scalable pipelines and execution plans."

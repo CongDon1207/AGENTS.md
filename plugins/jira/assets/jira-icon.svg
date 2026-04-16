@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title>Jira Plugin Icon</title>
+  <defs>
+    <linearGradient id="jira-gradient" x1="12%" x2="88%" y1="12%" y2="88%">
+      <stop offset="0%" stop-color="#2684FF" />
+      <stop offset="100%" stop-color="#0C66E4" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="#E9F2FF" />
+  <path
+    fill="url(#jira-gradient)"
+    d="M45 27a7 7 0 0 1 6 3.6l12.2 21.7a7 7 0 0 1 0 6.9L50.9 81.1a7 7 0 0 1-6 3.6H24.8a7 7 0 0 1-6-10.4L39 39.6A7 7 0 0 1 45 36h10.7l-4.6-8.2A7 7 0 0 0 45 24H45z"
+  />
+  <path
+    fill="url(#jira-gradient)"
+    d="M74.1 46.9a7 7 0 0 1 6 3.6l12.2 21.7a7 7 0 0 1-6 10.4H66.1a7 7 0 0 1-6-3.6L47.9 57.3a7 7 0 0 1 0-6.9l4.6-8.2 15.6 27.7h10.7a7 7 0 0 0 6-10.4L74.1 40.2a7 7 0 0 0-6-3.6H57.4l4.6 8.2a7 7 0 0 0 6 3.6h6.1z"
+  />
+</svg>

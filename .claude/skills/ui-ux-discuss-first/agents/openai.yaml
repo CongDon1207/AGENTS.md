@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI/UX Discuss First"
+  short_description: "Discuss style deeply before implementing UI code"
+  default_prompt: "Use $ui-ux-discuss-first to propose 2-4 UI direction options and get explicit approval before implementing."

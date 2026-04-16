@@ -85,7 +85,7 @@ For EACH changed file, verify:
 - [ ] No missing edge cases
 
 **Convention Compliance:**
-- [ ] Follows platform patterns from CLAUDE.md
+- [ ] Follows platform patterns from AGENTS.md
 - [ ] Uses correct base classes
 - [ ] Naming conventions followed
 - [ ] BEM classes on all template elements (frontend)
@@ -234,7 +234,7 @@ grep -r "subscribe()" --include="*.ts" | grep -v "untilDestroyed"  # Missing cle
 2. **Second pass is CONDITIONAL** - Only if first pass made corrections
 3. **Be honest and brutal** - Flag all issues, don't be lenient
 4. **Evidence-based** - Cite specific files and lines
-5. **Follow project conventions** - Check CLAUDE.md patterns
+5. **Follow project conventions** - Check AGENTS.md patterns
 
 ## Output Format
 
@@ -247,3 +247,4 @@ Always end with clear status:
 **Ready for Commit:** [Yes / No]
 ---
 ```
+

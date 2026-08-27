@@ -1,3 +1,5 @@
+
+
 # AGENTS.md - Antigravity Kit
 
 **Turn your AI coding assistant into a structured engineering team.**
@@ -19,6 +21,7 @@ AGENTS.md/
 |   |-- agents/               # Legacy base agent library
 |   |-- skills/               # Core shared skills
 |   |-- workflows/            # Slash-command workflows
+|   |-- rules/                # Global rules
 |   `-- ARCHITECTURE.md       # Legacy architecture reference
 |
 |-- .codex/                   # Codex-native overrides
